@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 // utils
-import { login } from "../services/userService";
+import { login } from "../../utils/Auth";
 
 const initialState = {
   isLogin: false,
