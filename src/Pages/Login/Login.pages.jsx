@@ -4,6 +4,10 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { loginAsync } from "../../features/user/userSlice"
 
+// styles
+import "./Login.styles.css"
+
+import "./Login."
 const Login = () => {
   const [values, setValues] = useState({
     email: "",
