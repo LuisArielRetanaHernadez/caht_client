@@ -4,3 +4,9 @@
   padding: .6rem;
   background-color: var(--bg-blue-bright);
 }
+
+.form__title {
+  font-size: 1.6rem;
+  color: black;
+  filter: invert(1);
+}
