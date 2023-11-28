@@ -19,3 +19,11 @@ body, * {
   font-family: var(--font-family-heebo);
   font-size: 16px;
 }
+
+/* class globals */
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+}
