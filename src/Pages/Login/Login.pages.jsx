@@ -82,7 +82,7 @@ const Login = () => {
               Olvidaste tu contraseña?
             </Link>
           </div>
-
+          <span>Or</span>
           <Socials />
         </div>
          
