@@ -39,10 +39,11 @@ const Login = () => {
           <div className="form__field">
             <label className="form__title">Correo</label>
             <input
-            className="form__input"
-            name="email"
-            type="email" />
-            onChange={handleChange}
+              className="form__input"
+              name="email"
+              type="email"
+              onChange={handleChange}
+            />
           </div>
           <div className="form__field">
             <label className="form__title">Contraseña</label>
