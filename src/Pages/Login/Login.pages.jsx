@@ -37,8 +37,8 @@ const Login = () => {
       <section className="container container--center">
         <form className="form" onSubmit={handleSubmit}>
           <h2 className="form__title">Login</h2>
-          <div className="form__field">
-            <label className="form__field-tile">Correo</label>
+          <div className="form__field position-relative">
+            <label className="form__field-tile position-relative">Correo</label>
             <input
               className="form__input"
               name="email"
@@ -46,7 +46,7 @@ const Login = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="form__field">
+          <div className="form__field position-relative">
             <label className="form__field-title">Contraseña</label>
             <input 
               className="form__input"
@@ -55,7 +55,7 @@ const Login = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="form__buttons">
+          <div className="form__buttons position-relative">
             <button className="button">
               Iniciar
             </button>
@@ -63,7 +63,7 @@ const Login = () => {
               Registrarse
             </Link>
           </div>
-          <div className="form__reset">
+          <div className="form__reset position-relative">
             <Link to="/forgot-password" className="form__link">
               Olvidaste tu contraseña?
             </Link>
