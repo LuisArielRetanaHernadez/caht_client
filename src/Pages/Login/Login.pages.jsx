@@ -49,16 +49,16 @@ const Login = () => {
           <div className="form__field">
             <label className="form__field-title">Contraseña</label>
             <input 
-            className="form__input"
+              className="form__input"
               name="password"
               type="password"
               onChange={handleChange}
             />
           </div>
           <button className="button">Iniciar</button>
-          <Link to="/register" className="form__link">
-            Registrarse
-          </Link>
+            <Link to="/register" className="form__link">
+              Registrarse
+            </Link>
           <div>
             <Link to="/forgot-password" className="form__link">
               Olvidaste tu contraseña?
