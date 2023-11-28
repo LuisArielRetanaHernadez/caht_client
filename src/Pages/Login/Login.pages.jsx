@@ -6,6 +6,7 @@ import { loginAsync } from "../../features/user/userSlice"
 
 // styles
 import "./Login.styles.css"
+import { Link } from "react-router-dom"
 
 const Login = () => {
   const [values, setValues] = useState({
@@ -53,6 +54,14 @@ const Login = () => {
             />
           </div>
           <button className="button">Iniciar</button>
+          <Link to="/register" className="form__link">
+            Registrarse
+          </Link>
+          <div>
+            <Link to="/forgot-password" className="form__link">
+              Olvidaste tu contraseña?
+            </Link>
+          </div>
         </form>
       </section>
     </>
