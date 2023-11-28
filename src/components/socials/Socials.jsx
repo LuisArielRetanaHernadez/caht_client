@@ -1,4 +1,4 @@
-import Google from "../../assets/svg/google.svg"
+import Google from "../../assets/svg/Google.svg"
 
 const Socials = () => {
 
@@ -6,7 +6,7 @@ const Socials = () => {
     <>
       <div>
         <ul>
-          <li><Google /></li>
+          <li><img src={Google}></img></li>
         </ul>
       </div>
     </>
