@@ -21,6 +21,11 @@ body, * {
   font-size: 16px;
 }
 
+a {
+  text-decoration: none;
+  list-style: none;
+}
+
 /* class globals */
 
 .container {
