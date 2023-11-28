@@ -36,8 +36,9 @@ const Login = () => {
     <>
       <section className="container container--center">
         <form className="form" onSubmit={handleSubmit}>
+          <h2 className="form__title">Login</h2>
           <div className="form__field">
-            <label className="form__title">Correo</label>
+            <label className="form__field-tile">Correo</label>
             <input
               className="form__input"
               name="email"
@@ -46,7 +47,7 @@ const Login = () => {
             />
           </div>
           <div className="form__field">
-            <label className="form__title">Contraseña</label>
+            <label className="form__field-title">Contraseña</label>
             <input 
             className="form__input"
               name="password"
