@@ -44,9 +44,9 @@ const Login = () => {
               position-relative
               form__field-mt-15p 
             ">
-            <label className="form__field-tile position-relative">Correo</label>
+            <label className="form__field-title position-relative">Correo</label>
             <input
-              className="form__input"
+              className="form__input form__input--color-blue"
               name="email"
               type="email"
               onChange={handleChange}
@@ -61,7 +61,7 @@ const Login = () => {
            ">
             <label className="form__field-title">Contraseña</label>
             <input 
-              className="form__input"
+              className="form__input form__input--color-blue"
               name="password"
               type="password"
               onChange={handleChange}
