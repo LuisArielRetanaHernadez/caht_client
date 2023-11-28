@@ -51,7 +51,7 @@
   padding: .2rem .1rem;
   outline: none;
   background: none;
-  border: 2px solid #04364A;
+  border: 2px solid var(--bg-blue-indigo);
   border-top: none;
   border-left: none;
   border-right: none;
@@ -71,6 +71,7 @@
   justify-content: center;
   gap: 5px;
 }
+
 .button {
   color: var(--gray-pearl);
   padding: .4rem 1.5rem;
@@ -78,6 +79,16 @@
   border: none;
   background-color: var(--bg-blue-indigo);
 }
+
+.button--hover-color-pear {
+  transition: all .2s;
+}
+
+.button--hover-color-pear:hover {
+  color: var(--blue-bright);
+  background-color: var(--bg-white);
+}
+
 .form__reset {
   text-align: center;
 }
