@@ -16,8 +16,8 @@
   border-radius: inherit;
   background-color: var(--bg-blue-bright);
   position: absolute;
-  bottom: 12%;
-  right: 12%;
+  bottom: 20%;
+  right: 25%;
 }
 
 .form__title {
