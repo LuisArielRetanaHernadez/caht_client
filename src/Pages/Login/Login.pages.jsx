@@ -55,10 +55,14 @@ const Login = () => {
               onChange={handleChange}
             />
           </div>
-          <button className="button">Iniciar</button>
+          <div>
+            <button className="button">
+              Iniciar
+            </button>
             <Link to="/register" className="form__link">
               Registrarse
             </Link>
+          </div>
           <div>
             <Link to="/forgot-password" className="form__link">
               Olvidaste tu contraseña?
