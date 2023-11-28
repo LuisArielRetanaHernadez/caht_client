@@ -71,7 +71,13 @@
   justify-content: center;
   gap: 5px;
 }
-
+.button {
+  color: var(--gray-pearl);
+  padding: .4rem 1.5rem;
+  outline: none;
+  border: none;
+  background-color: var(--bg-blue-indigo);
+}
 .form__reset {
   text-align: center;
 }
