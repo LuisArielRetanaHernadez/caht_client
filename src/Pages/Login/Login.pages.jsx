@@ -33,7 +33,7 @@ const Login = () => {
   
   return (
     <>
-      <section className="container">
+      <section className="container container--center">
         <form className="form" onSubmit={handleSubmit}>
           <div className="form__field">
             <label className="form__title">Correo</label>
