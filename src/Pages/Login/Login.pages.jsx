@@ -7,7 +7,6 @@ import { loginAsync } from "../../features/user/userSlice"
 // styles
 import "./Login.styles.css"
 
-import "./Login."
 const Login = () => {
   const [values, setValues] = useState({
     email: "",
