@@ -42,6 +42,7 @@ const Login = () => {
               form__field--medium
               form__field-center-m
               position-relative
+              form__field-mt-15p 
             ">
             <label className="form__field-tile position-relative">Correo</label>
             <input
@@ -54,8 +55,9 @@ const Login = () => {
 
           <div className="form__field 
             form__field--medium
-            position-relative
             form__field-center-m
+            position-relative
+            form__field-mt-15p 
            ">
             <label className="form__field-title">Contraseña</label>
             <input 
