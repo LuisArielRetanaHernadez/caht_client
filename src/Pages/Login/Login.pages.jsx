@@ -33,26 +33,28 @@ const Login = () => {
   
   return (
     <>
-      <form className="form" onSubmit={handleSubmit}>
-        <div className="form__field">
-          <label className="form__title">Correo</label>
-          <input
-          className="form__input"
-           name="email"
-           type="email" />
-           onChange={handleChange}
-        </div>
-        <div className="form__field">
-          <label className="form__title">Contraseña</label>
-          <input 
-          className="form__input"
-            name="password"
-            type="password"
+      <section className="container">
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="form__field">
+            <label className="form__title">Correo</label>
+            <input
+            className="form__input"
+            name="email"
+            type="email" />
             onChange={handleChange}
-          />
-        </div>
-        <button className="button">Iniciar</button>
-      </form>
+          </div>
+          <div className="form__field">
+            <label className="form__title">Contraseña</label>
+            <input 
+            className="form__input"
+              name="password"
+              type="password"
+              onChange={handleChange}
+            />
+          </div>
+          <button className="button">Iniciar</button>
+        </form>
+      </section>
     </>
   )
 }
