@@ -38,3 +38,7 @@ body, * {
 .position-relative {
   position: relative;
 }
+
+.rounded-10p {
+  border-radius: 10px;
+}
