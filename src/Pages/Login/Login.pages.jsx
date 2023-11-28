@@ -68,15 +68,15 @@ const Login = () => {
             />
           </div>
 
-          <div className="form__buttons position-relative">
-            <button className="button">
+          <div className="form__buttons m-10p position-relative">
+            <button className="button button--hover-color-pear rounded-10p">
               Iniciar
             </button>
-            <Link to="/register" className="form__link">
+            <Link to="/register" className="button button--hover-color-pear rounded-10p">
               Registrarse
             </Link>
           </div>
-          <div className="form__reset position-relative">
+          <div className="form__reset m-10p position-relative">
             <Link to="/forgot-password" className="form__link">
               Olvidaste tu contraseña?
             </Link>
