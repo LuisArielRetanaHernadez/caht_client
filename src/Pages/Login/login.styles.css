@@ -42,6 +42,10 @@
   margin: auto;
 }
 
+.form__field-mt-15p {
+  margin-top: 15px;
+}
+
 .form__input {
   width: 100%;
   padding: .5rem;
