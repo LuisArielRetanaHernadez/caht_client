@@ -28,7 +28,7 @@ body, * {
   display: grid;
 }
 
-.container__center {
+.container--center {
   align-items: center;
   justify-items: center;
 }
