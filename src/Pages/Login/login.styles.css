@@ -42,3 +42,14 @@
   border-left: none;
   border-right: none;
 }
+
+.form__buttons {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.form__reset {
+  text-align: center;
+}
