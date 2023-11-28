@@ -27,3 +27,8 @@ body, * {
   height: 100vh;
   display: grid;
 }
+
+.container__center {
+  align-items: center;
+  justify-items: center;
+}
