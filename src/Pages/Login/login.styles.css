@@ -1,5 +1,6 @@
 .form {
   width: 35vw;
   height: 60vh;
+  padding: .6rem;
   background-color: var(--bg-blue-bright);
 }
