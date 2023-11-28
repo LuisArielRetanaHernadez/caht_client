@@ -37,7 +37,12 @@ const Login = () => {
       <section className="container container--center">
         <form className="form form--shadow rounded-10p" onSubmit={handleSubmit}>
           <h2 className="form__title">Login</h2>
-          <div className="form__field form__field--medium position-relative">
+
+          <div className="form__field
+              form__field--medium
+              form__field-center-m
+              position-relative
+            ">
             <label className="form__field-tile position-relative">Correo</label>
             <input
               className="form__input"
@@ -46,7 +51,12 @@ const Login = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="form__field form__field--medium position-relative">
+
+          <div className="form__field 
+            form__field--medium
+            position-relative
+            form__field-center-m
+           ">
             <label className="form__field-title">Contraseña</label>
             <input 
               className="form__input"
@@ -55,6 +65,7 @@ const Login = () => {
               onChange={handleChange}
             />
           </div>
+
           <div className="form__buttons position-relative">
             <button className="button">
               Iniciar
