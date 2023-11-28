@@ -35,7 +35,7 @@ const Login = () => {
   return (
     <>
       <section className="container container--center">
-        <form className="form form--shadow" onSubmit={handleSubmit}>
+        <form className="form form--shadow rounded-10p" onSubmit={handleSubmit}>
           <h2 className="form__title">Login</h2>
           <div className="form__field position-relative">
             <label className="form__field-tile position-relative">Correo</label>
