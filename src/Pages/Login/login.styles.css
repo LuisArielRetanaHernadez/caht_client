@@ -34,6 +34,14 @@
   align-items: center;
 }
 
+.form__field--medium {
+  width: 75%;
+}
+
+.form__field-center-m {
+  margin: auto;
+}
+
 .form__input {
   width: 100%;
   padding: .5rem;
@@ -44,9 +52,7 @@
   border-left: none;
   border-right: none;
 }
-.form__field--medium {
-  width: 75%;
-}
+
 .form__buttons {
   text-align: center;
   display: flex;
