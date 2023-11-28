@@ -13,6 +13,7 @@
   content: ' ';
   width: inherit;
   height: inherit;
+  border-radius: inherit;
   background-color: var(--bg-blue-bright);
   position: absolute;
   bottom: 12%;
