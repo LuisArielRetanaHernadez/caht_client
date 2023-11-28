@@ -1,4 +1,5 @@
 .form {
-  width: 50vw;
+  width: 35vw;
+  height: 60vh;
   background-color: var(--bg-blue-bright);
 }
