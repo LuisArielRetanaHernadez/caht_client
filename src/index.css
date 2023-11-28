@@ -42,3 +42,7 @@ body, * {
 .rounded-10p {
   border-radius: 10px;
 }
+
+/* margin */
+
+.m-10p { margin-top: 20px; }
