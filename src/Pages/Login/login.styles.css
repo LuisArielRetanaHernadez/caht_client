@@ -2,7 +2,18 @@
   width: 35vw;
   height: 60vh;
   padding: .6rem;
+  overflow: hidden;
+  background-color: var(--bg-white);
+  position: relative;
+}
+.form::before {
+  content: ' ';
+  width: inherit;
+  height: inherit;
   background-color: var(--bg-blue-bright);
+  position: absolute;
+  bottom: 12%;
+  right: 12%;
 }
 
 .form__title {
