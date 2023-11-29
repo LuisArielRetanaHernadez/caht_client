@@ -60,12 +60,15 @@ const Login = () => {
             form__field-mt-15p 
           ">
             <label className="form__field-title">Contraseña</label>
-            <input 
-              className="form__input form__input--color-blue"
-              name="password"
-              type="password"
-              onChange={handleChange}
-            />
+            <div className="field__password">
+              <span></span>
+              <input 
+                className="form__input form__input--color-blue"
+                name="password"
+                type="password"
+                onChange={handleChange}
+              />
+            </div>
           </div>
 
           <div className="form__buttons m-10p">
