@@ -14,6 +14,7 @@ const Login = () => {
     email: "",
     password: "",
   })
+  const [showPassword, setShowPassword] = useState(false)
   const dispatch = useDispatch()
   
   const handleChange = (e) => {
@@ -31,6 +32,10 @@ const Login = () => {
       password: "",
     })
 
+  }
+
+  const togglePassword = () => {
+    setShowPassword(!showPassword)
   }
   
   return (
@@ -61,7 +66,9 @@ const Login = () => {
           ">
             <label className="form__field-title">Contraseña</label>
             <div className="field__password">
-              <span></span>
+              <span
+              onClick={togglePassword} 
+              ></span>
               <input 
                 className="form__input form__input--color-blue"
                 name="password"
