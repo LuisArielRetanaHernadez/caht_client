@@ -37,7 +37,7 @@ const Login = () => {
     <>
       <section className="container container--center">
         <form className="form form--shadow rounded-10p" onSubmit={handleSubmit}>
-        <div style={{position: "relative", width: "100%", height: "100%"}}>
+        <div className="text-center" style={{position: "relative", width: "100%", height: "100%"}}>
           <h2 className="form__title">Login</h2>
 
           <div className="form__field
