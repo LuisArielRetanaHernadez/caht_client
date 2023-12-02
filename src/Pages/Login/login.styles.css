@@ -46,6 +46,13 @@
   margin-top: 15px;
 }
 
+.field__password {
+  width: 100%;
+  background-color: none;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .form__input {
   width: 100%;
   padding: .2rem .1rem;
