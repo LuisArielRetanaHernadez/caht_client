@@ -6,7 +6,15 @@ import { loginAsync } from "../../features/user/userSlice"
 
 // styles
 import "./Login.styles.css"
+
+// svg
+import closedEye from "../../assets/svg/closedEye.svg"
+import openEye from "../../assets/svg/openEye.svg"
+
+// router-dom
 import { Link } from "react-router-dom"
+
+// components
 import Socials from "../../components/socials/Socials"
 
 const Login = () => {
@@ -42,7 +50,7 @@ const Login = () => {
     <>
       <section className="container container--center">
         <form className="form form--shadow rounded-10p" onSubmit={handleSubmit}>
-        <div className="text-center" style={{position: "relative", width: "100%", height: "100%"}}>
+        <div className="text-center" style={{position: "relative", width: "100%", height: "100%", backdropFilter: blur("10px")}}>
           <h2 className="form__title">Login</h2>
 
           <div className="form__field
@@ -64,17 +72,24 @@ const Login = () => {
             form__field-center-m
             form__field-mt-15p 
           ">
+
             <label className="form__field-title">Contraseña</label>
+            
             <div className="field__password">
               <span
               onClick={togglePassword} 
-              ></span>
+              className="icon"
+              >
+                {showPassword ? <img className="icon__img" src={closedEye} alt="closedEye" /> 
+                : <img className="icon__img" src={openEye} alt="openEye" /> }
+              </span>
               <input 
                 className="form__input form__input--color-blue"
                 name="password"
                 type="password"
                 onChange={handleChange}
               />
+
             </div>
           </div>
 
