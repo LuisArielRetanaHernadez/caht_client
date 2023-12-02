@@ -39,6 +39,23 @@ a {
   justify-items: center;
 }
 
+.icon {
+  width: 20px;
+  height: 20px;
+  padding: 1rem;
+  border-bottom: 2px solid #1F4172;
+  background-color: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon__img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}
+
 /* utils */
 
 .position-relative {
