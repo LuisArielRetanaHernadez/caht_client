@@ -1,8 +1,11 @@
 import axios from './Axios';
 
 const login = (credentials) => {
-  return axios.post('/login', credentials)
-  .then(res => localStorage.setItem('token', JSON.stringify(res.data.token)))
+  return axios.post('/users/login', credentials)
+  .then(res => {
+    localStorage.setItem('token', JSON.stringify(res.data.token))
+    return res
+  })
 }
 
 const register = (...data) => {
