@@ -63,6 +63,7 @@ const Login = () => {
               className="form__input form__input--color-blue"
               name="email"
               type="email"
+              value={values.email}
               onChange={handleChange}
             />
           </div>
@@ -87,6 +88,7 @@ const Login = () => {
                 className="form__input form__input--color-blue"
                 name="password"
                 type={showPassword ? "password" : "text"}
+                value={values.password}
                 onChange={handleChange}
               />
 
@@ -94,7 +96,7 @@ const Login = () => {
           </div>
 
           <div className="form__buttons m-10p">
-            <button className="button button--hover-color-pear rounded-10p">
+            <button type='submit' className="button button--hover-color-pear rounded-10p">
               Iniciar
             </button>
             <Link to="/register" className="button button--hover-color-pear rounded-10p">
