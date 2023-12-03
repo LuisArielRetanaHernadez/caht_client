@@ -79,8 +79,8 @@ const Register = () => {
       <div key={index} className="form__field">
         <label>{field.label.text}</label>
         <input type={field.input.type}
-        placeholder={field.input.text}
-         className={field.input.clasName}
+          placeholder={field.input.text}
+          className={field.input.clasName}
           />
       </div>
     </>
