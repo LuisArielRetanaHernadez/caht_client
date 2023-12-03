@@ -9,7 +9,11 @@
 .form--shadow {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.form::before {
+
+.form--block {
+  position: relative;
+}
+.form--block::before {
   content: ' ';
   width: inherit;
   height: inherit;
