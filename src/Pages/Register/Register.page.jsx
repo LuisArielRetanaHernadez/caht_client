@@ -1,7 +1,7 @@
 
 const Register = () => {
 
-  const datasFields= [
+  const datasFields = [
     {
       input: {
         clasName: '',
@@ -74,15 +74,23 @@ const Register = () => {
     },
   ]
 
+  const fields = datasFields.map((field, index) => (
+    <>
+      <div key={index} className="form__field">
+        <label>{field.label.text}</label>
+        <input type={field.input.type}
+        placeholder={field.input.text}
+         className={field.input.clasName}
+          />
+      </div>
+    </>
+  ))
+
   return (
     <>
       <section>
         <form>
-          <div>
-            <div>
-              
-            </div>
-          </div>
+         {fields}
         </form>
       </section>
     </>
