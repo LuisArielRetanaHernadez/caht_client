@@ -90,7 +90,13 @@ const Register = () => {
     <>
       <section>
         <form>
-         {fields}
+          <div>
+            <h2>Register</h2>
+            {fields}
+            <div>
+              <button>Enviar</button>
+            </div>
+          </div>
         </form>
       </section>
     </>
