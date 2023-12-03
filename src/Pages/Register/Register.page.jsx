@@ -88,8 +88,8 @@ const Register = () => {
 
   return (
     <>
-      <section>
-        <form>
+      <section className="container container--center">
+        <form className="form form--shadow rounded-10p">
           <div>
             <h2>Register</h2>
             {fields}
