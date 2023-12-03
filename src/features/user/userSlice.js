@@ -44,9 +44,8 @@ const userSlice = createSlice({
     .addCase(loginAsync.fulfilled, (state, action) => {
       state.status = "fulfilled"
       state.isLogin = true
-      state.token = action.payload.token
-      state.user = action.payload.user
-      state.rol = action.payload.rol
+      state.token = action.payload.data.data.token
+      state.user = action.payload.data.data.user
     })
   }
 })
