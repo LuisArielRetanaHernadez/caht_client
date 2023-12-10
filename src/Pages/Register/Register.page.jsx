@@ -80,7 +80,9 @@ const Register = () => {
         <label>{field.label.text}</label>
         <input type={field.input.type}
           placeholder={field.input.text}
-          className={field.input.clasName}
+          className={field.input.clasName + 
+          ` form__field form__field-medim
+          form__field-center form__field-mt-15p`}
           />
       </div>
     </>
@@ -90,7 +92,7 @@ const Register = () => {
     <>
       <section className="container container--center">
         <form className="form form--shadow rounded-10p">
-          <div>
+          <div className="wrapped text-center">
             <h2>Register</h2>
             {fields}
             <div>

@@ -42,11 +42,11 @@
   width: 75%;
 }
 
-.form__field-center-m {
+.form__field--center-m {
   margin: auto;
 }
 
-.form__field-mt-15p {
+.form__field--mt-15p {
   margin-top: 15px;
 }
 
