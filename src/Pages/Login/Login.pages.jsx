@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 // redux
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { loginAsync } from "../../features/user/userSlice"
 
 // styles
@@ -12,7 +12,7 @@ import closedEye from "../../assets/svg/closedEye.svg"
 import openEye from "../../assets/svg/openEye.svg"
 
 // router-dom
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 
 // components
 import Socials from "../../components/socials/Socials"
@@ -24,6 +24,7 @@ const Login = () => {
   })
   const [showPassword, setShowPassword] = useState(true)
   const dispatch = useDispatch()
+  const { isLogin } = useSelector((state) => state.user)
   
   const handleChange = (e) => {
     setValues({
@@ -35,6 +36,11 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     dispatch(loginAsync(values))
+    console.log(isLogin)
+    if (isLogin) {
+      console.log('login succes')
+      return <Navigate to="/" />
+    }
     setValues({
       email: "",
       password: "",
