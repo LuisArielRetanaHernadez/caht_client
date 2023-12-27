@@ -36,20 +36,18 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     dispatch(loginAsync(values))
-    console.log(isLogin)
-    if (isLogin) {
-      console.log('login succes')
-      return <Navigate to="/" />
-    }
     setValues({
       email: "",
       password: "",
     })
-
   }
 
   const togglePassword = () => {
     setShowPassword(!showPassword)
+  }
+
+  if (isLogin) {
+    return <Navigate to="/" />
   }
   
   return (
@@ -120,6 +118,7 @@ const Login = () => {
         </div>
          
         </form>
+        {isLogin && <Navigate to="/" />}
       </section>
     </>
   )
