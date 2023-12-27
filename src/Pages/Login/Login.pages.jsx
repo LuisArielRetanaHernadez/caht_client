@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 // redux
 import { useDispatch, useSelector } from "react-redux"
@@ -23,8 +23,11 @@ const Login = () => {
     password: "",
   })
   const [showPassword, setShowPassword] = useState(true)
+  
   const dispatch = useDispatch()
+
   const { isLogin } = useSelector((state) => state.user)
+  const { user } = useSelector((state) => state)
   
   const handleChange = (e) => {
     setValues({
@@ -45,6 +48,12 @@ const Login = () => {
   const togglePassword = () => {
     setShowPassword(!showPassword)
   }
+
+  useEffect(() => {
+    if (isLogin) {
+      localStorage.setItem("user", JSON.stringify(user))
+    }
+  }, [isLogin, user])
 
   if (isLogin) {
     return <Navigate to="/" />
