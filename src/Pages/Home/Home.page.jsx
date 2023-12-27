@@ -1,4 +1,7 @@
+
+import { useSelector } from "react-redux"
 import manager from "../../utils/websocket"
+import { Navigate } from "react-router-dom"
 
 const socket = manager.socket('/users')
 
@@ -8,6 +11,13 @@ socket.on('connect', () => {
 })
 
 const Home = () => {
+
+  const { isLogin } = useSelector((state) => state.user)
+
+  if (!isLogin) {
+    return <Navigate to="/login" />
+  }
+
   return (
     <>
       <h1>Home</h1>
