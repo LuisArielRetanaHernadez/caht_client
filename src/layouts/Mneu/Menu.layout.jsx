@@ -18,8 +18,8 @@ const Menu = () => {
 
   return (
     <>
-      <header className="header">
-        <div className="menu">
+      <header className="menu menu--short">
+        <div className="menu__wrappe menu__wrappe--height-full">
           <div className="menu__logo">
             <Logo />
           </div>
