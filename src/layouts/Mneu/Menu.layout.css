@@ -3,3 +3,9 @@
   box-shadow: 0px 8px 10px #B4D4FF;
   padding: .5rem;
 }
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
