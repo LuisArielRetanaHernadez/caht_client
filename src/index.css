@@ -26,6 +26,10 @@ a {
   list-style: none;
 }
 
+ul {
+  list-style: none;
+}
+
 /* class globals */
 
 .container {
