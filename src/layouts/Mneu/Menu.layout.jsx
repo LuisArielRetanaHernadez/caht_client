@@ -13,14 +13,16 @@ const Menu = () => {
 
   return (
     <>
-      <header>
-        <div>
-          <Logo />
-          <span>Pu</span>
-          <nav>
-            <ul>
-              <li><Link to="/logout">Logout</Link></li>
-              <li><Link to="/login">Login</Link></li>
+      <header className="header">
+        <div className="menu">
+          <div className="menu__logo">
+            <Logo />
+          </div>
+          <span className="menu__button">Pu</span>
+          <nav className="menu__nav">
+            <ul className="menu__list">
+              <li className="menu__item"><Link className="menu__link" to="/logout">Logout</Link></li>
+              <li className="menu__item"><Link className="menu__link" to="/login">Login</Link></li>
             </ul>
           </nav>
         </div>
