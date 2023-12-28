@@ -21,8 +21,12 @@ const Menu = () => {
           <span className="menu__button">Pu</span>
           <nav className="menu__nav">
             <ul className="menu__list">
-              <li className="menu__item"><Link className="menu__link" to="/logout">Logout</Link></li>
-              <li className="menu__item"><Link className="menu__link" to="/login">Login</Link></li>
+              <li className="menu__item">
+                <Link className="menu__link" to="/logout">Logout</Link>
+              </li>
+              <li className="menu__item">
+                <Link className="menu__link" to="/login">Login</Link>
+              </li>
             </ul>
           </nav>
         </div>
