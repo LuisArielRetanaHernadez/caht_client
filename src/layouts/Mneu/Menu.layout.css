@@ -1,13 +1,22 @@
-.header {
+.menu {
   background-color: #FFF;
   box-shadow: 0px 8px 10px #B4D4FF;
   padding: .5rem;
 }
 
-.menu {
+.menu--short {
+  height: 50px;
+  max-height: 80px;
+}
+
+.menu__wrappe {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.menu__wrappe--height-full {
+  height: 100%;
 }
 
 .menu__list .menu__item {
