@@ -34,8 +34,6 @@ const Menu = () => {
                 <Link className="menu__link" to="/login">Login</Link>
               </li>
             }
-
-
             </ul>
           </nav>
         </div>
