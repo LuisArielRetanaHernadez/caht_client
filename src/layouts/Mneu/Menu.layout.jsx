@@ -6,10 +6,15 @@ import { Outlet } from "react-router";
 
 // style
 import "./Menu.layout.css" 
+
+// router-dom-v6
 import { Link } from "react-router-dom";
+
+import { useSelector } from "react-redux";
 
 const Menu = () => {
 
+  const { isLogin } = useSelector(state => state.user)
 
   return (
     <>
@@ -21,12 +26,16 @@ const Menu = () => {
           <span className="menu__button">Pu</span>
           <nav className="menu__nav">
             <ul className="menu__list">
-              <li className="menu__item">
+            {
+              isLogin ? <li className="menu__item">
                 <Link className="menu__link" to="/logout">Logout</Link>
-              </li>
+              </li> :
               <li className="menu__item">
                 <Link className="menu__link" to="/login">Login</Link>
               </li>
+            }
+
+
             </ul>
           </nav>
         </div>
