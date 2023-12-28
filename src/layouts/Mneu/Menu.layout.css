@@ -9,3 +9,13 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.menu__list .menu__item {
+  display: inline-block;
+}
+
+.menu__link {
+  padding: .3rem .5rem;
+  margin: 5px;
+  color: #176B87;
+}
