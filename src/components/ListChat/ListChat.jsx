@@ -4,12 +4,12 @@ const listContacts = [
   {
     name: 'John Doe',
     message: 'Hello, how are you?',
-    avatar: 'XXXXXXXXXXXXXXXXXXXXXXXXX'
+    photo: 'XXXXXXXXXXXXXXXXXXXXXXXXX'
   },
   {
     name: 'Jose Fer',
     message: 'Hello...',
-    avatar: 'XXXXXXXXXXXXXXXXXXXXXXXXX'
+    photo: 'XXXXXXXXXXXXXXXXXXXXXXXXX'
   }
 ]
 
@@ -19,7 +19,8 @@ const ListChat = () => {
     <ItemChat 
       key={index}
       name={contact.name}
-      message={contact.message}
+      messageLast={contact.message}
+      photo={contact.avatar}
     />
   ))
 
