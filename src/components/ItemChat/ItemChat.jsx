@@ -1,15 +1,16 @@
-const ItemChat = () => {
+/* eslint-disable react/prop-types */
+const ItemChat = ({name, messageLast, photo}) => {
 
   return (
     <>
       <li>
         <div>
           <figure>
-            <img src="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" alt="avatar" />
+            <img src={photo} alt="photo user" />
           </figure>
           <div>
-            <span>Name User</span>
-            <p>Send Message</p>
+            <span>{name}</span>
+            <p>{messageLast}</p>
           </div>
         </div>
       </li>
