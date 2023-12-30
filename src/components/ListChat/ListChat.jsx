@@ -26,9 +26,9 @@ const ListChat = () => {
 
   return (
     <>
-      <div>
-        <ul>
-        {items ?? <span>Start adding your contacts</span>}
+      <div className="list-chat">
+        <ul className="list-chat__list">
+          {items ?? <span className="legend">Start adding your contacts</span>}
         </ul>
       </div>
     </>
