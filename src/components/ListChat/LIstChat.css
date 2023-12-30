@@ -3,3 +3,7 @@
   color: #176B87;
   background-color: #607274;
 }
+
+.list-chat__list {
+  padding: .8rem;
+}
