@@ -76,6 +76,14 @@ ul {
 
 /* utils */
 
+/* //// width //// */
+
+
+
+.w-30 {
+  width: 30%;
+}
+
 .position-relative {
   position: relative;
 }
