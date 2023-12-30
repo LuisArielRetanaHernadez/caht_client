@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <>
       <section>
-      <div>
+      <div className="w-30">
         <ListChat />
       </div>
         <h1>Home</h1>
