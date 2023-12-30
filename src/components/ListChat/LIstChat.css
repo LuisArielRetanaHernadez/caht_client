@@ -1,7 +1,7 @@
 .list-chat {
   height: 100%;
   color: #176B87;
-  background-color: #607274;
+  background-color: #F1EAFF;
 }
 
 .list-chat__list {
@@ -14,7 +14,7 @@
 
 .list-chat__link { 
   padding: .3rem .3rem;
-  background-color: cornflowerblue;
+  background-color: none;
   display: flex;
 }
 
