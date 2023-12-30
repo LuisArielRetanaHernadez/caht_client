@@ -7,3 +7,13 @@
 .list-chat__list {
   padding: .8rem;
 }
+
+.list-chat__item { 
+  background-color: none;
+}
+
+.list-chat__link { 
+  padding: .3rem .3rem;
+  background-color: cornflowerblue;
+  display: flex;
+}
