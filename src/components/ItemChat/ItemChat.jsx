@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import '../ListChat/ListChat.css'
+
 /* eslint-disable react/prop-types */
 const ItemChat = ({name, messageLast, photo}) => {
 
