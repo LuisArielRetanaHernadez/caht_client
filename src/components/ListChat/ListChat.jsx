@@ -7,7 +7,7 @@ const listContacts = [
   {
     name: 'John Doe',
     message: 'Hello, how are you?',
-    photo: 'XXXXXXXXXXXXXXXXXXXXXXXXX'
+    photo: 'https://res.cloudinary.com/dqmkovsdy/image/upload/v1702954354/cards_slider/fyaowaxwsulbd714yysi.jpg'
   },
   {
     name: 'Jose Fer',
@@ -23,7 +23,7 @@ const ListChat = () => {
       key={index}
       name={contact.name}
       messageLast={contact.message}
-      photo={contact.avatar}
+      photo={contact.photo}
     />
   ))
 
