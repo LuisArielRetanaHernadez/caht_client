@@ -28,7 +28,7 @@ const ListChat = () => {
     <>
       <div>
         <ul>
-          {items && <span>There are no contacts</span>}
+          {items}
         </ul>
       </div>
     </>
