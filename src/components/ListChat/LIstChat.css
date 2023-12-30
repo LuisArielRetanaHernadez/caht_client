@@ -35,3 +35,13 @@
   border-radius: inherit;
   object-fit: cover;
 }
+
+.list-chat__name {
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #27374D;
+}
+
+.list-chat__message {
+  color: #6B728E;
+}
