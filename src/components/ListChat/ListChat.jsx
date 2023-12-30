@@ -28,7 +28,7 @@ const ListChat = () => {
     <>
       <div>
         <ul>
-          {items}
+        {items ?? <span>Start adding your contacts</span>}
         </ul>
       </div>
     </>
