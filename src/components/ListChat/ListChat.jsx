@@ -1,5 +1,8 @@
 import ItemChat from "../ItemChat/ItemChat"
 
+// style ListChat
+import './ListChat.css'
+
 const listContacts = [
   {
     name: 'John Doe',
