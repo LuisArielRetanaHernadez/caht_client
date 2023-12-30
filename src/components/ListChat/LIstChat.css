@@ -20,6 +20,7 @@
 
 .list-chat__content { 
   display: flex;
+  gap: 0px 8px;
 }
 
 .list-chat__image {
