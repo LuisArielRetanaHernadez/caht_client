@@ -12,7 +12,7 @@ const listContacts = [
   {
     name: 'Jose Fer',
     message: 'Hello...',
-    photo: 'XXXXXXXXXXXXXXXXXXXXXXXXX'
+    photo: 'https://res.cloudinary.com/dqmkovsdy/image/upload/v1702938402/cards_slider/cjmlcirefsu6yl6o3a73.jpg'
   }
 ]
 
