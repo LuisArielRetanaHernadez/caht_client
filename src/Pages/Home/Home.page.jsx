@@ -2,6 +2,7 @@
 import { useSelector } from "react-redux"
 import manager from "../../utils/websocket"
 import { Navigate } from "react-router-dom"
+import ListChat from "../../components/ListChat/ListChat"
 
 const socket = manager.socket('/users')
 
@@ -20,7 +21,12 @@ const Home = () => {
 
   return (
     <>
-      <h1>Home</h1>
+      <section>
+      <div>
+        <ListChat />
+      </div>
+        <h1>Home</h1>
+      </section>
     </>
   )
 }
