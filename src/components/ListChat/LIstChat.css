@@ -63,6 +63,10 @@
   background-color: green;
 }
 
+.circle--low-blue {
+  background-color: #176B87;
+}
+
 .circle--small {
   width: 2vh;
   height: 2vh;
