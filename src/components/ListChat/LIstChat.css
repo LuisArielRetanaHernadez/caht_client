@@ -59,6 +59,10 @@
   position: absolute;
 }
 
+.circle--green {
+  background-color: green;
+}
+
 .circle--0-tr {
   top: 0;
   right: 0;
