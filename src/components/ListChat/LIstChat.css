@@ -63,6 +63,13 @@
   background-color: green;
 }
 
+.circle--small {
+  width: 2vh;
+  height: 2vh;
+  max-width: 20px;
+  max-height: 20px;
+}
+
 .circle--0-tr {
   top: 0;
   right: 0;
