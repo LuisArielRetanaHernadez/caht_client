@@ -54,11 +54,12 @@
   height: 5vh;
   max-width: 90px;
   max-height: 90px;
+  border-radius: 50%;
   background-color: red;
   position: absolute;
 }
 
 .circle--0-tr {
-  right: 0;
   top: 0;
+  right: 0;
 }
