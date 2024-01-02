@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <>
-      <section>
+      <section className="flex">
       <div className="w-25">
         <ListChat />
       </div>
