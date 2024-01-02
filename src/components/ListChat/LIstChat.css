@@ -10,6 +10,7 @@
 
 .list-chat__item { 
   background-color: none;
+  position: relative;
 }
 
 .list-chat__link { 
@@ -44,4 +45,20 @@
 
 .list-chat__message {
   color: #6B728E;
+}
+
+/* cricle */
+
+.circle {
+  width: 5vh;
+  height: 5vh;
+  max-width: 90px;
+  max-height: 90px;
+  background-color: red;
+  position: absolute;
+}
+
+.circle--0-lt {
+  right: 0;
+  top: 0;
 }
