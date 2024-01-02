@@ -20,7 +20,7 @@ const ItemChat = ({name, messageLast, photo}) => {
           </div>
         </Link>
 
-        <span className="circle circle--green circle--short circle--0-lt">
+        <span className="circle circle--green circle--short circle--0-lr">
         </span>
       </li>
     </>
