@@ -35,7 +35,7 @@ const Chat = () => {
         <div className="w-25">
           <ListChat />
         </div>
-        <div className="chat">
+        <div className="chat flex-grow-1">
           <InputMessage />
         </div>
       </section>

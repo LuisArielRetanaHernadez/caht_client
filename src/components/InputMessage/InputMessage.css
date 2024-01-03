@@ -1,14 +1,16 @@
 .input-message {
   width: 100%;
+  background-color: blue;
 }
 
 .input-message__message {
   outline: none;
   border: none;
+  width: 90%;
 }
 
 .input-message__button {
+  width: 10%;
   border: none;
-  padding: 1px;
-  background-color:azure;
+  background-color: azure;
 }
