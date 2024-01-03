@@ -4,3 +4,7 @@
   padding: .5rem;
   background-color: red;
 }
+
+.message--rounded-10px {
+  border-radius: 10px;
+}
