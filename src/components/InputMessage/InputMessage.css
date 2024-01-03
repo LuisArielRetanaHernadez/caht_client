@@ -1,0 +1,14 @@
+.input-message {
+  width: 100%;
+}
+
+.input-message__message {
+  outline: none;
+  border: none;
+}
+
+.input-message__button {
+  border: none;
+  padding: 1px;
+  background-color:azure;
+}

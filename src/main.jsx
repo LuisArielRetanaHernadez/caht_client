@@ -11,10 +11,10 @@ import { store } from './app/store.js'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 // Pages
-import Home from './Pages/Home/Home.page.jsx'
 import Login from './Pages/Login/Login.pages.jsx'
 import Register from './Pages/Register/Register.page.jsx'
 import Menu from './layouts/Mneu/Menu.layout.jsx'
+import Chat from './Pages/Chat/Chat.page.jsx'
 
 const router = createBrowserRouter([
   {
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />,
+        element: <Chat />,
         index: true,
       },
       {
