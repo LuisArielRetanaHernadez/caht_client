@@ -1,4 +1,8 @@
 /* eslint-disable react/prop-types */
+
+// styles
+import './Message.css';
+
 const Message = ({
   message,
   author,
