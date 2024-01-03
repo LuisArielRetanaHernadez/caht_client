@@ -36,6 +36,9 @@ const Chat = () => {
           <ListChat />
         </div>
         <div className="chat flex-grow-1">
+          <div className="chat__content">
+          hola
+          </div>
           <InputMessage />
         </div>
       </section>
