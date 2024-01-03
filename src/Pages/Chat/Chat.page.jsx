@@ -13,6 +13,9 @@ import manager from "../../utils/websocket"
 // styles
 import './Chat.css'
 
+// componets
+import Message from "../../components/Message/Message"
+
 
 const socket = manager.socket('/users')
 
@@ -37,7 +40,7 @@ const Chat = () => {
         </div>
         <div className="chat flex-grow-1">
           <div className="chat__content">
-          hola
+            <Message />
           </div>
           <InputMessage />
         </div>
