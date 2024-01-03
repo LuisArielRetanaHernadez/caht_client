@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const Meesage = ({
+const Message = ({
   message,
   author,
 
@@ -25,4 +25,4 @@ const Meesage = ({
 
 }
 
-export default Meesage;
+export default Message;
