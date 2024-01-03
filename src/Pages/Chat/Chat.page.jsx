@@ -10,6 +10,9 @@ import { Navigate } from "react-router-dom"
 // utils
 import manager from "../../utils/websocket"
 
+// styles
+import './Chat.css'
+
 
 const socket = manager.socket('/users')
 
