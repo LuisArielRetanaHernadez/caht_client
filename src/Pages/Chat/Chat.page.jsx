@@ -35,7 +35,7 @@ const Chat = () => {
         <div className="w-25">
           <ListChat />
         </div>
-        <div>
+        <div className="chat">
           <InputMessage />
         </div>
       </section>

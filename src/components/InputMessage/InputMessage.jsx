@@ -1,3 +1,6 @@
+// styles
+import './InputMessage.css';
+
 const InputMessage = () => {
   return (
     <div className="input-message">
