@@ -40,7 +40,10 @@ const Chat = () => {
         </div>
         <div className="chat flex-grow-1">
           <div className="chat__content">
-            <Message />
+            <Message
+            message={'Hola, que haces? vamos a salir?'}
+            author={'John Doe'}
+             />
           </div>
           <InputMessage />
         </div>
