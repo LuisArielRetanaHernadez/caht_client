@@ -4,13 +4,15 @@
 }
 
 .input-message__message {
+  width: 90%;
+  padding: .8rem;
   outline: none;
   border: none;
-  width: 90%;
 }
 
 .input-message__button {
   width: 10%;
+  padding: .8rem;
   border: none;
   background-color: azure;
 }
