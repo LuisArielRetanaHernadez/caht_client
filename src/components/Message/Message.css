@@ -1,5 +1,6 @@
 .message {
   width: 40%;
+  height: auto;
   min-width: 200px;
   padding: .5rem;
   background-color: #176B87;
@@ -11,4 +12,11 @@
 
 .message__options {
   display: none;
+}
+
+.message__content {
+  height: auto;
+  text-wrap: wrap;
+  word-break: break-all;
+  line-height: 15px;
 }

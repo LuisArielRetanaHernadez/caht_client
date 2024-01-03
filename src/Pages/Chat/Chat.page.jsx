@@ -41,7 +41,7 @@ const Chat = () => {
         <div className="chat flex-grow-1">
           <div className="chat__content chat__content--p-1rm">
             <Message
-            message={'Hola, que haces? vamos a salir?'}
+            message={'Hola, que haces? vamos a salir?wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww'}
             author={'John Doe'}
              />
           </div>
