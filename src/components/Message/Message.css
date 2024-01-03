@@ -6,6 +6,11 @@
   background-color: #176B87;
 }
 
+.message--float-right {
+  float: right;
+  clear: both;
+}
+
 .message--rounded-10px {
   border-radius: 10px;
 }
