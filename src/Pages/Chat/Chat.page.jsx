@@ -39,7 +39,7 @@ const Chat = () => {
           <ListChat />
         </div>
         <div className="chat flex-grow-1">
-          <div className="chat__content">
+          <div className="chat__content chat__content--p-1rm">
             <Message
             message={'Hola, que haces? vamos a salir?'}
             author={'John Doe'}

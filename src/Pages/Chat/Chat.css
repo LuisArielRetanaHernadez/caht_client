@@ -11,3 +11,7 @@
   background-size: cover;
   flex-grow: 1;
 }
+
+.chat__content--p-1rm {
+  padding: 1rem;
+}
