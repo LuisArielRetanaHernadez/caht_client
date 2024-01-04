@@ -1,9 +1,11 @@
 .message {
-  width: 40%;
+  max-width: 420px;
   height: auto;
-  min-width: 200px;
   padding: .5rem;
+  margin-top: 5px;
+  font-size: 15px;
   background-color: #176B87;
+  display: inline-block;
 }
 
 .message--float-right {
