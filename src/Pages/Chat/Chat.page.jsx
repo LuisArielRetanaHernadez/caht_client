@@ -21,7 +21,7 @@ const socket = manager.socket('/users')
 
 socket.on('connect', () => { 
   console.log('connected')
-  socket.emit('message', 'hello')
+  socket.emit('message', 'hola luis')
 })
 
 const Chat = () => {
