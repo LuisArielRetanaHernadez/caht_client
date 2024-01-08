@@ -48,6 +48,7 @@ const ListChat = () => {
   return (
     <>
       <div className="list-chat">
+        <Search />
         <ul className="list-chat__list">
           {items ?? <span className="legend">Start adding your contacts</span>}
         </ul>
