@@ -3,6 +3,11 @@ import ItemChat from "../ItemChat/ItemChat"
 // style ListChat
 import './ListChat.css'
 
+// manager insta
+import manager from "../../utils/websocket"
+import { useEffect } from "react"
+import { useState } from 'react'
+
 const listContacts = [
   {
     name: 'John Doe',
@@ -16,9 +21,21 @@ const listContacts = [
   }
 ]
 
-const ListChat = () => {
+const socket = manager.socket("/users")
 
-  const items = listContacts.map((contact, index) => (
+const ListChat = () => {
+  const [users, setUsers] = useState([])
+
+  socket.emit("list users", () => {
+    socket.on("list users", (data) => {
+
+      setUsers(data)
+    })
+  })
+  
+  console.log(users)
+
+  const items = users.map((contact, index) => (
     <ItemChat 
       key={index}
       name={contact.name}
