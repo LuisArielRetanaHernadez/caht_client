@@ -1,13 +1,9 @@
 import axios from './Axios';
 
-const login = (credentials) => {
-  return axios.post('/users/login', credentials)
-  .then(res => {
-    localStorage.setItem('token', JSON.stringify(res.data.data.token))
-    return res.data
-  }).catch(error => {
-    throw error
-  })
+const login = async (credentials) => {
+  return axios.post('/login', credentials)
+  .then(res => res.data)
+  .catch(err => err)
 }
 
 const register = (...data) => {
