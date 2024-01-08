@@ -7,6 +7,7 @@ import './ListChat.css'
 import manager from "../../utils/websocket"
 import { useEffect } from "react"
 import { useState } from 'react'
+import Search from "../Search/Search"
 
 const listContacts = [
   {
