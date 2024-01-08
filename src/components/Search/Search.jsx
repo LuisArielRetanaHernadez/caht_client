@@ -1,4 +1,5 @@
-
+// stytle
+import './Search.css'
 
 const Search = () => {
 
