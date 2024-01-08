@@ -3,7 +3,11 @@ import { Manager } from "socket.io-client";
 
 console.log(import.meta.env.SERVER_URL)
 
-const token = JSON.parse(localStorage.getItem("user")).token;
+const user = localStorage.getItem("user");
+let token
+if (user) {
+  token = JSON.parse(user);
+}
 
 const manager = new Manager("ws://localhost:3000", {
   reconnectionDelayMax: 10000,
