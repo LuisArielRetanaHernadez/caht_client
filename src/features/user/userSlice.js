@@ -6,6 +6,7 @@ const initialState = {
   isLogin: false,
   token: "",
   user: {},
+  usersFind: [],
   rol: "standar"
 }
 
@@ -16,7 +17,7 @@ export const loginAsync = createAsyncThunk(
       const response = await login(data)
       return response
     } catch (error) {
-      return thunkAPI.rejectWithValue(error)
+      return thunkAPI.rejectWithValue()
     }
   }
 )
@@ -30,6 +31,9 @@ const userSlice = createSlice({
       state.isLogin = false
       state.token = ""
       state.user = {}
+    },
+    usersFind: (state, action) => {
+      state.usersFind = action.payload
     }
   },
 
