@@ -1,13 +1,23 @@
+/* eslint-disable react/prop-types */
 // stytle
 import './Search.css'
+import { useState } from 'react'
 
-const Search = () => {
+const Search = ({onSubmit}) => {
+
+  const [value, setValue] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setValue('')
+    onSubmit(value)
+  }
 
   return (
     <>
-      <form className="search">
+      <form className="search" onSubmit={handleSubmit}>
         <div className="search-wrappe">
-          <input className="search-input" type="text" placeholder="Search" />
+          <input className="search-input" type="text" placeholder="Search" onChange={(e) => setValue(e.target.value)} />
           <button className="search-button" type="submit">Search</button>
         </div>
       </form>
