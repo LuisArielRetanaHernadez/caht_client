@@ -11,19 +11,6 @@ import Search from "../Search/Search"
 // axios
 import axios from "../../utils/axios"
 
-const listContacts = [
-  {
-    name: 'John Doe',
-    message: 'Hello, how are you?',
-    photo: 'https://res.cloudinary.com/dqmkovsdy/image/upload/v1702954354/cards_slider/fyaowaxwsulbd714yysi.jpg'
-  },
-  {
-    name: 'Jose Fer',
-    message: 'Hello...',
-    photo: 'https://res.cloudinary.com/dqmkovsdy/image/upload/v1702938402/cards_slider/cjmlcirefsu6yl6o3a73.jpg'
-  }
-]
-
 const socket = manager.socket("/users")
 
 const ListChat = () => {
