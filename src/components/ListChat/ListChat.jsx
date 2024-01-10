@@ -24,7 +24,7 @@ const ListChat = () => {
     <ItemChat 
       key={index}
       name={contact.Name}
-      messageLast={contact.message}
+      messageLast={contact.message || ''}
       photo={contact.photo}
     />
   ))
