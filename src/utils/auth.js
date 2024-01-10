@@ -1,9 +1,8 @@
-import axios from './Axios';
+import axios from './axios';
 
 const login = async (credentials) => {
-  return axios.post('/login', credentials)
+  return axios.post('/users/login', credentials)
   .then(res => res.data)
-  .catch(err => err)
 }
 
 const register = (...data) => {
