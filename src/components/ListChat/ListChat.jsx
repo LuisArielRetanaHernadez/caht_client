@@ -5,9 +5,11 @@ import './ListChat.css'
 
 // manager insta
 import manager from "../../utils/websocket"
-import { useEffect } from "react"
 import { useState } from 'react'
 import Search from "../Search/Search"
+
+// axios
+import axios from "../../utils/axios"
 
 const listContacts = [
   {
@@ -29,17 +31,24 @@ const ListChat = () => {
 
   socket.emit("list users", () => {
     socket.on("list users", (data) => {
-
       setUsers(data)
     })
   })
-  
-  console.log(users)
+
+
+  const searchUsers = async (value) => {
+    const usersFinds = await axios.get(`/users/search
+    ?user=${value}`, { value })
+    if (usersFinds) {
+      console.log('usuario encontrados ', usersFinds.data.data.usersFind)
+      setUsers(usersFinds.data.data.usersFind)
+    }
+  }
 
   const items = users.map((contact, index) => (
     <ItemChat 
       key={index}
-      name={contact.name}
+      name={contact.Name}
       messageLast={contact.message}
       photo={contact.photo}
     />
@@ -48,7 +57,7 @@ const ListChat = () => {
   return (
     <>
       <div className="list-chat">
-        <Search />
+        <Search onSubmit={searchUsers}/>
         <ul className="list-chat__list">
           {items ?? <span className="legend">Start adding your contacts</span>}
         </ul>
