@@ -35,7 +35,7 @@ const ListChat = () => {
     
     })
     return () => {
-      socket.off('list chat')
+      socket.off('connect')
       socket.on('disconnect')
     }
   },[])
