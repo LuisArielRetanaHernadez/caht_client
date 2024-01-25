@@ -1,3 +1,4 @@
+// components
 import InputMessage from "../../components/InputMessage/InputMessage"
 import ListChat from "../../components/ListChat/ListChat"
 
@@ -7,26 +8,33 @@ import { useSelector } from "react-redux"
 // router-dom
 import { Navigate } from "react-router-dom"
 
-// utils
-import manager from "../../utils/websocket"
-
 // styles
 import './Chat.css'
 
 // componets
 import Message from "../../components/Message/Message"
 
+import { useEffect } from "react"
 
-const socket = manager.socket('/users')
-
-socket.on('connect', () => { 
-  console.log('connected')
-  socket.emit('message', 'hola luis')
-})
+import manager from "../../utils/websocket"
 
 const Chat = () => {
-
   const { isLogin } = useSelector((state) => state.user)
+
+  const socket = manager.socket('/users')
+
+  useEffect(() => {
+    socket.on('connect', () => {
+      console.log('connected')
+    })
+    socket.on('disconnect', () => {
+      console.log('disconnected')
+    })
+    return () => {
+      socket.off('connect')
+      socket.off('disconnect')
+    }
+  },[])
 
   if (!isLogin) {
     return <Navigate to="/login" />

@@ -1,13 +1,14 @@
+// components
 import ItemChat from "../ItemChat/ItemChat"
+import Search from "../Search/Search"
 
 // style ListChat
 import './ListChat.css'
 
-// manager insta
-import { useState } from 'react'
-import Search from "../Search/Search"
+// hooks react
+import { useEffect, useState } from 'react'
 
-// axios
+// insta axios
 import axios from "../../utils/axios"
 
 const ListChat = () => {
@@ -20,14 +21,19 @@ const ListChat = () => {
     }
   }
 
+  useEffect(() => {
+    return () => setUsers([])
+  },[])
+
   const items = users.map((contact, index) => (
-    <ItemChat 
-      key={index}
-      name={contact.Name}
-      messageLast={contact.message || ''}
-      photo={contact.photo}
-    />
-  ))
+      <ItemChat 
+        key={index}
+        id={contact._id}
+        name={contact.Name}
+        messageLast={contact.message}
+        photo={contact.photo}
+      />
+    ))
 
   return (
     <>

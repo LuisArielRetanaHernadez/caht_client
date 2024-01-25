@@ -1,9 +1,28 @@
 import { Link } from "react-router-dom";
 
 import '../ListChat/ListChat.css'
+import manager from "../../utils/websocket";
+import { useEffect, useState } from 'react';
 
 /* eslint-disable react/prop-types */
-const ItemChat = ({name, messageLast, photo}) => {
+const ItemChat = ({id, name, messageLast, photo}) => {
+  const [userOnline, setUserOnline] = useState(false)
+  const socket = manager.socket('/users')
+
+  useEffect(() => {
+    socket.emit('users online')
+    socket.on('users online', (data) => {
+      const isOnline = data.some(user => {
+        return id === user.userId;  // id === user.userId ? true : false;  // id === user.userId ? true : false;  // id === user.userId ? true : false;  // id === user.userId ? true : false;  // id === user.userId ?
+      })
+      setUserOnline(isOnline)
+    })
+
+    return () => {
+      setUserOnline(false)
+    }
+  },[id])
+
 
   return (
     <>
@@ -15,6 +34,7 @@ const ItemChat = ({name, messageLast, photo}) => {
             </figure>
             <div className="list-chat__information">
               <span className="list-chat__name">{name}</span>
+              <span className="list-chat__status">{userOnline ? 'online' : 'off'}</span>
               <p className="list-chat__message">{messageLast}</p>
             </div>
           </div>

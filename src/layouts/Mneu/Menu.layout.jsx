@@ -10,11 +10,22 @@ import "./Menu.layout.css"
 // router-dom-v6
 import { Link } from "react-router-dom";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../features/user/userSlice";
 
 const Menu = () => {
 
   const { isLogin } = useSelector(state => state.user)
+  const dispatch = useDispatch()
+
+  const logoutLocal = () => {
+    localStorage.removeItem('user')
+  }
+
+  const onLogout = () => {
+    logoutLocal()
+    dispatch(logout)
+  }
 
   return (
     <>
@@ -28,7 +39,7 @@ const Menu = () => {
             <ul className="menu__list">
             {
               isLogin ? <li className="menu__item">
-                <Link className="menu__link" to="/logout">Logout</Link>
+                <button className="menu__link" onClick={onLogout}>Logout</button>
               </li> :
               <li className="menu__item">
                 <Link className="menu__link" to="/login">Login</Link>
