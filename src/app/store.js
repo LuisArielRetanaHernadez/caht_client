@@ -5,7 +5,6 @@ import userSlice from "../features/user/userSlice";
 
 const leadUserState = () => {
     const serializedState = localStorage.getItem('user');
-    console.log(JSON.parse(serializedState));
     if (serializedState === null) {
         return undefined;
     }
@@ -22,8 +21,6 @@ const preloadedState = {
 }
 
 const persistedState = leadUserState();
-
-console.log(persistedState);
 
 export const store = configureStore({
     reducer: {
