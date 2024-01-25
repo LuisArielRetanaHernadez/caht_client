@@ -1,21 +1,18 @@
+// components
 import ItemChat from "../ItemChat/ItemChat"
+import Search from "../Search/Search"
 
 // style ListChat
 import './ListChat.css'
 
-// manager insta
-import manager from "../../utils/websocket"
+// hooks react
 import { useEffect, useState } from 'react'
-import Search from "../Search/Search"
 
-// axios
+// insta axios
 import axios from "../../utils/axios"
 
 const ListChat = () => {
   const [users, setUsers] = useState([])
-  const [isConnected, setIsConncted] = useState(false)
-
-
 
   const searchUsers = async (value) => {
     const usersFinds = await axios.get(`/users/search?user=${value}`, { value })
@@ -24,30 +21,20 @@ const ListChat = () => {
     }
   }
 
-  const socket = manager.socket('/users')
-
   useEffect(() => {
-    socket.on('connect', () => {
-      console.log('connected')
-    })
-    socket.on('connect_error', error => {
-      console.log(error)
-    
-    })
-    return () => {
-      socket.off('connect')
-      socket.on('disconnect')
-    }
+    return () => setUsers([])
   },[])
 
   const items = users.map((contact, index) => (
-    <ItemChat 
-      key={index}
-      name={contact.Name}
-      messageLast={contact.message}
-      photo={contact.photo}
-    />
-  ))
+      <ItemChat 
+        key={index}
+        id={contact._id}
+        name={contact.Name}
+        messageLast={contact.message}
+        photo={contact.photo}
+      />
+    ))
+
 
   return (
     <>
