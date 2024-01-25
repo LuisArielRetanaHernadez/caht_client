@@ -15,10 +15,10 @@ const Message = ({
             <h4 className="message__name">{author}</h4>
             <ul className="message__options">
               <li className="message__option">
-                <button className="message__button" href="#">Edit</button>
+                <button className="" href="#">Edit</button>
               </li>
               <li className="message__option">
-                <button className="message__button" href="#">Delete</button>
+                <button className="" href="#">Delete</button>
               </li>
             </ul>
           </header>

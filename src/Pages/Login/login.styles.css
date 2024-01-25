@@ -83,14 +83,6 @@
   gap: 5px;
 }
 
-.button {
-  color: var(--gray-pearl);
-  padding: .4rem 1.5rem;
-  outline: none;
-  border: none;
-  background-color: var(--bg-blue-indigo);
-}
-
 .button--hover-color-pear {
   transition: all .2s;
 }
