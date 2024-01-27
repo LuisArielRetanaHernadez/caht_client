@@ -21,8 +21,6 @@ const Home = () => {
   return (
     <>
       <section className="flex">
-        <div className="w-25">
-        </div>
       </section>
     </>
   )
