@@ -15,6 +15,7 @@ import Login from './Pages/Login/Login.pages.jsx'
 import Register from './Pages/Register/Register.page.jsx'
 import Menu from './layouts/Mneu/Menu.layout.jsx'
 import Home from './Pages/Home/Home.page.jsx'
+import Chat from './Pages/Chat/Chat.jsx'
 
 
 
@@ -28,8 +29,8 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: '/caht/:id',
-        element: <h1>Chat</h1>,
+        path: '/chat/:id',
+        element: <Chat />,
       },
       {
         path: '/login',
