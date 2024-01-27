@@ -14,12 +14,19 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Login from './Pages/Login/Login.pages.jsx'
 import Register from './Pages/Register/Register.page.jsx'
 import Menu from './layouts/Mneu/Menu.layout.jsx'
+import Home from './Pages/Home/Home.page.jsx'
+
+
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Menu />,
     children: [
+      {
+        path: '/',
+        element: <Home />
+      },
       {
         path: '/caht/:id',
         element: <h1>Chat</h1>,

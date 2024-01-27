@@ -3,7 +3,6 @@ import { useSelector } from "react-redux"
 import manager from "../../utils/websocket"
 import { Navigate } from "react-router-dom"
 import ListChat from "../../components/ListChat/ListChat"
-import InputMessage from "../../components/InputMessage/InputMessage"
 
 const socket = manager.socket('/users')
 
@@ -25,9 +24,6 @@ const Home = () => {
       <section className="flex">
       <div className="w-25">
         <ListChat />
-      </div>
-      <div>
-        <InputMessage />
       </div>
       </section>
     </>
