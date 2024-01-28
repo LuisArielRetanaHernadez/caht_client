@@ -9,45 +9,51 @@ import "./Menu.layout.css"
 
 // router-dom-v6
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../features/user/userSlice";
+import { useRef } from "react";
+
+// import { useDispatch, useSelector } from "react-redux";
+// import { logout } from "../../features/user/userSlice";
 
 const Menu = () => {
 
-  const { isLogin } = useSelector(state => state.user)
-  const dispatch = useDispatch()
+  const subMenu = useRef(null)
 
-  const logoutLocal = () => {
-    localStorage.removeItem('user')
+  // const logoutLocal = () => {
+  //   localStorage.removeItem('user')
+  // }
+
+  const toggleSubMenu = () => {
+    if(subMenu.current.classList.contains('menu__list--show')){
+      subMenu.current.classList.remove('menu__list--show')
+      subMenu.current.classList.add('menu__list--hidden')
+    } else {
+      subMenu.current.classList.remove('menu__list--hidden')
+      subMenu.current.classList.add('menu__list--show')
+    }
   }
 
-  const onLogout = () => {
-    logoutLocal()
-    dispatch(logout)
-  }
 
   return (
     <>
-      <header className="menu menu--short">
-        <div className="menu__wrappe menu__wrappe--height-full">
-          <div className="menu__logo">
-            <Logo />
-          </div>
-          <span className="menu__button">Pu</span>
-          <nav className="menu__nav">
-            <ul className="menu__list">
-            {
-              isLogin ? <li className="menu__item">
-                <button className="menu__link" onClick={onLogout}>Logout</button>
-              </li> :
-              <li className="menu__item">
-                <Link className="menu__link" to="/login">Login</Link>
-              </li>
-            }
-            </ul>
-          </nav>
+      <header className="menu">
+        <div className="ml-5rem">
+          <Logo />
         </div>
+        <nav className="menu__navegation mr-5rem">
+        <div className="avatar">
+        </div>
+          <ul className="list list--navegation">
+            <li className="ite">
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+          </ul>
+        </nav>
       </header>
       <Outlet />
     </>
