@@ -19,10 +19,10 @@ const Menu = () => {
         <div className="ml-5rem">
           <Logo />
         </div>
-        <nav className="menu__navegation mr-5rem">
-          <div className="avatar avatar--gradiant-orange">
+        <nav className="menu__navegation list--hover mr-5rem">
+          <div className="avatar avatar--gradiant-orange list--hover pointer">
           </div>
-          <ul className="list list--submenu r-0 list--min-width-100px p-1rem ">
+          <ul className="list list--submenu list--submenu-hide-show list--min-width-100px p-1rem ">
             <li className="mb-1rem">
               <Link className="link" to="/">Perfil</Link>
             </li>
