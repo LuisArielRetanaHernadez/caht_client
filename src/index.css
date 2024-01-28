@@ -123,6 +123,12 @@ ul {
 .m-10p { margin-top: 20px; }
 .mr-5rem { margin-right: 5rem; }
 .ml-5rem { margin-left: 5rem; }
+.mt-05rem
+
+/* padding */
+p-1rem {
+  padding: 1rem;
+}
 
 /* text-aling */
 

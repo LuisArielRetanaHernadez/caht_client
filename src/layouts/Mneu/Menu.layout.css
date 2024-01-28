@@ -8,20 +8,33 @@
 }
 
 .menu__navegation {
-  padding: .1rem;
   text-align: center;
+  position: relative;
 }
 
 
 .list {
+  min-width: 100px;
+  /* max-width: 120px; */
+  height: auto;
+  padding: .5rem;
   background-color: #EEEDEB;
   display: flex;
   flex-direction: column;
 }
 .list--submenu {
   position: absolute;
+  right: 0%;
   /* top: 8%; */
 }
+.list-p-1rem {
+  padding: 1rem;
+}
+
+.mb-1rem {
+  margin-bottom: 1rem;
+}
+
 .avatar {
   width: 45px;
   height: 45px;
@@ -32,6 +45,13 @@
 .avatar--gradiant-orange {
   background-color: #FFE53B;
   background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
+}
+
+.link {
+  padding: .1rem .3rem;
+  text-decoration: none;
+  color: black;
+  display: block;
 }
 
 

@@ -6,6 +6,7 @@ import { Outlet } from "react-router";
 
 // style
 import "./Menu.layout.css" 
+import "../../index.css"
 
 // router-dom-v6
 import { Link } from "react-router-dom";
@@ -45,12 +46,12 @@ const Menu = () => {
         <nav className="menu__navegation mr-5rem">
         <div className="avatar avatar--gradiant-orange">
         </div>
-          <ul className="list list--submenu">
-            <li className="list--item">
-              <Link to="/">Home</Link>
+          <ul className="list list--submenu p-1rem ">
+            <li className="mb-1rem">
+              <Link className="link" to="/">Perfil</Link>
             </li>
-            <li className="list--item">
-              <Link to="/about">About</Link>
+            <li>
+              <Link className="link" to="/about">Cerrar Seccion</Link>
             </li>
           </ul>
         </nav>
