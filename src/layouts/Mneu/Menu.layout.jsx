@@ -46,7 +46,7 @@ const Menu = () => {
         <nav className="menu__navegation mr-5rem">
         <div className="avatar avatar--gradiant-orange">
         </div>
-          <ul className="list list--submenu list--min-width-100px p-1rem ">
+          <ul className="list list--submenu r-0 list--min-width-100px p-1rem ">
             <li className="mb-1rem">
               <Link className="link" to="/">Perfil</Link>
             </li>

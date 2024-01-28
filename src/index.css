@@ -119,6 +119,10 @@ ul {
   position: relative;
 }
 
+r-0 {
+  right: 0%;
+}
+
 .rounded-10p {
   border-radius: 10px;
 }
