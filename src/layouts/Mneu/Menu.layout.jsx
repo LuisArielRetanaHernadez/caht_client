@@ -10,32 +10,8 @@ import "../../index.css"
 
 // router-dom-v6
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-
-import { useRef } from "react";
-
-// import { useDispatch, useSelector } from "react-redux";
-// import { logout } from "../../features/user/userSlice";
 
 const Menu = () => {
-
-  const subMenu = useRef(null)
-
-  // const logoutLocal = () => {
-  //   localStorage.removeItem('user')
-  // }
-
-  const toggleSubMenu = () => {
-    if(subMenu.current.classList.contains('menu__list--show')){
-      subMenu.current.classList.remove('menu__list--show')
-      subMenu.current.classList.add('menu__list--hidden')
-    } else {
-      subMenu.current.classList.remove('menu__list--hidden')
-      subMenu.current.classList.add('menu__list--show')
-    }
-  }
-
 
   return (
     <>
