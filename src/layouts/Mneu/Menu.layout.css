@@ -14,26 +14,23 @@
 
 
 .list {
-  min-width: 100px;
-  /* max-width: 120px; */
+  width: 100%;
   height: auto;
   padding: .5rem;
   background-color: #EEEDEB;
   display: flex;
   flex-direction: column;
 }
+
+.list--min-width-100px {
+  min-width: 100px;
+}
+
 .list--submenu {
   position: absolute;
   right: 0%;
-  /* top: 8%; */
-}
-.list-p-1rem {
-  padding: 1rem;
 }
 
-.mb-1rem {
-  margin-bottom: 1rem;
-}
 
 .avatar {
   width: 45px;

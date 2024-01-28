@@ -31,7 +31,7 @@ ul {
 }
 
 /* class globals */
-
+/* .... container .... */
 .container {
   width: 100vw;
   height: 100vh;
@@ -42,6 +42,8 @@ ul {
   align-items: center;
   justify-items: center;
 }
+
+/* .... wrapped ... */
 
 .wrapped {
   width: 100%;
@@ -56,6 +58,8 @@ ul {
   display: flex;
   justify-content: space-around;
 }
+
+/* .... icon .... */
 
 .icon {
   width: 20px;
@@ -73,7 +77,7 @@ ul {
   object-fit: cover;
 }
 
-/* button */
+/* .... button ....*/
 .button { 
   padding: .5rem .3rem;
   border: none;
@@ -81,6 +85,8 @@ ul {
   color: #ffffff;
   background-color: #1F4172;
 }
+
+/* .... background .... */
 
 .bg-gradient {
   background-color: #4158D0;
@@ -100,14 +106,14 @@ ul {
   display: flex;
 }
 
-/* flex */
+/* .... flex .... */
 
 .flex-grow-1 {
   flex-grow: 1;
   background-color: red;
 }
 
-/* position */
+/* .... position .... */
 
 .position-relative {
   position: relative;
@@ -117,19 +123,26 @@ ul {
   border-radius: 10px;
 }
 
-/* margin */
+/* .... margin .... */
 .m-auto { margin:  auto; }
 
 .m-10p { margin-top: 20px; }
-.mr-5rem { margin-right: 5rem; }
-.ml-5rem { margin-left: 5rem; }
-.mt-05rem
 
-/* padding */
+.mr-5rem { margin-right: 5rem; }
+
+.ml-5rem { margin-left: 5rem; }
+
+.mb-1rem {
+  margin-bottom: 1rem;
+}
+
+
+/* .... padding .... */
+
 p-1rem {
   padding: 1rem;
 }
 
-/* text-aling */
+/* .... text-aling .... */
 
 .text-center { text-align: center; }
