@@ -43,13 +43,13 @@ const Menu = () => {
           <Logo />
         </div>
         <nav className="menu__navegation mr-5rem">
-        <div className="avatar">
+        <div className="avatar avatar--gradiant-orange">
         </div>
-          <ul className="list list--navegation">
-            <li className="ite">
+          <ul className="list list--submenu">
+            <li className="list--item">
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li className="list--item">
               <Link to="/about">About</Link>
             </li>
           </ul>

@@ -14,22 +14,24 @@
 
 
 .list {
-  background-color: chocolate;
+  background-color: #EEEDEB;
   display: flex;
   flex-direction: column;
 }
-
+.list--submenu {
+  position: absolute;
+  /* top: 8%; */
+}
 .avatar {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background-color: #FFE53B;
-  background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
-    display: block;
+  display: block;
 }
 
-.list {
-  padding: .2rem;
-  position: absolute;
-  top: 8%;
+.avatar--gradiant-orange {
+  background-color: #FFE53B;
+  background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);
 }
+
+
