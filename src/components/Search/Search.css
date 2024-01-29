@@ -5,14 +5,15 @@
 
 .search__wrappe {
   width: 100%;
+  padding: .4rem;
   display: flex;
-  gap: 5px;
 }
 
-.search__input--rounded {
+.input--rounded-10px {
   border-radius: 10px;
 }
 
-.button-search { 
-  flex: 1;
+.button--search { 
+  background-color: #EEEDEB;
+  color: black;
 }

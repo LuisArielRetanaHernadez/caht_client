@@ -18,8 +18,8 @@ const Search = ({onSubmit}) => {
     <>
       <form className="search" onSubmit={handleSubmit}>
         <div className="search__wrappe">
-          <input className="input flex-1" type="text" placeholder="Search" onChange={(e) => setValue(e.target.value)} value={value} />
-          <button className="button button--search" type="submit">Search</button>
+          <input className="input rounded-10px flex-1" type="text" placeholder="Search" onChange={(e) => setValue(e.target.value)} value={value} />
+          <button className="button button--search rounded-10p" type="submit">Search</button>
         </div>
       </form>
     </>

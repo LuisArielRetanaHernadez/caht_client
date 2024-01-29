@@ -143,3 +143,9 @@ p-1rem { padding: 1rem; }
 /* .... otuline .... */
 
 .outline-none { outline: none; }
+
+/* .... border-radious .... */
+
+.rounded-10px {
+  border-radius: 10px;
+}
