@@ -9,6 +9,10 @@
   display: flex;
 }
 
+.search__wrappe--gap-04rem { 
+  gap: .4rem;
+}
+
 .input--rounded-10px {
   border-radius: 10px;
 }
