@@ -18,7 +18,7 @@ const Search = ({onSubmit}) => {
     <>
       <form className="search" onSubmit={handleSubmit}>
         <div className="search__wrappe">
-          <input className="search__input search__input--rounded" type="text" placeholder="Search" onChange={(e) => setValue(e.target.value)} value={value} />
+          <input className="search__input search__input--rounded outline-none" type="text" placeholder="Search" onChange={(e) => setValue(e.target.value)} value={value} />
           <button className="button button--search" type="submit">Search</button>
         </div>
       </form>
