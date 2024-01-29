@@ -16,7 +16,7 @@ import Register from './Pages/Register/Register.page.jsx'
 import Menu from './layouts/Mneu/Menu.layout.jsx'
 // import Home from './Pages/Home/Home.page.jsx'
 import Chat from './Pages/Chat/Chat.jsx'
-import ListChat from './components/ListChat/ListChat.jsx'
+import ListChatLayout from './layouts/ListChat/ListChat.layout.jsx'
 
 
 
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <ListChat />,
+        element: <ListChatLayout />,
         children: [
           {
             path: '/chat/:id',
