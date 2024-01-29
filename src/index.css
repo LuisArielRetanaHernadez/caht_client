@@ -78,6 +78,7 @@ ul {
 }
 
 /* .... button ....*/
+
 .button { 
   padding: .5rem .3rem;
   border: none;
@@ -92,40 +93,24 @@ ul {
   background-color: #4158D0;
   background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
 }
-/* //// width //// */
+/* .... width .... */
 
-.w-25 {
-  width: 25%;
-}
+.w-25 { width: 25%; }
 
-.w-30 {
-  width: 30%;
-}
-
-.flex {
-  display: flex;
-}
+.w-30 { width: 30%; }
 
 /* .... flex .... */
 
-.flex-grow-1 {
-  flex-grow: 1;
-  background-color: red;
-}
+.flex { display: flex; }
+.flex-grow-1 { flex-grow: 1; }
 
 /* .... position .... */
 
-.position-relative {
-  position: relative;
-}
+.position-relative { position: relative; }
 
-r-0 {
-  right: 0%;
-}
+r-0 { right: 0%; }
 
-.rounded-10p {
-  border-radius: 10px;
-}
+.rounded-10p { border-radius: 10px; }
 
 /* .... margin .... */
 .m-auto { margin:  auto; }
@@ -136,16 +121,11 @@ r-0 {
 
 .ml-5rem { margin-left: 5rem; }
 
-.mb-1rem {
-  margin-bottom: 1rem;
-}
-
+.mb-1rem { margin-bottom: 1rem; }
 
 /* .... padding .... */
 
-p-1rem {
-  padding: 1rem;
-}
+p-1rem { padding: 1rem; }
 
 /* .... text-aling .... */
 
@@ -153,6 +133,4 @@ p-1rem {
 
 /* .... otuline .... */
 
-.outline-none {
-  outline: none;
-}
+.outline-none { outline: none; }
