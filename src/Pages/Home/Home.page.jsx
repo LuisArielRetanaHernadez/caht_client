@@ -21,6 +21,7 @@ const Home = () => {
   return (
     <>
       <section className="flex">
+      Holaa
       </section>
     </>
   )
