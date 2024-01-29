@@ -150,3 +150,9 @@ p-1rem {
 /* .... text-aling .... */
 
 .text-center { text-align: center; }
+
+/* .... otuline .... */
+
+.outline-none {
+  outline: none;
+}
