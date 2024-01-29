@@ -1,14 +1,24 @@
 .search {
   width: 100%;
-  max-width: 350px;
   background-color: red;
 }
 
-.search-wrappe {
+.search__wrappe {
   width: 100%;
   display: flex;
+  gap: 5px;
 }
 
-.search-input {
-  flex: 2;
+.search__input {
+  border: none;
+  padding: .5rem;
+  flex: 1;
+}
+
+.search__input--rounded {
+  border-radius: 10px;
+}
+
+.button-search { 
+  flex: 1;
 }
