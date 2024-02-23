@@ -18,6 +18,7 @@ import Menu from './layouts/Mneu/Menu.layout.jsx'
 // import Chat from './Pages/Chat/Chat.jsx'
 // import ListChatLayout from './layouts/ListChat/ListChat.layout.jsx'
 import ListChatLayout from './layouts/ListChat/ListChat.layout.jsx'
+import Chat from './Pages/Chat/Chat.jsx'
 
 
 
@@ -29,16 +30,16 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <ListChatLayout />,
-        // children: [
-        //   {
-        //     path: '/chat/:id',
-        //     element: <Chat />,
-        //   },
+        children: [
+          {
+            path: '/chat/:id',
+            element: <Chat />,
+          }
         //   {
         //     path: '/perfil/:id',
         //     element: <h1>Perfil</h1>
         //   }
-        // ]
+        ]
       },
       {
         path: '/login',
