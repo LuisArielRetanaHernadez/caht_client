@@ -51,7 +51,7 @@ ul {
 }
 
 .wrapped--list-layout {
-  min-height: calc(100vh - 8vh);
+  height: calc(100vh - 8vh);
 }
 
 .wrapped__colum-flex {
