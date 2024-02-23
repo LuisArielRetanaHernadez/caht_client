@@ -107,9 +107,13 @@ ul {
 }
 /* .... width .... */
 
-.w-25 { width: 25%; height: 100%;}
+.w-25 { width: 25%; }
 
 .w-30 { width: 30%; }
+
+/* .... height .... */
+
+.h-full { height: 100%; }
 
 /* .... flex .... */
 
