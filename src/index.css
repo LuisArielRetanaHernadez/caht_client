@@ -50,11 +50,15 @@ ul {
   height: 100%;
 }
 
-.wrapped--colum-flex {
+.wrapped--list-layout {
+  min-height: calc(100vh - 8vh);
+}
+
+.wrapped__colum-flex {
   flex-direction: column;
 }
 
-.wrapped--space-flex {
+.wrapped__space-flex {
   display: flex;
   justify-content: space-around;
 }
@@ -103,7 +107,7 @@ ul {
 }
 /* .... width .... */
 
-.w-25 { width: 25%; }
+.w-25 { width: 25%; height: 100%;}
 
 .w-30 { width: 30%; }
 
