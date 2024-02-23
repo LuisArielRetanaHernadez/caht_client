@@ -26,9 +26,9 @@ const ListChat = () => {
     }
   }
 
-  // useEffect(() => {
-  //   return () => setUsers([])
-  // },[])
+  useEffect(() => {
+    return () => setUsers([])
+  },[])
 
   const items = users.map((contact, index) => (
       <ItemChat 
