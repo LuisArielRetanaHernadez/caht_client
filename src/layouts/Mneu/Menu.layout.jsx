@@ -19,17 +19,13 @@ const Menu = () => {
         <div className="ml-5rem">
           <Logo />
         </div>
-        <nav className="menu__navegation list--hover mr-5rem">
-          <div className="avatar avatar--gradiant-orange list--hover pointer">
-          </div>
-          <ul className="list list--submenu list--submenu-hide-show list--min-width-100px p-1rem ">
-            <li className="mb-1rem">
-              <Link className="link" to="/">Perfil</Link>
-            </li>
-            <li>
-              <Link className="link" to="/about">Cerrar Seccion</Link>
-            </li>
-          </ul>
+        <nav className="menu__navegation ml-5rem">
+          <Link className="avatar">
+            <img 
+            className="avatar__img"
+            src="https://images.pexels.com/photos/15005609/pexels-photo-15005609/free-photo-of-puesta-de-sol-hombre-silueta-tarde.jpeg"
+            ></img>
+          </Link>
         </nav>
       </header>
       <Outlet />
