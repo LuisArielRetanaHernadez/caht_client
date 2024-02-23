@@ -2,3 +2,11 @@
   display: flex;
   background-color: #fff;
 }
+
+.layout-list-chat--list {
+  width: 25%;
+}
+
+.layout-list-chat--content {
+  flex: 1;
+}
