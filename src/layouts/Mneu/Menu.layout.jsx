@@ -19,7 +19,7 @@ const Menu = () => {
         <div className="ml-5rem">
           <Logo />
         </div>
-        <nav className="menu__navegation ml-5rem">
+        <nav className="menu__navegation mr-5rem">
           <Link className="avatar">
             <img 
             className="avatar__img"
