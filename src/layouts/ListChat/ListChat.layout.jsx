@@ -4,7 +4,7 @@ import ListChat from "../../components/ListChat/ListChat";
 const ListChatLayout = () => {
   return (
     <div className="wrapped wrapped--list-layout bg-gradient">
-      <div className="w-25">
+      <div className="w-25 h-full">
         <ListChat />
       </div>
       <div className="flex-1">
