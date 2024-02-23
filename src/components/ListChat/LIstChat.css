@@ -1,6 +1,6 @@
 .list-chat {
   height: 100%;
-  background-color: #176B87;
+  background-color: #27374D;
 }
 
 .list-chat__list {
@@ -8,7 +8,8 @@
 }
 
 .list-chat__item { 
-  background-color: none;
+  background-color: #041216;
+  border-radius: 10px;
   position: relative;
 }
 

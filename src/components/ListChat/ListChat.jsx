@@ -12,7 +12,12 @@ import { useEffect, useState } from 'react'
 import axios from "../../utils/axios"
 
 const ListChat = () => {
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState([{
+    _id: '',
+    Name: 'Luis',
+    photo: '',
+    message: 'Hola que tal'
+  }])
 
   const searchUsers = async (value) => {
     const usersFinds = await axios.get(`/users/search?user=${value}`, { value })
@@ -21,9 +26,9 @@ const ListChat = () => {
     }
   }
 
-  useEffect(() => {
-    return () => setUsers([])
-  },[])
+  // useEffect(() => {
+  //   return () => setUsers([])
+  // },[])
 
   const items = users.map((contact, index) => (
       <ItemChat 
@@ -34,6 +39,8 @@ const ListChat = () => {
         photo={contact.photo}
       />
     ))
+
+  console.log(users)
 
   return (
     <>
