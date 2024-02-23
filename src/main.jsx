@@ -13,12 +13,12 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 // Pages
 import Login from './Pages/Login/Login.pages.jsx'
 import Register from './Pages/Register/Register.page.jsx'
-import Menu from './layouts/Mneu/Menu.layout.jsx'
-// import Home from './Pages/Home/Home.page.jsx'
-// import Chat from './Pages/Chat/Chat.jsx'
-// import ListChatLayout from './layouts/ListChat/ListChat.layout.jsx'
-import ListChatLayout from './layouts/ListChat/ListChat.layout.jsx'
 import Chat from './Pages/Chat/Chat.jsx'
+
+// layouts
+import Menu from './layouts/Mneu/Menu.layout.jsx'
+import ListChatLayout from './layouts/ListChat/ListChat.layout.jsx'
+
 
 
 
@@ -35,10 +35,6 @@ const router = createBrowserRouter([
             path: '/chat/:id',
             element: <Chat />,
           }
-        //   {
-        //     path: '/perfil/:id',
-        //     element: <h1>Perfil</h1>
-        //   }
         ]
       },
       {
