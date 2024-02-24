@@ -18,3 +18,9 @@
   position: absolute;
   bottom: 1%;
 }
+
+/* ... button ... */
+
+.button--send-message {
+  background-color: #5E1675;
+}

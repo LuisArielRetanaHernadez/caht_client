@@ -30,7 +30,7 @@ const Chat = () => {
       <div className="chat__box-send-message">
         <form className="chat__form" action="">
           <input className="input" type="text" />
-          <button className="button">Enviar</button>
+          <button className="button button--send-message">Enviar</button>
         </form> 
       </div>
     </div>
