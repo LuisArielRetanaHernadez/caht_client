@@ -9,7 +9,6 @@ const Chat = () => {
   const { id } = params
 
 
-
   useEffect(() => {
 
     const getMessage = async () => {
@@ -23,13 +22,16 @@ const Chat = () => {
   return (
     <div className="chat">
       <div className="chat__messages">
-        {message.map((m) => (
+        {/* {message.map((m) => (    
           <div key={m.id}>{m.message}</div>
-        )) ?? "No hay mensajes"}
+        )) ?? "No hay mensajes"} */}
       </div>
       <div className="chat__box-send-message">
         <form className="chat__form rounded-10px" action="">
-          <input className="input rounded-10px" type="text" />
+          <textarea
+            rows={2}
+            wrap="hard"
+           className="input input--send-message rounded-10px" type="text" />
           <button className="button button--send-message rounded-10px">Enviar</button>
         </form> 
       </div>

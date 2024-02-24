@@ -25,11 +25,24 @@
   padding: 1rem 1.5rem;
   backdrop-filter: blur(10px);
   display: flex;
+  align-items: flex-end;
   gap: 5px;
 }
 
 /* ... button ... */
 
 .button--send-message {
+  height: min-content;
   background-color: #5E1675;
+}
+
+/* ... input ... */
+
+.input--send-message {
+  min-width: 300px;
+  max-width: 400px;
+  resize: none;
+  overflow: auto;
+  background-color: white;
+  display: inline-block;
 }
