@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 // style chat
 import "./Chat.style.css"
 const Chat = () => {
-  const [message, setMessage] = useState([])
+  const [message, setMessage] = useState([{}])
   const params = useParams()
   const { id } = params
 
@@ -27,7 +27,7 @@ const Chat = () => {
           <div key={m.id}>{m.message}</div>
         )) ?? "No hay mensajes"}
       </div>
-      <div className="chat__box-message">
+      <div className="chat__box-send-message">
         <form className="chat__form" action="">
           <input className="chat__message" type="text" />
           <button className="button">Enviar</button>
