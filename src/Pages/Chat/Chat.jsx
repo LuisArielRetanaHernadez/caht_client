@@ -29,7 +29,7 @@ const Chat = () => {
       </div>
       <div className="chat__box-send-message">
         <form className="chat__form" action="">
-          <input className="chat__message" type="text" />
+          <input className="input" type="text" />
           <button className="button">Enviar</button>
         </form> 
       </div>
