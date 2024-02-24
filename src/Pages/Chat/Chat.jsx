@@ -28,7 +28,7 @@ const Chat = () => {
         )) ?? "No hay mensajes"}
       </div>
       <div className="chat__box-send-message">
-        <form className="chat__form" action="">
+        <form className="chat__form rounded-10px" action="">
           <input className="input rounded-10px" type="text" />
           <button className="button button--send-message rounded-10px">Enviar</button>
         </form> 
