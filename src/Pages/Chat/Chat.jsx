@@ -29,8 +29,8 @@ const Chat = () => {
       </div>
       <div className="chat__box-send-message">
         <form className="chat__form" action="">
-          <input className="input" type="text" />
-          <button className="button button--send-message">Enviar</button>
+          <input className="input rounded-10px" type="text" />
+          <button className="button button--send-message rounded-10px">Enviar</button>
         </form> 
       </div>
     </div>
