@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useFetcher, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 const Chat = () => {
   const [message, setMessage] = useState([])
   const params = useParams()
@@ -16,17 +16,18 @@ const Chat = () => {
     }
     getMessage()
   },[])
+
   return (
-    <div>
-      <div>
+    <div className="chat">
+      <div className="chat__messages">
         {message.map((m) => (
           <div key={m.id}>{m.message}</div>
         )) ?? "No hay mensajes"}
       </div>
-      <div>
-        <form action="">
-          <input type="text" />
-          <button>Enviar</button>
+      <div className="chat__box-message">
+        <form className="chat__form" action="">
+          <input className="chat__message" type="text" />
+          <button className="button">Enviar</button>
         </form> 
       </div>
     </div>
