@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+
+// style chat
+import "./Chat.style.css"
 const Chat = () => {
   const [message, setMessage] = useState([])
   const params = useParams()
