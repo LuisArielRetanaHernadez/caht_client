@@ -19,6 +19,15 @@
   bottom: 1%;
 }
 
+/* ... form del send message ... */
+
+.chat__form {
+  padding: 1rem 1.5rem;
+  backdrop-filter: blur(10px);
+  display: flex;
+  gap: 5px;
+}
+
 /* ... button ... */
 
 .button--send-message {
