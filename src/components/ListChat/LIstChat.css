@@ -8,22 +8,20 @@
 }
 
 .list-chat__item { 
+  width: 100%;
   background-color: #041216;
   border-radius: 10px;
   position: relative;
 }
 
 .list-chat__link { 
+  width: 100%;
   padding: .3rem .3rem;
-  background-color: none;
   display: flex;
+  gap: 0 10px;
 }
 
-.list-chat__content { 
-  display: flex;
-  gap: 0px 8px;
-}
-
+/* ... imagen del avatar ... */
 .list-chat__image {
   width: 50px;
   height: 50px;
@@ -37,6 +35,13 @@
   object-fit: cover;
 }
 
+/* ... name, isOnlien and last message ... */
+
+.list-chat__information {
+  width: max-content;
+  flex-grow: 1;
+}
+
 .list-chat__name {
   font-weight: 600;
   letter-spacing: 1px;
@@ -44,7 +49,12 @@
 }
 
 .list-chat__message {
+  width: 140px;
   color: #6B728E;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
 }
 
 /* cricle */
