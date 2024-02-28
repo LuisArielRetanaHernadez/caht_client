@@ -42,7 +42,7 @@ const Menu = () => {
                 <li 
                 onClick={logout}
                 className="menu__item menu__item--bg-blue">
-                  <spna>Logout</spna>
+                  <span>Logout</span>
                 </li>
               </ul>
 
