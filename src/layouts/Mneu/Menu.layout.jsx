@@ -21,18 +21,19 @@ const Menu = () => {
         </div>
         <nav className="menu__navegation mr-5rem">
           <ul className="menu__list">
-            <li>
+            <li className="">
               <Link className="avatar">
                 <img 
                 className="avatar__img"
                 src="https://images.pexels.com/photos/15005609/pexels-photo-15005609/free-photo-of-puesta-de-sol-hombre-silueta-tarde.jpeg"
                 ></img>
               </Link>
+
+              <li className="menu__item">
+                <spna>Logout</spna>
+              </li>
             </li>
-  
-            <li className="menu__item">
-              <spna>Logout</spna>
-            </li>
+
           </ul>
         </nav>
       </header>
