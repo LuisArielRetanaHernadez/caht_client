@@ -6,7 +6,7 @@ import Search from "../Search/Search"
 import './ListChat.css'
 
 // hooks react
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 // insta axios
 import axios from "../../utils/axios"
@@ -25,10 +25,6 @@ const ListChat = () => {
       setUsers(usersFinds.data.data.usersFind)
     }
   }
-
-  useEffect(() => {
-    return () => setUsers([])
-  },[])
 
   const items = users.map((contact, index) => (
       <ItemChat 
