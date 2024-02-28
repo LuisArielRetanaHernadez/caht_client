@@ -5,21 +5,30 @@
   background-position: center center;
   background-size: cover;
   backdrop-filter: blur(50%);
+  display: flex;
+  flex-direction: column;
   position: relative;
 }
 
+.chat__messages {
+  width: 100%;
+  max-height: 100%;
+  padding-right: .5rem;
+  padding-left: .5rem;
+  flex-grow: 1;
+  overflow: auto;
+}
 
 /* ///// send message ///// */
 
 .chat__box-send-message {
   width: 100%;
+  max-height: max-content;
   padding: .5rem;
-  background-color: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  bottom: 1%;
+  bottom: 0;
 }
 
 /* ... form del send message ... */
