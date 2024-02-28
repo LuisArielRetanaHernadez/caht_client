@@ -28,15 +28,13 @@ const ItemChat = ({ id, name, messageLast, photo}) => {
     <>
       <li className="list-chat__item">
         <Link className="list-chat__link">
-          <div className="list-chat__content">
-            <figure className={`${photo ? '' : 'bg-gradient '}list-chat__image`}>
-              {photo ? <img className="list-chat__img" src={photo} alt="photo user" /> : ''}
-            </figure>
-            <div className="list-chat__information">
-              <span className="list-chat__name">{name}</span>
-              <span className="list-chat__status">{userOnline ? 'online' : 'off'}</span>
-              <p className="list-chat__message">{messageLast}</p>
-            </div>
+          <figure className={`${photo ? '' : 'bg-gradient'} list-chat__image`}>
+            {photo ? <img className="list-chat__img" src={photo} alt="photo user" /> : ''}
+          </figure>
+          <div className="list-chat__information">
+            <span className="list-chat__name">{name}</span>
+            <span className="list-chat__status">{userOnline ? 'online' : 'off'}</span>
+            <p className="list-chat__message">{messageLast}</p>
           </div>
         </Link>
 
