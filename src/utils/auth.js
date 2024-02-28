@@ -9,7 +9,7 @@ const register = (...data) => {
   return axios.post('/register', ...data)
 }
 
-const logout = () => {
+const logout = async () => {
   return axios.post('/logout')
 }
 
