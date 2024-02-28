@@ -156,11 +156,16 @@ ul, ol, li {
 
 .position-relative { position: relative; }
 
-.postion-absolute { position: absolute; }
+.position-absolute { position: absolute; }
 
 r-0 { right: 0%; }
 
 .rounded-10p { border-radius: 10px; }
+
+/* .... z-index .... */
+.z-index { 
+  z-index: 10;
+}
 
 /* .... margin .... */
 .m-auto { margin:  auto; }

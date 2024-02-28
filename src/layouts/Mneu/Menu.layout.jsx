@@ -29,7 +29,7 @@ const Menu = () => {
                 ></img>
               </Link>
 
-              <ul className="menu__list-sub position-absolute">
+              <ul className="menu__list-sub position-absolute z-index">
                 <li className="menu__item">
                   <spna>Logout</spna>
                 </li>
