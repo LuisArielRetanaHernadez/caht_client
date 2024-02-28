@@ -21,7 +21,7 @@ const Menu = () => {
         </div>
         <nav className="menu__navegation mr-5rem">
           <ul className="menu__list">
-            <li className="">
+            <li className="menu__item">
               <Link className="avatar">
                 <img 
                 className="avatar__img"
@@ -29,9 +29,12 @@ const Menu = () => {
                 ></img>
               </Link>
 
-              <li className="menu__item">
-                <spna>Logout</spna>
-              </li>
+              <ul className="menu__list-sub">
+                <li className="menu__item">
+                  <spna>Logout</spna>
+                </li>
+              </ul>
+
             </li>
 
           </ul>

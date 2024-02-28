@@ -18,6 +18,12 @@
   gap: 0 .5rem;
 }
 
+.menu__list-sub {
+  padding: .4rem .6rem;
+  background-color: red;
+}
+
 .menu__item { 
   display: inline-block;
+  cursor: pointer;
 }
