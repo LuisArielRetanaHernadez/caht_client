@@ -9,4 +9,8 @@ const register = (...data) => {
   return axios.post('/register', ...data)
 }
 
-export { login, register };
+const logout = () => {
+  return axios.post('/logout')
+}
+
+export { login, register, logout };
