@@ -39,7 +39,9 @@ const Menu = () => {
               </Link>
 
               <ul className="menu__list-sub position-absolute z-index">
-                <li className="menu__item menu__item--bg-blue">
+                <li 
+                onClick={logout}
+                className="menu__item menu__item--bg-blue">
                   <spna>Logout</spna>
                 </li>
               </ul>
