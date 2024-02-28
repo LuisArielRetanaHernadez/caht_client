@@ -27,3 +27,7 @@
   display: inline-block;
   cursor: pointer;
 }
+
+.menu__item--bg-blue {
+  background-color: #041216;
+}
