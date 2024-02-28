@@ -12,6 +12,11 @@ const Message = ({
         <>
         <article className="message message--rounded-10px message--float-right">
           <header className="message__header">
+            <div className='avatar avatar--message'>
+              <img 
+              src='https://images.pexels.com/photos/15005609/pexels-photo-15005609/free-photo-of-puesta-de-sol-hombre-silueta-tarde.jpeg' 
+              className='avatar__img avatar__img--message' />
+            </div>
             <h4 className="message__name">{author}</h4>
             <ul className="message__options">
               <li className="message__option">
