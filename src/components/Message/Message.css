@@ -6,6 +6,7 @@
   font-size: 15px;
   background-color: #F6F5F5;
   display: inline-block;
+  position: relative;
 }
 
 .message__name { 
