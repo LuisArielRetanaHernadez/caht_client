@@ -63,6 +63,18 @@ const userSlice = createSlice({
       state.token = action.payload.data.token
       state.user = action.payload.data.user
     })
+
+    .addCase(logoutAsync.pending, state => {
+      state.status = "loading"
+    })
+    .addCase(logoutAsync.rejected, state => {
+      state.status = "rejected"
+    })
+    .addCase(logoutAsync.fulfilled, (state) => {
+      state.isLogin = false
+      state.token = ""
+      state.user = {}
+    })
   }
 })
 
