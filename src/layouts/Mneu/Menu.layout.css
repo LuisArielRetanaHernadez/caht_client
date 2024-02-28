@@ -24,6 +24,9 @@
 }
 
 .menu__item { 
+  padding: .4rem .6rem;
+  color: #EEEDEB;
+  font-size: 15px;
   display: inline-block;
   cursor: pointer;
 }

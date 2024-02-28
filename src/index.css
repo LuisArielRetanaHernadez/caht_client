@@ -177,8 +177,9 @@ r-0 { right: 0%; }
 .mb-1rem { margin-bottom: 1rem; }
 
 /* .... padding .... */
+.p-0 { padding: 0px; }
 
-p-1rem { padding: 1rem; }
+.p-1rem { padding: 1rem; }
 
 /* .... text-aling .... */
 
