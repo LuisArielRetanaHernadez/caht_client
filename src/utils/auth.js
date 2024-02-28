@@ -10,6 +10,7 @@ const register = (...data) => {
 }
 
 const logout = async () => {
+  localStorage.removeItem('user');
   return axios.post('/logout')
 }
 
