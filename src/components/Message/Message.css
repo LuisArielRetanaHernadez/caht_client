@@ -4,8 +4,12 @@
   padding: .5rem;
   margin-top: 8px;
   font-size: 15px;
-  background-color: #176B87;
+  background-color: #F6F5F5;
   display: inline-block;
+}
+
+.message__name { 
+  color: #0B60B0;
 }
 
 .message--float-right {
