@@ -21,7 +21,7 @@ const Menu = () => {
         </div>
         <nav className="menu__navegation mr-5rem">
           <ul className="menu__list">
-            <li className="menu__item">
+            <li className="menu__item position-relative">
               <Link className="avatar">
                 <img 
                 className="avatar__img"
@@ -29,7 +29,7 @@ const Menu = () => {
                 ></img>
               </Link>
 
-              <ul className="menu__list-sub">
+              <ul className="menu__list-sub position-absolute">
                 <li className="menu__item">
                   <spna>Logout</spna>
                 </li>

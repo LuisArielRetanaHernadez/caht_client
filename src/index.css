@@ -156,6 +156,8 @@ ul, ol, li {
 
 .position-relative { position: relative; }
 
+.postion-absolute { position: absolute; }
+
 r-0 { right: 0%; }
 
 .rounded-10p { border-radius: 10px; }
