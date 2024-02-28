@@ -9,9 +9,18 @@ import "./Menu.layout.css"
 import "../../index.css"
 
 // router-dom-v6
-import { Link } from "react-router-dom";
+import { Link, redirect } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logoutAsync } from "../../features/user/userSlice";
 
 const Menu = () => {
+
+  const dispatch = useDispatch()
+
+  const logout = () => {
+    dispatch(logoutAsync())
+    return redirect('/login')
+  }
 
   return (
     <>
