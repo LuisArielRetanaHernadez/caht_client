@@ -22,7 +22,6 @@
   padding: .4rem .6rem;
   color: #EEEDEB;
   font-size: 15px;
-  display: inline-block;
   cursor: pointer;
 }
 
@@ -37,12 +36,11 @@
 .menu__list-sub {
   padding: .4rem .6rem;
   background-color: #EEEDEB;
-}
-
-.menu__list-sub--hidden { 
   display: none;
+  position: absolute;
 }
 
-.menu__list-sub--show:hover .menu__list-sub {
+.menu__item:hover .menu__list-sub {
   display: block;
 }
+

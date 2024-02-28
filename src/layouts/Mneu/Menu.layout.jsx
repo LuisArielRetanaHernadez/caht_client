@@ -29,7 +29,7 @@ const Menu = () => {
           <Logo />
         </div>
         <nav className="menu__navegation mr-5rem">
-          <ul className="menu__list">
+          <ul className="menu__list position-relative z-index-10">
             <li className="menu__item menu__item--p-0 menu__list-sub--show position-relative">
               <Link className="avatar">
                 <img 
@@ -38,7 +38,7 @@ const Menu = () => {
                 ></img>
               </Link>
 
-              <ul className="menu__list-sub menu__list-sub--hidden position-absolute z-index">
+              <ul className="menu__list menu__list-sub">
                 <li 
                 onClick={logout}
                 className="menu__item menu__item--bg-blue">
