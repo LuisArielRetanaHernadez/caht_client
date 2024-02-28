@@ -30,7 +30,7 @@ const Menu = () => {
         </div>
         <nav className="menu__navegation mr-5rem">
           <ul className="menu__list">
-            <li className="menu__item menu__item--p-0 position-relative">
+            <li className="menu__item menu__item--p-0 menu__list-sub--show position-relative">
               <Link className="avatar">
                 <img 
                 className="avatar__img"
@@ -38,7 +38,7 @@ const Menu = () => {
                 ></img>
               </Link>
 
-              <ul className="menu__list-sub position-absolute z-index">
+              <ul className="menu__list-sub menu__list-sub--hidden position-absolute z-index">
                 <li 
                 onClick={logout}
                 className="menu__item menu__item--bg-blue">

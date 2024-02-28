@@ -18,11 +18,6 @@
   gap: 0 .5rem;
 }
 
-.menu__list-sub {
-  padding: .4rem .6rem;
-  background-color: #EEEDEB;
-}
-
 .menu__item { 
   padding: .4rem .6rem;
   color: #EEEDEB;
@@ -37,4 +32,17 @@
 
 .menu__item--bg-blue {
   background-color: #041216;
+}
+
+.menu__list-sub {
+  padding: .4rem .6rem;
+  background-color: #EEEDEB;
+}
+
+.menu__list-sub--hidden { 
+  display: none;
+}
+
+.menu__list-sub--show:hover .menu__list-sub {
+  display: block;
 }
