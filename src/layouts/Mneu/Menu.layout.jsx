@@ -9,8 +9,8 @@ import "./Menu.layout.css"
 import "../../index.css"
 
 // router-dom-v6
-import { Link, redirect } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { Link, redirect, Navigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { logoutAsync } from "../../features/user/userSlice";
 
 const Menu = () => {
@@ -20,6 +20,13 @@ const Menu = () => {
   const logout = () => {
     dispatch(logoutAsync())
     return redirect('/login')
+  }
+
+  // if is not login
+  const { isLogin } = useSelector((state) => state.user)
+
+  if (!isLogin) {
+    return <Navigate to="/login" />
   }
 
   return (
