@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Navigate, useParams } from "react-router-dom"
 import Message from "../../components/Message/Message"
 // style chat
 import "./Chat.style.css"
+import { useSelector } from "react-redux"
 const Chat = () => {
   const [message, setMessage] = useState([{
     id: 1,
@@ -22,6 +23,12 @@ const Chat = () => {
     }
     getMessage()
   },[])
+
+  const { isLogin } = useSelector((state) => state.user);
+
+  if (!isLogin) {
+    return <Navigate to="/login" />
+  }
 
   return (
     <div className="chat">
