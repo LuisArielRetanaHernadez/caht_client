@@ -33,12 +33,11 @@ const ItemChat = ({ id, name, messageLast, photo}) => {
           </figure>
           <div className="list-chat__information">
             <span className="list-chat__name">{name}</span>
-            <span className="list-chat__status">{userOnline ? 'online' : 'off'}</span>
             <p className="list-chat__message">{messageLast}</p>
           </div>
         </Link>
 
-        <span className="circle circle--low-blue circle--small circle--0-tr">
+        <span className={`circle circle--low-blue circle--small circle--0-tr ${userOnline ? 'circle--green' : 'circle--low-blue'}`}>
         </span>
       </li>
     </>
