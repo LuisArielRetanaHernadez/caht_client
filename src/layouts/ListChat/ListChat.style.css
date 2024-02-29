@@ -8,6 +8,8 @@
 }
 
 .layout-list-chat--content {
-  background-color: red;
+  background-image: url(https://res.cloudinary.com/dqmkovsdy/image/upload/v1709241300/chat/fondos/xrbhvebh7rrwpxqhzd6t.png);
+  background-position: center;
+  background-size: cover;
   flex-grow: 1;
 }
