@@ -37,7 +37,7 @@ const ListChat = () => {
     <>
       <div className="list-chat">
         <Search onSubmit={searchUsers}/>
-        <ul className="list-chat__list">
+        <ul className="list-chat__list grid">
           {items ?? <span className="legend">Start adding your contacts</span>}
         </ul>
       </div>
