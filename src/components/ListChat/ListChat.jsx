@@ -12,12 +12,7 @@ import { useState } from 'react'
 import axios from "../../utils/axios"
 
 const ListChat = () => {
-  const [users, setUsers] = useState([{
-    _id: '',
-    Name: 'Luis',
-    photo: '',
-    message: 'Hola que tal'
-  }])
+  const [users, setUsers] = useState([])
 
   const searchUsers = async (value) => {
     const usersFinds = await axios.get(`/users/search?user=${value}`, { value })
