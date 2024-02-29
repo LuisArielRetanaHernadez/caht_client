@@ -22,13 +22,6 @@ const Menu = () => {
     return redirect('/login')
   }
 
-  // if is not login
-  const { isLogin } = useSelector((state) => state.user)
-
-  if (!isLogin) {
-    return <Navigate to="/login" />
-  }
-
   return (
     <>
       <header className="menu">
