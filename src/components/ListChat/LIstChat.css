@@ -5,6 +5,7 @@
 
 .list-chat__list {
   padding: .8rem;
+  gap: 4px 0px;
 }
 
 .list-chat__item { 
