@@ -143,11 +143,15 @@ ul, ol, li {
 /* .... height .... */
 .h-full { height: 100%; }
 
-/* .... flex .... */
+/* .... display .... */
 .flex { display: flex; }
 
+.grid { display: grid; }
+
+/* '...... flex-frow ...... */
 .flex-grow-1 { flex-grow: 1; }
 
+/* ........... flex .......... */
 .flex-1 { flex: 1; }
 
 /* .... position .... */
