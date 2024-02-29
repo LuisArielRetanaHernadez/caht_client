@@ -158,6 +158,7 @@ ul, ol, li {
 /* ........ right ...... */
 r-0 { right: 0%; }
 
+
 /* .... z-index .... */
 .z-index { z-index: 10; }
 
@@ -184,6 +185,4 @@ r-0 { right: 0%; }
 .outline-none { outline: none; }
 
 /* .... border-radious .... */
-.rounded-10p { border-radius: 10px; }
-
-.rounded-10px { border-radius: 10px; }
+.rounded-10 { border-radius: 10px; }
