@@ -132,35 +132,31 @@ ul, ol, li {
 /* .... background .... */
 
 .bg-gradient {
-  /* background-color: #4158D0; */
   background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-
 }
-/* .... width .... */
 
+/* .... width .... */
 .w-25 { width: 25%; }
 
 .w-30 { width: 30%; }
 
 /* .... height .... */
-
 .h-full { height: 100%; }
 
 /* .... flex .... */
-
 .flex { display: flex; }
+
 .flex-grow-1 { flex-grow: 1; }
+
 .flex-1 { flex: 1; }
 
 /* .... position .... */
-
 .position-relative { position: relative; }
 
 .position-absolute { position: absolute; }
 
+/* ........ right ...... */
 r-0 { right: 0%; }
-
-.rounded-10p { border-radius: 10px; }
 
 /* .... z-index .... */
 .z-index { z-index: 10; }
@@ -182,15 +178,12 @@ r-0 { right: 0%; }
 .p-1rem { padding: 1rem; }
 
 /* .... text-aling .... */
-
 .text-center { text-align: center; }
 
 /* .... otuline .... */
-
 .outline-none { outline: none; }
 
 /* .... border-radious .... */
+.rounded-10p { border-radius: 10px; }
 
-.rounded-10px {
-  border-radius: 10px;
-}
+.rounded-10px { border-radius: 10px; }
