@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import ListChat from "../../components/ListChat/ListChat";
 import "./ListChat.style.css";
 import { useSelector } from 'react-redux';
