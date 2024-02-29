@@ -61,7 +61,7 @@ const Login = () => {
   
   return (
     <>
-      <section className="container container--center">
+      <section className="container container--center wrapped--menu">
         <form className="form form--block form--shadow rounded-10p" onSubmit={handleSubmit}>
         <div className="text-center wrapped wrapped--space-flex wrapped--colum-flex" style={{position: "relative"}}>
           <h2 className="form__title">Login</h2>
