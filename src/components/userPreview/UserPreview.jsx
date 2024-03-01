@@ -16,7 +16,7 @@ const UserPreview = () => {
         <p className="user-preview__frende">Amigo</p>
       </div>
       <div>
-      <span className="icon pointer">
+      <span className="icon icon--hover-white pointer">
       <FontAwesomeIcon icon={faArrowDown} />
       </span>
         <ul className='list list--sub'>
