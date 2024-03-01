@@ -13,7 +13,7 @@ const ItemChat = ({ id, name, messageLast, photo}) => {
     socket.emit('users online')
     socket.on('users online', (data) => {
       const isOnline = data.some(user => {
-        return id === user.userId;  // id === user.userId ? true : false;  // id === user.userId ? true : false;  // id === user.userId ? true : false;  // id === user.userId ? true : false;  // id === user.userId ?
+        return id === user._id;  // id === user.userId ? true : false;  // id === user.userId ? true : false;  // id === user.userId ? true : false;  // id === user.userId ? true : false;  // id === user.userId ?
       })
       setUserOnline(isOnline)
     })
@@ -22,6 +22,10 @@ const ItemChat = ({ id, name, messageLast, photo}) => {
       setUserOnline(false)
     }
   },[id])
+
+  useEffect(() => {
+    console.log('userOnline ', userOnline)
+  }, [userOnline])
 
 
   return (
@@ -37,7 +41,7 @@ const ItemChat = ({ id, name, messageLast, photo}) => {
           </div>
         </Link>
 
-        <span className={`circle circle--low-blue circle--small circle--0-tr ${userOnline ? 'circle--green' : 'circle--low-blue'}`}>
+        <span className={`circle circle--small circle--0-tr ${userOnline ? 'circle--online' : 'circle--offline'}`}>
         </span>
       </li>
     </>
