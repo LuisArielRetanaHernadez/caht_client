@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
+
 import './UserPreview.css'
 const UserPreview = () => {
   return (
@@ -13,8 +16,8 @@ const UserPreview = () => {
         <p className="user-preview__frende">Amigo</p>
       </div>
       <div>
-      <span className="button pointer">
-        mas
+      <span className="icon pointer">
+      <FontAwesomeIcon icon={faArrowDown} />
       </span>
         <ul className='list list--sub'>
           <li className='list__item'>Bloquear</li>
