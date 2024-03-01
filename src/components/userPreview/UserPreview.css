@@ -18,6 +18,16 @@
   gap: 20px;
 }
 
+/* information */
+
+.user-preview__username {
+  color: #fff;
+}
+
+.user-preview__frende {
+  color: #0B60B0;
+}
+
 /* list - items del menu */
 
 .list {
