@@ -1,3 +1,4 @@
+import './UserPreview.css'
 const UserPreview = () => {
   return (
     <div className="user-preview">
