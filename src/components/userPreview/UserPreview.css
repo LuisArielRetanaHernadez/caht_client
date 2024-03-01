@@ -8,3 +8,18 @@
 .user-preview--gap-8 {
   gap: 8px;
 }
+
+/* list - items del menu */
+
+.list {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: absolute;
+}
+
+.list__item {
+  background-color: blue;
+  padding: .3rem .4rem;
+}

@@ -15,10 +15,10 @@ const UserPreview = () => {
       <span className="button">
         mas
       </span>
-        <ul>
-          <li>Bloquear</li>
-          <li>Agregar</li>
-          <li>Editar</li>
+        <ul className='list'>
+          <li className='list__item'>Bloquear</li>
+          <li className='list__item'>Agregar</li>
+          <li className='list__item'>Editar</li>
         </ul>
       </div>
     </div>
