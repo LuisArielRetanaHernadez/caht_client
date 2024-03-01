@@ -1,15 +1,17 @@
 const UserPreview = () => {
   return (
-    <div>
-      <div>
-        <img src="" alt="" />
+    <div className="user-preview">
+      <div className="avatar">
+        <img
+        className="avatar__img"
+         src="" alt="" />
+      </div>
+      <div className="user-preview__information">
+        <p className="user-preview__username">Name</p>
+        <p className="user-preview__frende">Amigo</p>
       </div>
       <div>
-        <p>Name</p>
-        <p>Amigo</p>
-      </div>
-      <div>
-      <span>
+      <span className="button">
         mas
       </span>
         <ul>
