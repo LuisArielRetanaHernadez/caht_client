@@ -4,3 +4,7 @@
   position: fixed;
   left: 50%;
 }
+
+.user-preview--gap-8 {
+  gap: 8px;
+}

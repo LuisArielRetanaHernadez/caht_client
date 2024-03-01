@@ -1,7 +1,7 @@
 import './UserPreview.css'
 const UserPreview = () => {
   return (
-    <div className="user-preview">
+    <div className="user-preview user-preview--gap-8 p-1rem rounded-10">
       <div className="avatar">
         <img
         className="avatar__img"
