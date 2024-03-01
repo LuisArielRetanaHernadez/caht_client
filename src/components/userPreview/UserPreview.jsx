@@ -15,7 +15,7 @@ const UserPreview = () => {
       <span className="button">
         mas
       </span>
-        <ul className='list'>
+        <ul className='list list--sub'>
           <li className='list__item'>Bloquear</li>
           <li className='list__item'>Agregar</li>
           <li className='list__item'>Editar</li>
