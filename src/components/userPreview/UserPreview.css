@@ -10,6 +10,10 @@
   align-items: center;
 }
 
+.user-preview--top-65 {
+  top: 65px;
+}
+
 .user-preview--gap-20 {
   gap: 20px;
 }
