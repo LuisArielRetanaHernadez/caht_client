@@ -13,7 +13,7 @@ const UserPreview = () => {
         <p className="user-preview__frende">Amigo</p>
       </div>
       <div>
-      <span className="button">
+      <span className="button pointer">
         mas
       </span>
         <ul className='list list--sub'>
