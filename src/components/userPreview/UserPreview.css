@@ -1,0 +1,6 @@
+.user-preview {
+  background-color: #0A1D56;
+  display: flex;
+  position: fixed;
+  left: 50%;
+}
