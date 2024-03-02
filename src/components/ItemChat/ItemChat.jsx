@@ -31,7 +31,9 @@ const ItemChat = ({ id, name, messageLast, photo}) => {
   return (
     <>
       <li className="list-chat__item">
-        <Link className="list-chat__link">
+        <Link 
+        to={`/chat/${id}`}
+        className="list-chat__link">
           <figure className={`${photo ? '' : 'bg-gradient'} list-chat__image`}>
             {photo ? <img className="list-chat__img" src={photo} alt="photo user" /> : ''}
           </figure>
