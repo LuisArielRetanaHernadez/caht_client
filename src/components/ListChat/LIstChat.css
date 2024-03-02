@@ -66,16 +66,15 @@
   max-width: 90px;
   max-height: 90px;
   border-radius: 50%;
-  background-color: red;
   position: absolute;
 }
 
-.circle--green {
-  background-color: green;
+.circle--offline {
+  background-color: #344955;
 }
 
-.circle--low-blue {
-  background-color: #176B87;
+.circle--online {
+  background-color: #0B60B0;
 }
 
 .circle--small {

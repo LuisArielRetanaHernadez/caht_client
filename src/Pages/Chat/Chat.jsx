@@ -4,6 +4,7 @@ import Message from "../../components/Message/Message"
 // style chat
 import "./Chat.style.css"
 import { useSelector } from "react-redux"
+import UserPreview from "../../components/userPreview/UserPreview"
 const Chat = () => {
   const [message, setMessage] = useState([{
     id: 1,
@@ -33,6 +34,7 @@ const Chat = () => {
   return (
     <div className="chat">
       <div className="chat__messages">
+      <UserPreview />
         {message.map((m) => (    
           <Message key={m.id} message={m.message} author={m.author} />
         )) ?? "No hay mensajes"}
@@ -42,8 +44,8 @@ const Chat = () => {
           <textarea
             rows={2}
             wrap="hard"
-           className="input input--send-message rounded-10px" type="text" />
-          <button className="button button--send-message rounded-10px">Enviar</button>
+           className="input input--send-message rounded-10" type="text" />
+          <button className="button button--send-message rounded-10">Enviar</button>
         </form> 
       </div>
     </div>
