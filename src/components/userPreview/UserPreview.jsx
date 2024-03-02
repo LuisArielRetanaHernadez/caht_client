@@ -44,7 +44,9 @@ const UserPreview = () => {
          className='list'>
           <li className='list__item pointer rounded-10'>Bloquear</li>
           <li className='list__item pointer rounded-10'>Agregar</li>
-          <li className='list__item pointer rounded-10'>Editar</li>
+          {
+            contact && <li className='list__item pointer rounded-10'>Editar</li>
+          }
         </ul>
       </div>
     </div>
