@@ -37,10 +37,10 @@ const UserPreview = () => {
       </span>
         <ul
         ref={menuSub}
-         className='list list--sub'>
-          <li className='list__item'>Bloquear</li>
-          <li className='list__item'>Agregar</li>
-          <li className='list__item'>Editar</li>
+         className='list'>
+          <li className='list__item rounded-10'>Bloquear</li>
+          <li className='list__item rounded-10'>Agregar</li>
+          <li className='list__item rounded-10'>Editar</li>
         </ul>
       </div>
     </div>
