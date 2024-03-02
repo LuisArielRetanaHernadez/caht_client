@@ -9,7 +9,7 @@ const UserPreview = () => {
       <div className="avatar avatar--preview">
         <img
         className="avatar__img"
-         src="" alt="" />
+         src="https://images.pexels.com/photos/15005609/pexels-photo-15005609/free-photo-of-puesta-de-sol-hombre-silueta-tarde.jpeg" alt="" />
       </div>
       <div className="user-preview__information">
         <p className="user-preview__username">Name</p>
