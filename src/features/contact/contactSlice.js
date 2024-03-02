@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
   idSelect: null,
+  contact: false,
 }
 
 
@@ -11,7 +12,8 @@ const contactSlice = createSlice({
 
   reducers: {
     selectContact: (state, action) => {
-      state.idSelect = action.payload
+      state.idSelect = action.payload.id
+      state.contact = action.payload.contact
     }
   }
 })
