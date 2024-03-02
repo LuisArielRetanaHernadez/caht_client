@@ -3,6 +3,8 @@ import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 import './UserPreview.css'
 import { useEffect, useRef, useState } from 'react'
+import { useSelector } from 'react-redux'
+
 const UserPreview = () => {
 
   const [showMenu, setShowMenu] = useState(false)
@@ -16,6 +18,8 @@ const UserPreview = () => {
     }
   }, [showMenu])
 
+  const { contact } = useSelector(state => state.contact)
+
   return (
     <div className="user-preview user-preview--center-content
      user-preview--gap-20 user-preview--top-65 p-1rem rounded-10">
@@ -26,7 +30,7 @@ const UserPreview = () => {
       </div>
       <div className="user-preview__information">
         <p className="user-preview__username">Name</p>
-        <p className="user-preview__frende">Amigo</p>
+        <p className="user-preview__frende">{contact ? 'Contacto' : 'Agregar'}</p>
       </div>
       <div>
       <span
