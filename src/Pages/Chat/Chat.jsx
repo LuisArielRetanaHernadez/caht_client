@@ -44,8 +44,8 @@ const Chat = () => {
           <textarea
             rows={2}
             wrap="hard"
-           className="input input--send-message rounded-10px" type="text" />
-          <button className="button button--send-message rounded-10px">Enviar</button>
+           className="input input--send-message rounded-10" type="text" />
+          <button className="button button--send-message rounded-10">Enviar</button>
         </form> 
       </div>
     </div>
