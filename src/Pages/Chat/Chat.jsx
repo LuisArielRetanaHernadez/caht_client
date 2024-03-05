@@ -63,7 +63,27 @@ const Chat = () => {
   const sendMessage = (e) => {
     e.preventDefault();
 
-    setMessages(prev => [...prev, {message, author: 'tu', isAuthor: true}])
+    if (!message) return
+
+    const sendNewMessage = async () => {
+      try {
+        const newMessage = await Axios.post('/messages', {
+          message
+        })
+
+        if (newMessage.response.status === 203) {
+          setMessages(prev => [...prev, {message, author: 'tu', isAuthor: true}])
+        }
+      } catch (error) {
+        dispatch(setError({
+          message: error.response.data.message,
+          statusCode: error.response.status,
+          isError: true
+        }))
+      }
+    }
+
+    sendNewMessage()
 
     setMessage('')
     socket.emit('send message', {message, to: id})
