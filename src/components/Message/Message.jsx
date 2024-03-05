@@ -6,11 +6,11 @@ import './Message.css';
 const Message = ({
   message,
   author,
-
+  isAuthor
 }) => {
     return (
         <>
-        <article className="message message--rounded-10px message--float-right">
+        <article className={`message message--rounded-10px ${isAuthor ? 'message--float-right' : 'message--float-left'} `}>
           <header className="message__header">
             <div className='avatar avatar--message avatar--message-left'>
               <img 
