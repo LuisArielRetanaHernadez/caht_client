@@ -49,9 +49,9 @@ const Chat = () => {
       </div>
       <div className="chat__box-send-message">
         <form onSubmit={sendMessage} className="chat__form rounded-10px" action="">
-          <input
-            // rows={2}
-            // wrap="hard"
+          <textarea
+            rows={1}
+            wrap="hard"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
            className="input input--send-message rounded-10" type="text" />
