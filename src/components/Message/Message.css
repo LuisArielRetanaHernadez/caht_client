@@ -17,6 +17,10 @@
   float: right;
   clear: both;
 }
+.message--float-left {
+  float: left;
+  clear: both;
+}
 
 .message--rounded-10px {
   border-radius: 10px;
