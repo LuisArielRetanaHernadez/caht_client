@@ -41,7 +41,7 @@ const Chat = () => {
 
   return (
     <div className="chat">
-      <div className="chat__messages">
+      <div className="chat__messages position-relative">
       <UserPreview />
         {messages.map((m, i) => (    
           <Message key={i} message={m.message} author={m.author} />
