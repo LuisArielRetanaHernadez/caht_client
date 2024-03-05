@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import { Navigate, useParams } from "react-router-dom"
 
 // redux toolkit
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 // components
 import Message from "../../components/Message/Message"
@@ -18,6 +18,7 @@ import Axios from "../../utils/axios"
 import "./Chat.style.css"
 
 import manager from "../../utils/websocket"
+import { setError } from "../../features/error/errorSlice"
 const Chat = () => {
   const socket = manager.socket('/users')
 
@@ -26,15 +27,26 @@ const Chat = () => {
   const [messages, setMessages] = useState([])
   const [message, setMessage] = useState('')
 
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    Axios.get(`/messages/${id}`).then(res => {
-      console.log('message en la base de datos ', res.data)
-    })
+    const getMessages = async () => {
+      try {
+        const messagesDB = await Axios.get(`/messages/${id}`)
+        if (messagesDB.response.status === 200) {
+          setMessages(messagesDB.data.messagesIds)
+        }
+      } catch (error) {
+        dispatch(setError({
+          message: error.response.data.message,
+          statusCode: error.response.status,
+          isError: true
+        }))
+      }
 
-    return () => {
-      socket.off('message')
     }
+
+    getMessages()
   }, [])
 
   useEffect(() => {
