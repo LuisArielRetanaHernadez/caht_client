@@ -38,7 +38,7 @@ const ItemChat = ({ id, name, messageLast, photo}) => {
   },[id])
 
   const onContact = () => {
-    dispatch(selectContact({id, contact: false, }))
+    dispatch(selectContact({id, contact: false, name}))
   }
 
 
