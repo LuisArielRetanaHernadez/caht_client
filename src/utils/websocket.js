@@ -1,8 +1,6 @@
 /* eslint-disable no-undef */
 import { Manager } from "socket.io-client";
 
-console.log(import.meta.env.SERVER_URL)
-
 const user = localStorage.getItem("user");
 let token
 if (user) {
