@@ -1,13 +1,20 @@
+// react hooks
+import { useEffect, useRef, useState } from 'react'
+
+// redux tookit
+import { useSelector } from 'react-redux'
+
+// fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
+// style UserPreview
 import './UserPreview.css'
-import { useEffect, useRef, useState } from 'react'
-import { useSelector } from 'react-redux'
 
 const UserPreview = () => {
 
   const [showMenu, setShowMenu] = useState(false)
+
   const menuSub = useRef(null)
 
   useEffect(() => {
@@ -23,15 +30,18 @@ const UserPreview = () => {
   return (
     <div className="user-preview user-preview--center-content
      user-preview--gap-20 user-preview--top-4 user-preview--center-x p-1rem rounded-10">
+      
       <div className="avatar avatar--preview">
         <img
         className="avatar__img"
          src="https://images.pexels.com/photos/15005609/pexels-photo-15005609/free-photo-of-puesta-de-sol-hombre-silueta-tarde.jpeg" alt="" />
       </div>
+
       <div className="user-preview__information">
         <p className="user-preview__username">Name</p>
         <p className="user-preview__frende">{contact ? 'Contacto' : 'Agregar'}</p>
       </div>
+
       <div>
       <span
        className="user-preview__blue icon icon--hover-white icon--sub-menu pointer"
@@ -39,6 +49,7 @@ const UserPreview = () => {
        >
         <FontAwesomeIcon icon={faArrowDown} />
       </span>
+
         <ul
         ref={menuSub}
          className='list'>
@@ -48,6 +59,7 @@ const UserPreview = () => {
             contact && <li className='list__item pointer rounded-10'>Editar</li>
           }
         </ul>
+
       </div>
     </div>
   )
