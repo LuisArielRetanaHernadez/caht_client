@@ -2,7 +2,7 @@
   padding: .5rem;
   background-color: #0A1D56;
   display: flex;
-  position: fixed;
+  position: absolute;
   left: 50%;
 }
 
@@ -12,6 +12,10 @@
 
 .user-preview--top-65 {
   top: 65px;
+}
+
+.user-preview--top-4 {
+  top: 4%;
 }
 
 .user-preview--gap-20 {
