@@ -3,6 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 // slices
 import userSlice from "../features/user/userSlice";
 import contactSlice from "../features/contact/contactSlice";
+import errorSlice from "../features/error/errorSlice";
 
 const leadUserState = () => {
     const serializedState = localStorage.getItem('user');
@@ -26,7 +27,8 @@ const persistedState = leadUserState();
 export const store = configureStore({
     reducer: {
         user: userSlice.reducer,
-        contact: contactSlice.reducer
+        contact: contactSlice.reducer,
+        error: errorSlice.reducer,
     },
     preloadedState: {
         ...preloadedState,
