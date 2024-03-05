@@ -11,6 +11,9 @@ import { useSelector } from "react-redux"
 import Message from "../../components/Message/Message"
 import UserPreview from "../../components/userPreview/UserPreview"
 
+// axios instacia
+import Axios from "../../utils/axios"
+
 // style chat
 import "./Chat.style.css"
 
@@ -23,6 +26,16 @@ const Chat = () => {
   const [messages, setMessages] = useState([])
   const [message, setMessage] = useState('')
 
+
+  useEffect(() => {
+    Axios.get(`/messages/${id}`).then(res => {
+      console.log('message en la base de datos ', res.data)
+    })
+
+    return () => {
+      socket.off('message')
+    }
+  }, [])
 
   useEffect(() => {
     socket.on('message', (data) => {
