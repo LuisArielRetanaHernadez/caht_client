@@ -26,7 +26,7 @@ const Chat = () => {
 
   useEffect(() => {
     socket.on('message', (data) => {
-      setMessages(prev => [...prev, { message: data.message, author: data.to}])
+      setMessages(prev => [...prev, { message: data.message, author: data.to, isAuthor: false}])
     })
 
     return () => {
@@ -37,7 +37,7 @@ const Chat = () => {
   const sendMessage = (e) => {
     e.preventDefault();
 
-    setMessages(prev => [...prev, {message, author: 'user'}])
+    setMessages(prev => [...prev, {message, author: 'tu', isAuthor: true}])
 
     setMessage('')
     socket.emit('send message', {message, to: id})
@@ -56,7 +56,7 @@ const Chat = () => {
       <UserPreview />
 
         {messages.map((m, i) => (    
-          <Message key={i} message={m.message} author={m.author} />
+          <Message key={i} message={m.message} author={m.author} isAuthor={m.isAuthor} />
         )) ?? "No hay mensajes"}
         
       </div>
