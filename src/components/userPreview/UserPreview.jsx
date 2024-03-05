@@ -25,7 +25,10 @@ const UserPreview = () => {
     }
   }, [showMenu])
 
-  const { contact } = useSelector(state => state.contact)
+  const {
+    contact,
+    name
+  } = useSelector(state => state.contact)
 
   return (
     <div className="user-preview user-preview--center-content
@@ -38,7 +41,7 @@ const UserPreview = () => {
       </div>
 
       <div className="user-preview__information">
-        <p className="user-preview__username">Name</p>
+        <p className="user-preview__username">{name}</p>
         <p className="user-preview__frende">{contact ? 'Contacto' : 'Agregar'}</p>
       </div>
 
