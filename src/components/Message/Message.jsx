@@ -1,13 +1,22 @@
 /* eslint-disable react/prop-types */
 
 // styles
+import { useSelector } from 'react-redux';
 import './Message.css';
+import { useState } from 'react';
 
 const Message = ({
   message,
   author,
-  isAuthor
 }) => {
+
+  const [isAuthor, setIsAuthor] = useState(false);
+
+  const { user } = useSelector(state => state.user)
+
+  if (user?.username === author) {
+    setIsAuthor(true)
+  }
     return (
         <>
         <article className={`message message--rounded-10px ${isAuthor ? 'message--float-right' : 'message--float-left'} `}>
