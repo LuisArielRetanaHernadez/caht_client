@@ -33,8 +33,10 @@ const Chat = () => {
     const getMessages = async () => {
       try {
         const messagesDB = await Axios.get(`/messages/${id}`)
-        if (messagesDB.response.status === 200) {
-          setMessages(messagesDB.data.messagesIds)
+        console.log(messagesDB)
+        if (messagesDB.status === 200) {
+          console.log(messagesDB.data.messages)
+          setMessages(messagesDB.data.data.messages)
         }
       } catch (error) {
         dispatch(setError({
@@ -47,7 +49,7 @@ const Chat = () => {
     }
 
     getMessages()
-  }, [])
+  }, [id])
 
   useEffect(() => {
     socket.on('message', (data) => {
@@ -67,11 +69,12 @@ const Chat = () => {
 
     const sendNewMessage = async () => {
       try {
-        const newMessage = await Axios.post('/messages', {
-          message
+        const newMessage = await Axios.post('/messages/save', {
+          message,
+          id
         })
 
-        if (newMessage.response.status === 203) {
+        if (newMessage.response.status === 204) {
           setMessages(prev => [...prev, {message, author: 'tu', isAuthor: true}])
         }
       } catch (error) {
