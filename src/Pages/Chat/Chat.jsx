@@ -33,17 +33,21 @@ const Chat = () => {
 
   useEffect(() => {
     const getMessages = async () => {
+      
       try {
+
         const messagesDB = await Axios.get(`/messages/${id}`)
         console.log(messagesDB)
+
         if (messagesDB.status === 200) {
           console.log(messagesDB.data.messages)
           setMessages(messagesDB.data.data.messages)
         }
       } catch (error) {
+
         dispatch(setError({
-          message: error.response.data.message,
-          statusCode: error.response.status,
+          message: error.data.message,
+          statusCode: error.status,
           isError: true
         }))
       }
@@ -56,7 +60,7 @@ const Chat = () => {
   useEffect(() => {
     socket.on('message', (data) => {
       
-      setMessages(prev => [...prev, { message: data.message, author: data.username, isAuthor: false}])
+      setMessages(prev => [...prev, { message: data.message, author: data.username}])
     })
 
     return () => {
@@ -77,12 +81,12 @@ const Chat = () => {
         })
 
         if (newMessage.response.status === 204) {
-          setMessages(prev => [...prev, { content: message, author: user.username, isAuthor: true}])
+          setMessages(prev => [...prev, { content: message, author: user.username}])
         }
       } catch (error) {
         dispatch(setError({
-          message: error.response.data.message,
-          statusCode: error.response.status,
+          message: error.data.message,
+          statusCode: error.status,
           isError: true
         }))
       }
@@ -107,7 +111,7 @@ const Chat = () => {
       <UserPreview />
 
         {messages.map((m, i) => (    
-          <Message key={i} message={m.message} author={m.author} isAuthor={m.isAuthor} />
+          <Message key={i} message={m.content} author={m.author} />
         )) ?? "No hay mensajes"}
         
       </div>
