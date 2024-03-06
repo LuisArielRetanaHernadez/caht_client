@@ -27,7 +27,7 @@ const Login = () => {
   const dispatch = useDispatch()
 
   const { isLogin } = useSelector((state) => state.user)
-  const { user } = useSelector((state) => state.user)
+  const { user } = useSelector((state) => state)
   
   const handleChange = (e) => {
     setValues({
