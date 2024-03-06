@@ -6,7 +6,7 @@ import './Message.css';
 import { useState } from 'react';
 
 const Message = ({
-  message,
+  content,
   author,
 }) => {
 
@@ -36,7 +36,7 @@ const Message = ({
               </li>
             </ul>
           </header>
-          <p className="message__content">{message}</p>
+          <p className="message__content">{content}</p>
         </article>
         </>
     )

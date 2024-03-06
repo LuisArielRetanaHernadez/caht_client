@@ -33,7 +33,7 @@ const Chat = () => {
 
   useEffect(() => {
     const getMessages = async () => {
-      
+
       try {
 
         const messagesDB = await Axios.get(`/messages/${id}`)
@@ -60,7 +60,7 @@ const Chat = () => {
   useEffect(() => {
     socket.on('message', (data) => {
       
-      setMessages(prev => [...prev, { message: data.message, author: data.username}])
+      setMessages(prev => [...prev, { content: data.message, author: data.username}])
     })
 
     return () => {
