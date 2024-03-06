@@ -10,8 +10,8 @@ const Search = ({onSubmit}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setValue('')
     onSubmit(value)
+    setValue('')
   }
 
   return (
