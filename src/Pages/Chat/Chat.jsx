@@ -29,6 +29,8 @@ const Chat = () => {
 
   const dispatch = useDispatch()
 
+  const { user } = useSelector((state) => state.user);
+
   useEffect(() => {
     const getMessages = async () => {
       try {
@@ -75,7 +77,7 @@ const Chat = () => {
         })
 
         if (newMessage.response.status === 204) {
-          setMessages(prev => [...prev, {message, author: 'tu', isAuthor: true}])
+          setMessages(prev => [...prev, { content: message, author: user.username, isAuthor: true}])
         }
       } catch (error) {
         dispatch(setError({
