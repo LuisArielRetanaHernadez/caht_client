@@ -27,7 +27,7 @@ const Login = () => {
   const dispatch = useDispatch()
 
   const { isLogin } = useSelector((state) => state.user)
-  const { user } = useSelector((state) => state)
+  const { user } = useSelector((state) => state.user)
   
   const handleChange = (e) => {
     setValues({
@@ -127,7 +127,7 @@ const Login = () => {
         </div>
          
         </form>
-        {isLogin && <Navigate to="/" />}
+        {/* {isLogin && <Navigate to="/" />} */}
       </section>
     </>
   )
