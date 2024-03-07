@@ -11,14 +11,18 @@ import "../../index.css"
 // router-dom-v6
 import { Link, redirect } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { logoutAsync } from "../../features/user/userSlice";
+import { logout } from "../../features/user/userSlice";
+import manager from "../../utils/websocket";
 
 const Menu = () => {
 
+  const socket = manager.socket('/users')
+
   const dispatch = useDispatch()
 
-  const logout = () => {
-    dispatch(logoutAsync())
+  const logoutSeccion = () => {
+    dispatch(logout())
+    socket.disconnect()
     return redirect('/login')
   }
 
@@ -40,7 +44,7 @@ const Menu = () => {
 
               <ul className="menu__list menu__list-sub">
                 <li 
-                onClick={logout}
+                onClick={logoutSeccion}
                 className="menu__item menu__item--bg-blue">
                   <span>Logout</span>
                 </li>
