@@ -1,6 +1,9 @@
+import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useState } from "react"
 
 const Register = () => {
-
+  const [showPassword, setShowPassword] = useState(false)
   const datasFields = [
     {
       input: {
@@ -46,7 +49,7 @@ const Register = () => {
     },
     {
       input: {
-        clasName: '',
+        clasName: 'form__field--password',
         id: '',
         text: 'Password',
         type: 'password'
@@ -60,7 +63,7 @@ const Register = () => {
     },
     {
       input: {
-        clasName: '',
+        clasName: 'form__field--password',
         id: '',
         text: 'Confirm Password',
         type: 'password'
@@ -78,11 +81,28 @@ const Register = () => {
     <>
       <div key={index} className="form__field form__field--medium m-auto m-10p">
         <label className="form__field-title">{field.label.text}</label>
-        <input type={field.input.type}
-          placeholder={field.input.text}
-          className={field.input.clasName + 
-          ` form__input form__field-medim`}
-          />
+          { field.input.type === 'password' ?
+              <div className="form__field form__field--password">
+                <span
+                onClick={() => setShowPassword(!showPassword)} 
+                className="icon"
+                >
+                  {showPassword ? <FontAwesomeIcon icon={faEye}  /> 
+                  : <FontAwesomeIcon icon={faEyeSlash} /> }
+                </span>
+                <input 
+                  className="form__input form__input--color-blue"
+                  name="password"
+                  type={showPassword ? "password" : "text"}
+                />
+
+              </div> :
+              <input type={field.input.type}
+                placeholder={field.input.text}
+                className={field.input.clasName + 
+                ` form__input form__field-medim`}
+                />
+          }
       </div>
     </>
   ))
