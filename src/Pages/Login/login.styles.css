@@ -47,7 +47,6 @@
   font-size: 1.6rem;
   text-align: center;
   color: black;
-  filter: invert(1);
 }
 
 .form__field--password {

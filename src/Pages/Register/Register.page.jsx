@@ -76,13 +76,12 @@ const Register = () => {
 
   const fields = datasFields.map((field, index) => (
     <>
-      <div key={index} className="form__field">
-        <label>{field.label.text}</label>
+      <div key={index} className="form__field m-auto m-10p">
+        <label className="form__field-title">{field.label.text}</label>
         <input type={field.input.type}
           placeholder={field.input.text}
           className={field.input.clasName + 
-          ` form__field form__field-medim
-          form__field-center form__field-mt-15p`}
+          ` form__input form__field-medim`}
           />
       </div>
     </>
@@ -90,12 +89,12 @@ const Register = () => {
 
   return (
     <>
-      <section className="container container--center">
-        <form className="form form--shadow rounded-10p">
+      <section className="container container--center wrapped--menu ">
+        <form className="form form--shadow rounded-10">
           <div className="wrapped text-center">
-            <h2>Register</h2>
+            <h2 className="form__title">Register</h2>
             {fields}
-            <div>
+            <div className="m-10p">
               <button>Enviar</button>
             </div>
           </div>

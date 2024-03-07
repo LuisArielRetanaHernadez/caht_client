@@ -54,6 +54,10 @@ ul, ol, li {
   height: calc(100vh - 8vh);
 }
 
+.wrapped--menu-min-h {
+  min-width: calc(100vh - 8vh);
+}
+
 .wrapped__colum-flex {
   flex-direction: column;
 }
