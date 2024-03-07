@@ -47,6 +47,7 @@
   font-size: 1.6rem;
   text-align: center;
   color: black;
+  filter: invert();
 }
 
 .form__field--password {
@@ -71,6 +72,7 @@
 
 .form__field-title {
   color: var(--gray-pearl);
+  filter: invert();
 }
 
 .form__buttons {
