@@ -89,7 +89,3 @@
   color: var(--blue-bright);
   background-color: var(--bg-white);
 }
-
-.form__reset {
-  text-align: center;
-}
