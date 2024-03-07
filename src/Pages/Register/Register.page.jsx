@@ -94,8 +94,8 @@ const Register = () => {
           <div className="wrapped text-center">
             <h2 className="form__title">Register</h2>
             {fields}
-            <div className="m-10p">
-              <button className="button">Enviar</button>
+            <div className="w-50 m-auto m-10p">
+              <button className="w-full button">Enviar</button>
             </div>
           </div>
         </form>
