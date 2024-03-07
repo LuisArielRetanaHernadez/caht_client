@@ -108,6 +108,13 @@ const Chat = () => {
     socket.emit('send message', {message, to: id})
   }
 
+  useEffect(() => {
+    if (boxMessages.current) {
+      boxMessages.current.scrollTop = boxMessages.current.scrollHeight;
+      console.log(boxMessages.current.scrollHeight)
+    }
+  }, [boxMessages?.current?.scrollHeight, messages])
+
   const { isLogin } = useSelector((state) => state.user);
 
   if (!isLogin) {
