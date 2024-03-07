@@ -111,7 +111,6 @@ const Chat = () => {
   useEffect(() => {
     if (boxMessages.current) {
       boxMessages.current.scrollTop = boxMessages.current.scrollHeight;
-      console.log(boxMessages.current.scrollHeight)
     }
   }, [boxMessages?.current?.scrollHeight, messages])
 
