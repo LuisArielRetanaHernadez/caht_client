@@ -23,14 +23,7 @@
   bottom: 25%;
   right: 35%;
 }
-
-.form__title {
-  font-size: 1.6rem;
-  text-align: center;
-  color: black;
-  filter: invert(1);
-}
-
+/* ..... fields form ..... */
 .form__field {
   width: 100%;
   display: flex;
@@ -50,13 +43,18 @@
   margin-top: 15px;
 }
 
-.field__password {
-  width: 100%;
-  background-color: none;
-  display: flex;
+.form__title {
+  font-size: 1.6rem;
+  text-align: center;
+  color: black;
+  filter: invert(1);
+}
+
+.form__field--password {
   flex-direction: row-reverse;
 }
 
+/* ..... inputs fields form ..... */
 .form__input {
   width: 100%;
   padding: .2rem .1rem;

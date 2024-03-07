@@ -64,13 +64,13 @@ const Login = () => {
       <section className="container container--center wrapped--menu">
         
         <form className="form form--block form--shadow rounded-10" onSubmit={handleSubmit}>
-        <div className="text-center wrapped wrapped--space-flex wrapped--colum-flex" style={{position: "relative"}}>
+        <div className="text-center wrapped wrapped--space-flex wrapped--colum-flex position-relative">
           <h2 className="form__title">Login</h2>
 
           <div className="form__field
               form__field--medium
-              form__field--center-m
-              form__field--mt-15p 
+              m-auto
+              m-10p 
             ">
             <label className="form__field-title position-relative">Correo</label>
             <input
@@ -84,11 +84,11 @@ const Login = () => {
 
           <div className="form__field 
             form__field--medium
-            form__field--center-m
-            form__field--mt-15p 
+            m-auto
+            m-10p  
           ">
             <label className="form__field-title">Contraseña</label>
-            <div className="field__password">
+            <div className="form__field form__field--password">
               <span
               onClick={togglePassword} 
               className="icon"
