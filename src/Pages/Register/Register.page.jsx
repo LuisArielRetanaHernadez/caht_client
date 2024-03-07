@@ -95,7 +95,7 @@ const Register = () => {
             <h2 className="form__title">Register</h2>
             {fields}
             <div className="m-10p">
-              <button>Enviar</button>
+              <button className="button">Enviar</button>
             </div>
           </div>
         </form>
