@@ -23,8 +23,9 @@ const ItemChat = ({ id, name, messageLast, photo}) => {
 
 
   useEffect(() => {
+    socket.emit('users online')
+    
     socket.on('users online', (data) => {
-
       const isOnline = data.some(user => {
         return id === user._id;
       })
@@ -34,8 +35,9 @@ const ItemChat = ({ id, name, messageLast, photo}) => {
 
     return () => {
       setUserOnline(false)
+      socket.off('users online')
     }
-  },[id])
+  }, [id, socket])
 
   const onContact = () => {
     dispatch(selectContact({id, contact: false, name}))
