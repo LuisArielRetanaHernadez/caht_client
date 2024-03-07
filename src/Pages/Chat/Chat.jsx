@@ -24,12 +24,12 @@ const Chat = () => {
 
   const { id } = useParams()
 
+  const { user } = useSelector((state) => state.user);
+
   const [messages, setMessages] = useState([])
   const [message, setMessage] = useState('')
 
   const dispatch = useDispatch()
-
-  const { user } = useSelector((state) => state.user);
 
   useEffect(() => {
     const getMessages = async () => {
@@ -37,10 +37,8 @@ const Chat = () => {
       try {
 
         const messagesDB = await Axios.get(`/messages/${id}`)
-        console.log(messagesDB)
 
         if (messagesDB.status === 200) {
-          console.log(messagesDB.data.messages)
           setMessages(messagesDB.data.data.messages)
         }
       } catch (error) {
@@ -51,7 +49,6 @@ const Chat = () => {
           isError: true
         }))
       }
-
     }
 
     getMessages()
@@ -59,8 +56,14 @@ const Chat = () => {
 
   useEffect(() => {
     socket.on('message', (data) => {
-      
-      setMessages(prev => [...prev, { content: data.message, author: data.username}])
+
+      setMessages(prev => [...prev, { 
+
+        content: data.message,
+          author: {
+            username: data.username,
+          }
+      }])
     })
 
     return () => {
@@ -74,16 +77,22 @@ const Chat = () => {
     if (!message) return
 
     const sendNewMessage = async () => {
+      
       try {
+
         const newMessage = await Axios.post('/messages/save', {
           message,
           id
         })
 
         if (newMessage.response.status === 204) {
-          setMessages(prev => [...prev, { content: message, author: user.username}])
+          setMessages(prev => [...prev, { 
+            content: message,
+            author: { username: user.username } 
+          }])
         }
       } catch (error) {
+        
         dispatch(setError({
           message: error.data.message,
           statusCode: error.status,
@@ -111,7 +120,7 @@ const Chat = () => {
       <UserPreview />
 
         {messages.map((m, i) => (    
-          <Message key={i} message={m.content} author={m.author} />
+          <Message key={i} content={m.content} author={m.author} />
         )) ?? "No hay mensajes"}
         
       </div>
