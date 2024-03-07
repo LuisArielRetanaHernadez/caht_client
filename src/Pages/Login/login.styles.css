@@ -1,27 +1,27 @@
+/* ...... formulario container del login ..... */
 .form {
   width: 35vw;
-  height: 60vh;
+  max-width: 500px;
+  height: auto;
   padding: .6rem;
   overflow: hidden;
   background-color: var(--bg-white);
   position: relative;
 }
+
 .form--shadow {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.form--block {
-  position: relative;
-}
 .form--block::before {
   content: ' ';
   width: inherit;
-  height: inherit;
-  border-radius: inherit;
+  height: 100%;
+  border-radius: 40px;
   background-color: var(--bg-blue-bright);
   position: absolute;
-  bottom: 20%;
-  right: 25%;
+  bottom: 25%;
+  right: 35%;
 }
 
 .form__title {
