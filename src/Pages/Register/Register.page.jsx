@@ -76,7 +76,7 @@ const Register = () => {
 
   const fields = datasFields.map((field, index) => (
     <>
-      <div key={index} className="form__field m-auto m-10p">
+      <div key={index} className="form__field form__field--medium m-auto m-10p">
         <label className="form__field-title">{field.label.text}</label>
         <input type={field.input.type}
           placeholder={field.input.text}
