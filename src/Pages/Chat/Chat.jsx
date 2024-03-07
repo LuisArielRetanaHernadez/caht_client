@@ -1,5 +1,5 @@
 // react hooks
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 // router-dom
 import { Navigate, useParams } from "react-router-dom"
@@ -28,6 +28,8 @@ const Chat = () => {
 
   const [messages, setMessages] = useState([])
   const [message, setMessage] = useState('')
+
+  const boxMessages = useRef(null)
 
   const dispatch = useDispatch()
 
@@ -114,7 +116,7 @@ const Chat = () => {
 
   return (
     <div className="chat">
-      <div className="chat__messages position-relative">
+      <div ref={boxMessages} className="chat__messages position-relative">
 
       <UserPreview />
 
