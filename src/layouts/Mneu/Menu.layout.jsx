@@ -23,6 +23,7 @@ const Menu = () => {
   const logoutSeccion = () => {
     dispatch(logout())
     socket.disconnect()
+    localStorage.removeItem('user')
     return redirect('/login')
   }
 
