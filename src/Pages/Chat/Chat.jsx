@@ -84,8 +84,7 @@ const Chat = () => {
           message,
           id
         })
-
-        if (newMessage.response.status === 204) {
+        if (newMessage.status === 204) {
           setMessages(prev => [...prev, { 
             content: message,
             author: { username: user.username } 
