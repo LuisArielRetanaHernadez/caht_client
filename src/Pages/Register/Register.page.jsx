@@ -90,8 +90,8 @@ const Register = () => {
   return (
     <>
       <section className="container container--center wrapped--menu ">
-        <form className="form form--shadow rounded-10">
-          <div className="wrapped text-center">
+        <form className="form form--shadow form--block positon-relative rounded-10">
+          <div className="wrapped text-center position-relative">
             <h2 className="form__title">Register</h2>
             {fields}
             <div className="w-50 m-auto m-10p">
