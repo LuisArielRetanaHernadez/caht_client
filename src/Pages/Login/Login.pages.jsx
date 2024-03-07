@@ -62,6 +62,7 @@ const Login = () => {
   return (
     <>
       <section className="container container--center wrapped--menu">
+        
         <form className="form form--block form--shadow rounded-10p" onSubmit={handleSubmit}>
         <div className="text-center wrapped wrapped--space-flex wrapped--colum-flex" style={{position: "relative"}}>
           <h2 className="form__title">Login</h2>
@@ -86,9 +87,7 @@ const Login = () => {
             form__field--center-m
             form__field--mt-15p 
           ">
-
             <label className="form__field-title">Contraseña</label>
-            
             <div className="field__password">
               <span
               onClick={togglePassword} 
@@ -122,7 +121,9 @@ const Login = () => {
               Olvidaste tu contraseña?
             </Link>
           </div>
+
           <span>Or</span>
+          
           <Socials />
         </div>
          
