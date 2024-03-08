@@ -1,6 +1,7 @@
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false)
@@ -116,6 +117,7 @@ const Register = () => {
             {fields}
             <div className="w-50 m-auto m-10p">
               <button className="w-full button">Enviar</button>
+              <Link to='/login'>Tienes una cuenta ya?</Link>
             </div>
           </div>
         </form>
