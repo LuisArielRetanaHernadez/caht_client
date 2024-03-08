@@ -124,6 +124,20 @@ const Register = () => {
     confirmPassword: '',
   })
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(values)
+    setValues({
+      name: '',
+      lastName: '',
+      username: '',
+      age: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+    })
+  }
+
   const fields = datasFields.map((field, index) => (
     <>
       <div key={index} className="form__field form__field--medium m-auto m-10p">
