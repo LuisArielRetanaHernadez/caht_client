@@ -38,6 +38,36 @@ const datasFields = [
     input: {
       clasName: '',
       id: '',
+      text: 'Username',
+      type: 'text',
+      name: 'username'
+    },
+    label: {
+      clasName: '',
+      id: '',
+      text: 'Username',
+      for: '',
+    }
+  },
+  {
+    input: {
+      clasName: '',
+      id: '',
+      text: 'Email',
+      type: 'text',
+      name: 'email'
+    },
+    label: {
+      clasName: '',
+      id: '',
+      text: 'Email',
+      for: '',
+    }
+  },
+  {
+    input: {
+      clasName: '',
+      id: '',
       text: 'Age',
       type: 'number',
       name: 'age'
