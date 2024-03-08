@@ -7,7 +7,8 @@ const initialState = {
   token: "",
   user: {},
   usersFind: [],
-  rol: "standar"
+  rol: "standar",
+  status: 'fulfilled'
 }
 
 export const loginAsync = createAsyncThunk(
