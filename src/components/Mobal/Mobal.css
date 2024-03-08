@@ -1,0 +1,8 @@
+.mobal { 
+  width: 30%;
+  max-width: 300px;
+  background-color: var(--blue-bright);
+  position: absolute;
+  transform: translateX(50%);
+  left: 50%;
+}
