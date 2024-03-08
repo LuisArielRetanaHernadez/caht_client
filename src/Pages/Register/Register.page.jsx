@@ -78,6 +78,15 @@ const datasFields = [
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false)
+  const [values, setValues] = useState({
+    name: '',
+    lastName: '',
+    username: '',
+    age: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  })
 
   const fields = datasFields.map((field, index) => (
     <>
