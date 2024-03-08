@@ -155,7 +155,7 @@ const Register = () => {
 
   return (
     <>
-      <section className="container container--center wrapped--menu ">
+      <section className="container container--center wrapped--menu-min-h ">
         <form className="form form--shadow form--block positon-relative rounded-10">
           <div className="wrapped text-center position-relative">
             <h2 className="form__title">Register</h2>
