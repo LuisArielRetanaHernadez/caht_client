@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState } from "react"
@@ -140,6 +141,9 @@ const Register = () => {
                   className="form__input form__input--color-blue"
                   name="password"
                   type={showPassword ? "password" : "text"}
+                  placeholder={field.input.text}
+                  name={field.input.name}
+                  onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })}
                 />
 
               </div> :
@@ -147,6 +151,8 @@ const Register = () => {
                 placeholder={field.input.text}
                 className={field.input.clasName + 
                 ` form__input form__field-medim`}
+                name={field.input.name}
+                onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })}
                 />
           }
       </div>
