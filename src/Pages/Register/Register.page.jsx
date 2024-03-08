@@ -9,7 +9,8 @@ const datasFields = [
       clasName: '',
       id: '',
       text: 'name',
-      type: 'text'
+      type: 'text',
+      name: 'name'
     },
     label: {
       clasName: '',
@@ -23,7 +24,8 @@ const datasFields = [
       clasName: '',
       id: '',
       text: 'Last Name',
-      type: 'text'
+      type: 'text',
+      name: 'lastName'
     },
     label: {
       clasName: '',
@@ -37,7 +39,8 @@ const datasFields = [
       clasName: '',
       id: '',
       text: 'Age',
-      type: 'number'
+      type: 'number',
+      name: 'age'
     },
     label: {
       clasName: '',
@@ -51,7 +54,8 @@ const datasFields = [
       clasName: 'form__field--password',
       id: '',
       text: 'Password',
-      type: 'password'
+      type: 'password',
+      name: 'password'
     },
     label: {
       clasName: '',
@@ -65,7 +69,8 @@ const datasFields = [
       clasName: 'form__field--password',
       id: '',
       text: 'Confirm Password',
-      type: 'password'
+      type: 'password',
+      name: 'confirmPassword'
     },
     label: {
       clasName: '',
