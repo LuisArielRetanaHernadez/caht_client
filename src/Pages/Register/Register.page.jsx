@@ -173,10 +173,9 @@ const Register = () => {
                   name="password"
                   type={showPassword ? "password" : "text"}
                   placeholder={field.input.text}
-                  name={field.input.name}
+                  // name={field.input.name}
                   onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })}
                 />
-
               </div> :
               <input type={field.input.type}
                 placeholder={field.input.text}
@@ -186,13 +185,14 @@ const Register = () => {
                 onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })}
                 />
           }
+          <span>Error</span>
       </div>
     </>
   ))
 
   return (
     <>
-      <section className="w-full container container--center wrapped--menu-min-h ">
+      <section className="w-full h-auto container container--center wrapped--menu-min-h  ">
         <form onSubmit={handleSubmit} className="form form--shadow form--block positon-relative rounded-10">
           <div className="wrapped text-center position-relative">
             <h2 className="form__title">Register</h2>

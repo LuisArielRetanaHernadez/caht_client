@@ -55,7 +55,7 @@ ul, ol, li {
 }
 
 .wrapped--menu-min-h {
-  min-width: calc(100vh - 8vh);
+  min-height: calc(100vh - 8vh);
 }
 
 .wrapped__colum-flex {
@@ -162,6 +162,7 @@ ul, ol, li {
 
 /* .... height .... */
 .h-full { height: 100%; }
+.h-auto { height: auto; }
 
 /* .... display .... */
 .flex { display: flex; }
