@@ -121,7 +121,7 @@ const Register = () => {
     name: '',
     lastName: '',
     username: '',
-    age: '',
+    age: 0,
     email: '',
     password: '',
     confirmPassword: '',
