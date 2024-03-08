@@ -192,7 +192,7 @@ const Register = () => {
 
   return (
     <>
-      <section className="w-full h-auto container container--center wrapped--menu-min-h  ">
+      <section className="w-full h-auto p-1rem container container--center wrapped--menu-min-h  ">
         <form onSubmit={handleSubmit} className="form form--shadow form--block positon-relative rounded-10">
           <div className="wrapped text-center position-relative">
             <h2 className="form__title">Register</h2>
