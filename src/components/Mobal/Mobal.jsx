@@ -1,12 +1,12 @@
 const Mobal = () => {
 
   return (
-    <div>
-      <h2>Title mobal</h2>
-      <p>Content</p>
-      <div>
-        <button>Close</button>
-        <button>Acepta</button>
+    <div className="mobal">
+      <h2 className="mobal__title">Title mobal</h2>
+      <p className="mobal__text">Content</p>
+      <div className="mobal__buttons">
+        <button className="button">Close</button>
+        <button className="button">Acepta</button>
       </div>
     </div>
   )
