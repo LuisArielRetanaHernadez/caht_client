@@ -6,7 +6,7 @@ const login = async (credentials) => {
 }
 
 const register = (...data) => {
-  return axios.post('/register', ...data)
+  return axios.post('/users/register', ...data)
 }
 
 const logout = async () => {

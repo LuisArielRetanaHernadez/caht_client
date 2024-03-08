@@ -116,6 +116,7 @@ const datasFields = [
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false)
+  const [typePassword, setTypePassword] = useState('password')
   const [values, setValues] = useState({
     name: '',
     lastName: '',
@@ -146,6 +147,11 @@ const Register = () => {
   }
 
   useEffect(() => {
+    if (showPassword) setTypePassword('text')
+    else setTypePassword('password')
+  }, [showPassword])
+
+  useEffect(() => {
     if (isLogin) {
       localStorage.setItem("user", JSON.stringify(user))
     }
@@ -156,38 +162,30 @@ const Register = () => {
   }
 
   const fields = datasFields.map((field, index) => (
-    <>
-      <div key={index} className="form__field form__field--medium m-auto m-10p">
-        <label className="form__field-title">{field.label.text}</label>
-          { field.input.type === 'password' ?
-              <div className="form__field form__field--password">
-                <span
-                onClick={() => setShowPassword(!showPassword)} 
-                className="icon"
-                >
-                  {showPassword ? <FontAwesomeIcon icon={faEye}  /> 
-                  : <FontAwesomeIcon icon={faEyeSlash} /> }
-                </span>
-                <input 
-                  className="form__input form__input--color-blue"
-                  name="password"
-                  type={showPassword ? "password" : "text"}
-                  placeholder={field.input.text}
-                  // name={field.input.name}
-                  onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })}
-                />
-              </div> :
-              <input type={field.input.type}
-                placeholder={field.input.text}
-                className={field.input.clasName + 
-                ` form__input form__field-medim`}
-                name={field.input.name}
-                onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })}
-                />
-          }
-          <span>Error</span>
-      </div>
-    </>
+    <div key={index} className="form__field form__field--medium m-auto m-10p">
+      <label className="form__field-title">{field.label.text}</label>
+        <div className="form__field form__field--password">
+        {
+          field.input.type === 'password' ? 
+            <span
+              onClick={() => setShowPassword(!showPassword)} 
+              className="icon"
+              >
+              {showPassword ? <FontAwesomeIcon icon={faEye}  /> 
+              : <FontAwesomeIcon icon={faEyeSlash} /> }
+            </span>
+          : ''
+        }
+
+          <input
+            placeholder={field.input.text}
+            className={field.input.clasName + ` form__input form__field-medim`}
+            type={field.input.type === 'password' ? typePassword : field.input.type}
+            name={field.input.name}
+            onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })} 
+          />
+        </div> 
+    </div>
   ))
 
   return (
