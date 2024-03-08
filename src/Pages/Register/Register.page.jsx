@@ -1,8 +1,10 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { Link, Navigate } from "react-router-dom"
+import { useDispatch, useSelector } from 'react-redux'
+import { registerAsync } from "../../features/user/userSlice"
 
 const datasFields = [
   {
@@ -124,9 +126,14 @@ const Register = () => {
     confirmPassword: '',
   })
 
+  const { isLogin } = useSelector(state => state.user)
+  const { user } = useSelector(state => state)
+
+  const dispatch = useDispatch()
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(values)
+    dispatch(registerAsync(values))
     setValues({
       name: '',
       lastName: '',
@@ -136,6 +143,16 @@ const Register = () => {
       password: '',
       confirmPassword: '',
     })
+  }
+
+  useEffect(() => {
+    if (isLogin) {
+      localStorage.setItem("user", JSON.stringify(user))
+    }
+  }, [isLogin, user])
+
+  if (isLogin) {
+    return <Navigate to="/" />
   }
 
   const fields = datasFields.map((field, index) => (
