@@ -3,80 +3,81 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 
+const datasFields = [
+  {
+    input: {
+      clasName: '',
+      id: '',
+      text: 'name',
+      type: 'text'
+    },
+    label: {
+      clasName: '',
+      id: '',
+      text: 'Name',
+      for: '',
+    }
+  },
+  {
+    input: {
+      clasName: '',
+      id: '',
+      text: 'Last Name',
+      type: 'text'
+    },
+    label: {
+      clasName: '',
+      id: '',
+      text: 'Last Name',
+      for: '',
+    }
+  },
+  {
+    input: {
+      clasName: '',
+      id: '',
+      text: 'Age',
+      type: 'number'
+    },
+    label: {
+      clasName: '',
+      id: '',
+      text: 'Age',
+      for: '',
+    }
+  },
+  {
+    input: {
+      clasName: 'form__field--password',
+      id: '',
+      text: 'Password',
+      type: 'password'
+    },
+    label: {
+      clasName: '',
+      id: '',
+      text: 'Password',
+      for: '',
+    }
+  },
+  {
+    input: {
+      clasName: 'form__field--password',
+      id: '',
+      text: 'Confirm Password',
+      type: 'password'
+    },
+    label: {
+      clasName: '',
+      id: '',
+      text: 'Confirm Password',
+      for: '',
+    }
+  },
+]
+
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false)
-  const datasFields = [
-    {
-      input: {
-        clasName: '',
-        id: '',
-        text: 'name',
-        type: 'text'
-      },
-      label: {
-        clasName: '',
-        id: '',
-        text: 'Name',
-        for: '',
-      }
-    },
-    {
-      input: {
-        clasName: '',
-        id: '',
-        text: 'Last Name',
-        type: 'text'
-      },
-      label: {
-        clasName: '',
-        id: '',
-        text: 'Last Name',
-        for: '',
-      }
-    },
-    {
-      input: {
-        clasName: '',
-        id: '',
-        text: 'Age',
-        type: 'number'
-      },
-      label: {
-        clasName: '',
-        id: '',
-        text: 'Age',
-        for: '',
-      }
-    },
-    {
-      input: {
-        clasName: 'form__field--password',
-        id: '',
-        text: 'Password',
-        type: 'password'
-      },
-      label: {
-        clasName: '',
-        id: '',
-        text: 'Password',
-        for: '',
-      }
-    },
-    {
-      input: {
-        clasName: 'form__field--password',
-        id: '',
-        text: 'Confirm Password',
-        type: 'password'
-      },
-      label: {
-        clasName: '',
-        id: '',
-        text: 'Confirm Password',
-        for: '',
-      }
-    },
-  ]
 
   const fields = datasFields.map((field, index) => (
     <>
