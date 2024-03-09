@@ -17,3 +17,8 @@
 .mobal__text {
   font-weight: 600;
 }
+
+.mobal__buttons { 
+  display: inline-flex;
+  gap: 10px;
+}
