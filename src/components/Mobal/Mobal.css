@@ -13,3 +13,7 @@
   color: var(--white);
   font-size: 1.3rem;
 }
+
+.mobal__text {
+  font-weight: 600;
+}
