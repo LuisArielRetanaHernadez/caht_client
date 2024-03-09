@@ -160,6 +160,10 @@ ul, ol, li {
 
 .w-50 { width: 50%; }
 
+/* ..... text ..... */
+
+text-center { text-align: center; }
+
 /* .... height .... */
 .h-full { height: 100%; }
 .h-auto { height: auto; }
