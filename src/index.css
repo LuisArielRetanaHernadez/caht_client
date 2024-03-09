@@ -143,9 +143,9 @@ ul, ol, li {
   color: var(--bg-blue-indigo);
 }
 
-.buton--gray-teel {
+.button--gray-teel {
   background-color: var(--gray-teel);
-  color: var(--bg-blue-bright);
+  color: var(--white);
 }
 
 /* .button--paddign-x {
