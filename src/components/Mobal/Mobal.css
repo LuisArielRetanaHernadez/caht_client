@@ -1,8 +1,10 @@
 .mobal { 
   width: 30%;
   max-width: 300px;
-  background-color: var(--blue-bright);
-  position: absolute;
-  transform: translateX(50%);
+  background-color: var(--bg-blue-indigo);
+  position: fixed;
+  transform: translateX(-50%);
   left: 50%;
+  top: 20px;
+  z-index: 10;
 }
