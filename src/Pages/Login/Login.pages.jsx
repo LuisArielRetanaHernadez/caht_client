@@ -70,7 +70,7 @@ const Login = () => {
           <div className="form__field
               form__field--medium
               m-auto
-              m-10p 
+              mt-20 
             ">
             <label className="form__field-title position-relative">Correo</label>
             <input
@@ -85,7 +85,7 @@ const Login = () => {
           <div className="form__field 
             form__field--medium
             m-auto
-            m-10p  
+            mt-20  
           ">
             <label className="form__field-title">Contraseña</label>
             <div className="form__field form__field--password">
@@ -107,7 +107,7 @@ const Login = () => {
             </div>
           </div>
 
-          <div className="form__buttons m-10p">
+          <div className="form__buttons mt-20">
             <button type='submit' className="button button--hover-color-pear rounded-10p">
               Iniciar
             </button>
@@ -116,7 +116,7 @@ const Login = () => {
             </Link>
           </div>
 
-          <div className="form__reset m-10p">
+          <div className="form__reset mt-20">
             <Link to="/forgot-password" className="form__link">
               Olvidaste tu contraseña?
             </Link>

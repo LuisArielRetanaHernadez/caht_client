@@ -162,7 +162,7 @@ const Register = () => {
   }
 
   const fields = datasFields.map((field, index) => (
-    <div key={index} className="form__field form__field--medium m-auto m-10p">
+    <div key={index} className="form__field form__field--medium m-auto mt-20">
       <label className="form__field-title">{field.label.text}</label>
         <div className="form__field form__field--password">
         {
@@ -195,7 +195,7 @@ const Register = () => {
           <div className="wrapped text-center position-relative">
             <h2 className="form__title">Register</h2>
             {fields}
-            <div className="w-50 m-auto m-10p">
+            <div className="w-50 m-auto mt-20">
               <button className="w-full button">Enviar</button>
               <Link to='/login'>Tienes una cuenta ya?</Link>
             </div>
