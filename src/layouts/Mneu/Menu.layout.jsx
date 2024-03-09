@@ -13,6 +13,7 @@ import { Link, redirect } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from "../../features/user/userSlice";
 import manager from "../../utils/websocket";
+import Mobal from "../../components/Mobal/Mobal";
 
 const Menu = () => {
 
@@ -29,6 +30,7 @@ const Menu = () => {
 
   return (
     <>
+    <Mobal />
       <header className="menu">
         <div className="ml-5rem">
           <Logo />
