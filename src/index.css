@@ -135,6 +135,7 @@ ul, ol, li {
   color: #ffffff;
   text-decoration: none;
   background-color: #1F4172;
+  cursor: pointer;
 }
 
 .button--white {
