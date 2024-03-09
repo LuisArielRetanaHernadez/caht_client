@@ -143,6 +143,11 @@ ul, ol, li {
   color: var(--bg-blue-indigo);
 }
 
+.buton--gray-teel {
+  background-color: var(--gray-teel);
+  color: var(--bg-blue-bright);
+}
+
 /* .button--paddign-x {
 
 } */
