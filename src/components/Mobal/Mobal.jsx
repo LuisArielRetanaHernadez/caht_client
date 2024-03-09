@@ -1,3 +1,5 @@
+import './Mobal.css'
+
 const Mobal = () => {
 
   return (
