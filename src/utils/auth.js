@@ -5,8 +5,11 @@ const login = async (credentials) => {
   .then(res => res.data)
 }
 
-const register = (...data) => {
-  return axios.post('/users/register', ...data)
+const register = async (...data) => {
+  const user = await axios.post('/users/register', ...data)
+    .then(res => res.data)
+    .catch(err => err)
+  return user
 }
 
 const logout = async () => {
