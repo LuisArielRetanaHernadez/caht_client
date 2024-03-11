@@ -103,7 +103,7 @@ const datasFields = [
       id: '',
       text: 'Confirm Password',
       type: 'password',
-      name: 'confirmPassword'
+      name: 'passwordConfirm'
     },
     label: {
       clasName: '',
@@ -124,7 +124,7 @@ const Register = () => {
     age: 0,
     email: '',
     password: '',
-    confirmPassword: '',
+    passwordConfirm: '',
   })
 
   const { isLogin } = useSelector(state => state.user)
@@ -142,7 +142,7 @@ const Register = () => {
       age: '',
       email: '',
       password: '',
-      confirmPassword: '',
+      passwordConfirm: '',
     })
   }
 
