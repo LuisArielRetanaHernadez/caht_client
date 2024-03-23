@@ -1,6 +1,6 @@
 .layout-list-chat {
   display: flex;
-  background-color: #fff;
+  background-color: var(--bg-white);
 }
 
 .layout-list-chat--list {
