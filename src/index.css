@@ -159,6 +159,10 @@ ul, ol, li {
   outline: none;
 }
 
+.input--search {
+  background-color: var(--gray-pearl);
+}
+
 /* .... background .... */
 
 .bg-gradient {
