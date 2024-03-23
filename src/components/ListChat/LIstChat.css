@@ -10,7 +10,7 @@
 
 .list-chat__item { 
   width: 100%;
-  background-color: #041216;
+  background-color: var(--bg-blue-bright);
   border-radius: 10px;
   position: relative;
 }
@@ -46,12 +46,12 @@
 .list-chat__name {
   font-weight: 600;
   letter-spacing: 1px;
-  color: #27374D;
+  color: var(--white);
 }
 
 .list-chat__message {
   width: 140px;
-  color: #6B728E;
+  color: var(--black);
   overflow: hidden;
   text-wrap: nowrap;
   text-overflow: ellipsis;
