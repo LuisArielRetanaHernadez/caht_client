@@ -33,6 +33,14 @@ const Chat = () => {
 
   const dispatch = useDispatch()
 
+  socket.on('connect_error', err => {
+    dispatch(setError({
+      message: err.message,
+      statusCode: err.code,
+      setError: true
+    }))
+  })
+
   useEffect(() => {
     const getMessages = async () => {
 
