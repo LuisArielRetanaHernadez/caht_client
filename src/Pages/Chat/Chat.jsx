@@ -44,10 +44,9 @@ const Chat = () => {
           setMessages(messagesDB.data.data.messages)
         }
       } catch (error) {
-
         dispatch(setError({
           message: error.data.message,
-          statusCode: error.status,
+          statusCode: error.response.status,
           isError: true
         }))
       }
