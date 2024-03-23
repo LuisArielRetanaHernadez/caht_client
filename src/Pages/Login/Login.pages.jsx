@@ -62,14 +62,15 @@ const Login = () => {
   return (
     <>
       <section className="container container--center wrapped--menu">
-        <form className="form form--block form--shadow rounded-10p" onSubmit={handleSubmit}>
-        <div className="text-center wrapped wrapped--space-flex wrapped--colum-flex" style={{position: "relative"}}>
+        
+        <form className="form form--block form--shadow rounded-10" onSubmit={handleSubmit}>
+        <div className="text-center wrapped wrapped--space-flex wrapped--colum-flex position-relative">
           <h2 className="form__title">Login</h2>
 
           <div className="form__field
               form__field--medium
-              form__field--center-m
-              form__field--mt-15p 
+              m-auto
+              mt-20 
             ">
             <label className="form__field-title position-relative">Correo</label>
             <input
@@ -83,13 +84,11 @@ const Login = () => {
 
           <div className="form__field 
             form__field--medium
-            form__field--center-m
-            form__field--mt-15p 
+            m-auto
+            mt-20  
           ">
-
             <label className="form__field-title">Contraseña</label>
-            
-            <div className="field__password">
+            <div className="form__field form__field--password">
               <span
               onClick={togglePassword} 
               className="icon"
@@ -108,7 +107,7 @@ const Login = () => {
             </div>
           </div>
 
-          <div className="form__buttons m-10p">
+          <div className="form__buttons mt-20">
             <button type='submit' className="button button--hover-color-pear rounded-10p">
               Iniciar
             </button>
@@ -117,12 +116,14 @@ const Login = () => {
             </Link>
           </div>
 
-          <div className="form__reset m-10p">
+          <div className="form__reset mt-20">
             <Link to="/forgot-password" className="form__link">
               Olvidaste tu contraseña?
             </Link>
           </div>
+
           <span>Or</span>
+
           <Socials />
         </div>
          

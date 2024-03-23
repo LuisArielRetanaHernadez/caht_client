@@ -1,13 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 // utils
-import { login } from "../../utils/Auth";
+import { login, register } from "../../utils/Auth";
 
 const initialState = {
   isLogin: false,
   token: "",
   user: {},
   usersFind: [],
-  rol: "standar"
+  rol: "standar",
+  status: 'fulfilled'
 }
 
 export const loginAsync = createAsyncThunk(
@@ -19,6 +20,18 @@ export const loginAsync = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue()
     }
+  }
+)
+
+export const registerAsync = createAsyncThunk(
+  "user/register",
+  async (data, thunkAPI) => {
+    try {
+      const response = await register(data)
+      return response
+    } catch (error) {
+      return thunkAPI.rejectWithValue()
+    } 
   }
 )
 
@@ -58,6 +71,19 @@ const userSlice = createSlice({
       state.status = "rejected"
     })
     .addCase(loginAsync.fulfilled, (state, action) => {
+      state.status = "fulfilled"
+      state.isLogin = true
+      state.token = action.payload.data.token
+      state.user = action.payload.data.user
+    })
+
+    .addCase(registerAsync.pending, state => {
+      state.status = "loading"
+    })
+    .addCase(registerAsync.rejected, state => {
+      state.status = "rejected"
+    })
+    .addCase(registerAsync.fulfilled, (state, action) => {
       state.status = "fulfilled"
       state.isLogin = true
       state.token = action.payload.data.token

@@ -1,0 +1,29 @@
+.mobal { 
+  width: 30%;
+  max-width: 300px;
+  background-color: var(--bg-blue-indigo);
+  position: fixed;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 20px;
+  z-index: 10;
+  transition: all .4s;  
+}
+
+.mobal--close {
+  top: -100%;
+}
+
+.mobal__title {
+  color: var(--white);
+  font-size: 1.3rem;
+}
+
+.mobal__text {
+  font-weight: 600;
+}
+
+.mobal__buttons { 
+  display: inline-flex;
+  gap: 10px;
+}

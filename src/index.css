@@ -3,11 +3,13 @@
   /* colors */
   --blue-bright: #2563eb;
   --white: #ffffff;
+  --black: #000000;
   --gray-pearl: #f1f5f9;
   --gray-teel: #6e7886;
   /* background */
   --bg-blue-bright: #2563eb;
   --bg-white: #ffffff;
+  --bg-black: #000000;
   --bg-blue-indigo: #1F4172;
   /* font-family */
   --font-family-heebo: "Heebo";
@@ -31,6 +33,7 @@ ul, ol, li {
 }
 
 /* class globals */
+
 /* .... container .... */
 .container {
   width: 100vw;
@@ -52,6 +55,10 @@ ul, ol, li {
 
 .wrapped--menu {
   height: calc(100vh - 8vh);
+}
+
+.wrapped--menu-min-h {
+  min-height: calc(100vh - 8vh);
 }
 
 .wrapped__colum-flex {
@@ -131,6 +138,17 @@ ul, ol, li {
   color: #ffffff;
   text-decoration: none;
   background-color: #1F4172;
+  cursor: pointer;
+}
+
+.button--white {
+  background-color: var(--bg-white);
+  color: var(--bg-blue-indigo);
+}
+
+.button--gray-teel {
+  background-color: var(--gray-teel);
+  color: var(--white);
 }
 
 /* .... input .... */
@@ -148,59 +166,109 @@ ul, ol, li {
 }
 
 /* .... width .... */
+
+.w-full { width: 100%; }
+
 .w-25 { width: 25%; }
 
 .w-30 { width: 30%; }
 
+.w-50 { width: 50%; }
+
+/* ..... text ..... */
+
+text-center { text-align: center; }
+
 /* .... height .... */
+
 .h-full { height: 100%; }
 
+.h-auto { height: auto; }
+
 /* .... display .... */
+
 .flex { display: flex; }
 
 .grid { display: grid; }
 
-/* '...... flex-frow ...... */
-.flex-grow-1 { flex-grow: 1; }
-
 /* ........... flex .......... */
+
 .flex-1 { flex: 1; }
 
+/* '...... flex-frow ...... */
+
+.flex-grow-1 { flex-grow: 1; }
+
 /* .... position .... */
+
 .position-relative { position: relative; }
 
 .position-absolute { position: absolute; }
 
 /* ........ right ...... */
+
 r-0 { right: 0%; }
 
-
 /* .... z-index .... */
+
 .z-index { z-index: 10; }
 
 /* .... margin .... */
+
 .m-auto { margin:  auto; }
 
-.m-10p { margin-top: 20px; }
+/* ----- maring-top ----- */
+
+.mt-20 { margin-top: 20px; }
+
+/* ----- margin-right ----- */
 
 .mr-5rem { margin-right: 5rem; }
 
+/* ----- marign-left ---- */
+
 .ml-5rem { margin-left: 5rem; }
+
+/* ---- margin-bottom ---- */
 
 .mb-1rem { margin-bottom: 1rem; }
 
 /* .... padding .... */
+
 .p-0 { padding: 0px; }
+
+.p-5 { padding: 5px; }
 
 .p-1rem { padding: 1rem; }
 
+/* ----- padding-bottom ----- */
+
+.pb-5 { padding-bottom: 5px; }
+
+/* ------ padding eje X --------*/
+
+.px-5 { 
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* ------ padding eje X --------*/
+
+.py-5 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 /* .... text-aling .... */
+
 .text-center { text-align: center; }
 
 /* .... otuline .... */
+
 .outline-none { outline: none; }
 
 /* .... border-radious .... */
+
 .rounded-10 { border-radius: 10px; }
 
 /* ...... cursor ...... */

@@ -1,36 +1,29 @@
+/* ...... formulario container del login ..... */
 .form {
   width: 35vw;
-  height: 60vh;
+  max-width: 500px;
+  height: auto;
   padding: .6rem;
   overflow: hidden;
   background-color: var(--bg-white);
   position: relative;
 }
+
 .form--shadow {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.form--block {
-  position: relative;
-}
 .form--block::before {
   content: ' ';
   width: inherit;
-  height: inherit;
-  border-radius: inherit;
+  height: 100%;
+  border-radius: 40px;
   background-color: var(--bg-blue-bright);
   position: absolute;
-  bottom: 20%;
-  right: 25%;
+  bottom: 25%;
+  right: 35%;
 }
-
-.form__title {
-  font-size: 1.6rem;
-  text-align: center;
-  color: black;
-  filter: invert(1);
-}
-
+/* ..... fields form ..... */
 .form__field {
   width: 100%;
   display: flex;
@@ -50,13 +43,18 @@
   margin-top: 15px;
 }
 
-.field__password {
-  width: 100%;
-  background-color: none;
-  display: flex;
+.form__title {
+  font-size: 1.6rem;
+  text-align: center;
+  color: black;
+  filter: invert();
+}
+
+.form__field--password {
   flex-direction: row-reverse;
 }
 
+/* ..... inputs fields form ..... */
 .form__input {
   width: 100%;
   padding: .2rem .1rem;
@@ -74,6 +72,7 @@
 
 .form__field-title {
   color: var(--gray-pearl);
+  filter: invert();
 }
 
 .form__buttons {
@@ -90,8 +89,4 @@
 .button--hover-color-pear:hover {
   color: var(--blue-bright);
   background-color: var(--bg-white);
-}
-
-.form__reset {
-  text-align: center;
 }
