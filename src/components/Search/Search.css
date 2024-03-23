@@ -17,6 +17,6 @@
 }
 
 .button--search { 
-  background-color: #EEEDEB;
+  background-color: var(--bg-blue-bright);
   color: black;
 }
