@@ -6,7 +6,6 @@ const initialState = {
   isLogin: false,
   token: "",
   user: {},
-  usersFind: [],
   rol: "standar",
   status: 'fulfilled'
 }
