@@ -7,6 +7,7 @@ const initialState = {
   isLogin: false,
   token: "",
   user: {},
+  contacts: [],
   rol: "standar",
   status: 'fulfilled'
 }
