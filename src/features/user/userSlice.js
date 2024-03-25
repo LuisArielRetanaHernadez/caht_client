@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 // utils
 import { login, register } from "../../utils/Auth";
+import { getContacts } from "../../utils/thunkUser";
 
 const initialState = {
   isLogin: false,
@@ -39,6 +40,18 @@ export const logoutAsync = createAsyncThunk(
   async (data, thunkAPI) => {
     try {
       const response = await logout()
+      return response
+    } catch (error) {
+      return thunkAPI.rejectWithValue()
+    }
+  }
+)
+
+export const getContactsAsync = createAsyncThunk(
+  "user/getContacts",
+  async (data, thunkAPI) => {
+    try {
+      const response = await getContacts()
       return response
     } catch (error) {
       return thunkAPI.rejectWithValue()
