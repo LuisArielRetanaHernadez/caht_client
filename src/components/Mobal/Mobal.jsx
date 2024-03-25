@@ -6,8 +6,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { clearError } from '../../features/error/errorSlice'
 
 const Mobal = () => {
-  const [close, setClose] = useState(false)
-
   const mobal = useRef(null)
 
   const dispatch = useDispatch()
@@ -23,18 +21,20 @@ const Mobal = () => {
   }, [])
 
   const closeMobal = () => {
-        if (mobal.current) {
+    if (mobal.current) {
       if (isError) {
-        mobal.current.classList.add('mobal--close')
-      } else {
         mobal.current.classList.remove('mobal--close')
-        dispatch(clearError)
+        mobal.current.classList.add('mobal--show')
+      } else {
+        mobal.current.classList.remove('mobal--show')
+        mobal.current.classList.add('mobal--close')
+        dispatch(clearError())
       }
     }
   } 
 
   return (
-    <div ref={mobal} className="mobal text-center p-5 rounded-10">
+    <div ref={mobal} className="mobal mobal--close text-center p-5 rounded-10">
       <h2 className="mobal__title pb-5">{status ?? 'error'}</h2>
       <p className="mobal__text pb-5">{message}</p>
       <div className="mobal__buttons pb-5">
