@@ -32,7 +32,7 @@ const UserPreview = () => {
 
   return (
     <div className="user-preview user-preview--center-content
-     user-preview--gap-20 user-preview--top-4 user-preview--center-x p-1rem rounded-10">
+     user-preview--gap-20 user-preview--top-4 user-preview--center-x p-1rem rounded-10 z-index">
       
       <div className="avatar avatar--preview">
         <img
