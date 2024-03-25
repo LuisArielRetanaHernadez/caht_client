@@ -1,8 +1,9 @@
 .user-preview {
+  width: max-content;
   padding: .5rem;
   background-color: #0A1D56;
   display: flex;
-  position: absolute;
+  position: sticky;
 }
 
 .user-preview--center-x {
