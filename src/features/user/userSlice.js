@@ -114,6 +114,16 @@ const userSlice = createSlice({
       state.token = ""
       state.user = {}
     })
+
+    .addCase(getContactsAsync.pending, state => {
+      state.status = "loading"
+    })
+    .addCase(getContactsAsync.rejected, state => {
+      state.status = "rejected"
+    })
+    .addCase(getContactsAsync.fulfilled, (state, action) => {
+      state.contacts = action.payload.data.contacts
+    })
   }
 })
 
