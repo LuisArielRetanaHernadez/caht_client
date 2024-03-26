@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import Axios from "../../utils/axios"
 
 const initialState = {
-  idSelect: null,
   isContact: false,
   name: "",
 }
