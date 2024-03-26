@@ -6,3 +6,10 @@ export const isContact = async (id) => {
   })
   return contact
 }
+
+export const getContact = async (id) => {
+  const contacts = await Axios.get("/contact", {
+    id
+  })
+  return contacts
+}
