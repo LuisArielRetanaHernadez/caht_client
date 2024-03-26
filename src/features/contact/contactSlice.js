@@ -1,10 +1,25 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import Axios from "../../utils/axios"
 
 const initialState = {
   idSelect: null,
-  contact: false,
+  isContact: false,
   name: "",
 }
+
+
+export const isContactAsyn = createAsyncThunk(
+  "contact/isContact",
+  async (id, thunkAPI) => {
+    try {
+      const response = await Axios.get(`/isContact/${id}`)
+      return response.data.isContact
+    } catch (error) {
+      return thunkAPI.rejectWithValue()
+    }
+
+  }
+)
 
 
 const contactSlice = createSlice({
@@ -14,7 +29,7 @@ const contactSlice = createSlice({
   reducers: {
     selectContact: (state, action) => {
       state.idSelect = action.payload.id
-      state.contact = action.payload.contact
+      state.isContact = action.payload.contact
       state.name = action.payload.name
     }
   }
