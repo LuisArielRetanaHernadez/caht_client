@@ -20,6 +20,18 @@ export const isContactAsync = createAsyncThunk(
   }
 )
 
+export const getContactAsync = createAsyncThunk(
+  "contact/getContact",
+  async (id, thunkAPI) => {
+    try {
+      const response = await Axios.get(`/getContact/${id}`)
+      return response.data
+    } catch (error) {
+      return thunkAPI.rejectWithValue()
+    }
+  }
+)
+
 
 const contactSlice = createSlice({
   name: "contact",
