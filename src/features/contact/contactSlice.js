@@ -8,7 +8,7 @@ const initialState = {
 }
 
 
-export const isContactAsyn = createAsyncThunk(
+export const isContactAsync = createAsyncThunk(
   "contact/isContact",
   async (id, thunkAPI) => {
     try {
