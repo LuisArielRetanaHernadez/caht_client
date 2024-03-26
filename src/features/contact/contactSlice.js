@@ -32,6 +32,19 @@ const contactSlice = createSlice({
       state.isContact = action.payload.contact
       state.name = action.payload.name
     }
+  },
+
+  extraReducers: (builder) => {
+    builder
+    .addCase(isContactAsync.pending, (state) => {
+      state.isContact = false
+    })
+    .addCase(isContactAsync.fulfilled, (state, action) => {
+      state.isContact = action.payload
+    })
+    .addCase(isContactAsync.rejected, (state) => {
+      state.isContact = false
+    })
   }
 })
 
