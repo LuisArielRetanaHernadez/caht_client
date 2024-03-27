@@ -13,3 +13,9 @@
   background-size: cover;
   flex-grow: 1;
 }
+
+@media screen and (max-width: 760px) {
+  .layout-list-chat--list {
+    width: 100%;
+  }
+}
