@@ -6,8 +6,21 @@
 .layout-list-chat--list {
   width: 20%;
   transition: all .4s;
+  position: relative;
 }
 
+.button--list-chat {
+  width: 40px;
+  height: 40px;
+  color: var(--black);
+  border-radius: 0px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: var(--bg-white);
+  position: absolute;
+  top: 0;
+  right: -14%;
+}
 
 .layout-list-chat--content {
   background-image: url(https://res.cloudinary.com/dqmkovsdy/image/upload/v1709241300/chat/fondos/xrbhvebh7rrwpxqhzd6t.png);
