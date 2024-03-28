@@ -28,6 +28,7 @@ export const store = configureStore({
     reducer: {
         user: userSlice.reducer,
         contact: contactSlice.reducer,
+        listChat: contactSlice.reducer,
         error: errorSlice
     },
     preloadedState: {
