@@ -5,7 +5,9 @@
 
 .layout-list-chat--list {
   width: 20%;
+  transition: all .4s;
 }
+
 
 .layout-list-chat--content {
   background-image: url(https://res.cloudinary.com/dqmkovsdy/image/upload/v1709241300/chat/fondos/xrbhvebh7rrwpxqhzd6t.png);
@@ -17,5 +19,9 @@
 @media screen and (max-width: 760px) {
   .layout-list-chat--list {
     width: 100%;
+  }
+  .layout-list-chat--hidden {
+    width: 0%;
+    display: none
   }
 }
