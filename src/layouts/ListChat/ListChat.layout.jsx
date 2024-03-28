@@ -6,6 +6,9 @@ import { useSelector } from 'react-redux';
 import { useEffect } from "react";
 import { useState } from 'react';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+
 
 const ListChatLayout = () => {
   const [showListChat, setShowListChat] = useState(true);
@@ -36,6 +39,9 @@ const ListChatLayout = () => {
     <div className="layout-list-chat wrapped wrapped--menu">
       <div className={`layout-list-chat--list ${!showListChat ? 'layout-list-chat--hidden' : ''} w-25 h-full`}>
         <ListChat />
+        <span className="button button--list-chat text-center">
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </span>
       </div>
       <div className="layout-list-chat--content">
         <Outlet /> 
