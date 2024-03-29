@@ -18,4 +18,4 @@ const listChatSlice = createSlice({
 
 export const { toggleVisibility } = listChatSlice.actions
 
-export default initialState
+export default listChatSlice
