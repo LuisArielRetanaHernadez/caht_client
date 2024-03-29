@@ -19,9 +19,10 @@
 @media screen and (max-width: 760px) {
   .layout-list-chat--list {
     width: 100%;
+    transition: all .4s;
   }
   .layout-list-chat--hidden {
     width: 0%;
-    display: none
+    transition: all .4s;
   }
 }
