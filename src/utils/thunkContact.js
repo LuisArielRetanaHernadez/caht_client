@@ -13,3 +13,8 @@ export const getContact = async (id) => {
   })
   return contacts
 }
+
+export const getUser = async (id) => {
+  const user = await Axios.get(`/users/${id}`)
+  return user
+}
