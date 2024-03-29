@@ -10,10 +10,17 @@ import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 // style UserPreview
 import './UserPreview.css'
+import { useDispatch } from 'react-redux'
+import { useParams } from 'react-router-dom'
+import { getUserAsync } from '../../features/contact/contactSlice'
 
 const UserPreview = () => {
 
   const [showMenu, setShowMenu] = useState(false)
+
+  const { id } = useParams()
+
+  const dispatch = useDispatch()
 
   const menuSub = useRef(null)
 
@@ -25,10 +32,20 @@ const UserPreview = () => {
     }
   }, [showMenu])
 
+  useEffect(() => {
+    const getUser = async () => {
+      dispatch(getUserAsync(id))
+    }
+    if (id) {
+      getUser()
+    }
+  }, [id])
+
   const {
-    contact,
+    isContact,
     name
   } = useSelector(state => state.contact)
+
 
   return (
     <div className="user-preview user-preview--center-content
@@ -42,7 +59,7 @@ const UserPreview = () => {
 
       <div className="user-preview__information">
         <p className="user-preview__username">{name}</p>
-        <p className="user-preview__frende">{contact ? 'Contacto' : 'Agregar'}</p>
+        <p className="user-preview__frende">{isContact ? 'Contacto' : 'Agregar'}</p>
       </div>
 
       <div>
@@ -59,7 +76,7 @@ const UserPreview = () => {
           <li className='list__item pointer rounded-10'>Bloquear</li>
           <li className='list__item pointer rounded-10'>Agregar</li>
           {
-            contact && <li className='list__item pointer rounded-10'>Editar</li>
+            isContact && <li className='list__item pointer rounded-10'>Editar</li>
           }
         </ul>
 
