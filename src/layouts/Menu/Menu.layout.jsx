@@ -32,9 +32,9 @@ const Menu = () => {
     <>
     <Mobal />
       <header className="menu">
-        <div className="ml-5rem">
+        <Link to='/' className="ml-5rem">
           <Logo />
-        </div>
+        </Link>
         <nav className="menu__navegation mr-5rem">
           <ul className="menu__list position-relative z-index-10">
             <li className="menu__item menu__item--p-0 menu__list-sub--show position-relative">
