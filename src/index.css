@@ -116,6 +116,11 @@ ul, ol, li {
   bottom: 80%;
 }
 
+.avatar--message-right {
+  left: -.5rem;
+  bottom: 80%;
+}
+
 .avatar--preview {
   width: 40px;
   height: 40px;

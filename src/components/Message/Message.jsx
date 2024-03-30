@@ -30,7 +30,7 @@ const Message = ({
     <>
     <article className={`message message--rounded-10px ${isAuthor ? 'message--float-right' : 'message--float-left'} `}>
       <header className="message__header">
-        <div className='avatar avatar--message avatar--message-left'>
+        <div className={`avatar avatar--message ${isAuthor ? 'avatar--message-left' : 'avatar--message-right'}`}>
           <img 
           src='https://images.pexels.com/photos/15005609/pexels-photo-15005609/free-photo-of-puesta-de-sol-hombre-silueta-tarde.jpeg' 
           className='avatar__img avatar__img--message' />
