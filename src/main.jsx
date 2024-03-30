@@ -18,6 +18,7 @@ import Chat from './Pages/Chat/Chat.jsx'
 // layouts
 import Menu from './layouts/Menu/Menu.layout.jsx'
 import ListChatLayout from './layouts/ListChat/ListChat.layout.jsx'
+import CheckEmail from './Pages/CheckEmail/CheckEmail.jsx'
 
 
 
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register />
+      },
+      {
+        path: '/email/verify/:token',
+        element: <CheckEmail />
       }
     ]
   }
