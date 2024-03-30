@@ -1,12 +1,12 @@
 const CheckEmail = () => {
   return (
-    <div>
-      <h2>Verificacion del menu</h2>
-      <p>
+    <div className="card">
+      <h2 className="card__title">Verificacion del menu</h2>
+      <p className="card__text">
         Introduce el codigo que te enviamos al correo con el que te registrates
       </p>
-      <form>
-        <input type="text" />
+      <form className="card__form">
+        <input className="card__input" type="text" />
       </form>
     </div>
   )
