@@ -1,3 +1,4 @@
+import './CheckEmail.css'
 const CheckEmail = () => {
   return (
     <div className="card">
