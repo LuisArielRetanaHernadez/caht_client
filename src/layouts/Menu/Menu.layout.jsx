@@ -32,7 +32,7 @@ const Menu = () => {
     <>
     <Mobal />
       <header className="menu">
-        <Link to='/' className="ml-5rem">
+        <Link to='/' className="menu__logo ml-5rem">
           <Logo />
         </Link>
         <nav className="menu__navegation mr-5rem">
