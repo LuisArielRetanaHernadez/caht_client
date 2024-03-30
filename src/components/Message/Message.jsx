@@ -35,7 +35,7 @@ const Message = ({
           src='https://images.pexels.com/photos/15005609/pexels-photo-15005609/free-photo-of-puesta-de-sol-hombre-silueta-tarde.jpeg' 
           className='avatar__img avatar__img--message' />
         </div>
-        <h4 className="message__name">{author.username}</h4>
+        <h4 className={`message__name ${isAuthor ? 'message__name--left' : ''}`}>{author.username}</h4>
         <ul className="message__options">
           <li className="message__option">
             <button className="" href="#">Edit</button>
