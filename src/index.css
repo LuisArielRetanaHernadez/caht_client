@@ -164,6 +164,11 @@ ul, ol, li {
   outline: none;
 }
 
+.input--card {
+  padding: .2rem;
+  border-radius: 10px;
+}
+
 .input--search {
   background-color: var(--gray-pearl);
 }

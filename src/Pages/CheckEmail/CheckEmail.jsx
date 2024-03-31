@@ -7,7 +7,7 @@ const CheckEmail = () => {
         Introduce el codigo que te enviamos al correo con el que te registrates
       </p>
       <form className="card__form">
-        <input className="card__input" type="text" />
+        <input className="input input--card" type="text" />
       </form>
     </div>
   )
