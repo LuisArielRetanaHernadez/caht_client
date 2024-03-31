@@ -1,5 +1,7 @@
 import './CheckEmail.css'
+import { useParams } from 'react-router-dom'
 const CheckEmail = () => {
+  const { toke } = useParams();
   return (
     <section className='wrapped--menu container container--center'>
       <div className="card">
