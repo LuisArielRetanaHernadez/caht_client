@@ -167,6 +167,7 @@ ul, ol, li {
 .input--card {
   padding: .2rem;
   border-radius: 10px;
+  border: 1px solid var(--blue-bright);
 }
 
 .input--search {

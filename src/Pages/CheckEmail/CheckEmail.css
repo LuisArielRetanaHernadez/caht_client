@@ -4,7 +4,7 @@
   text-align: center;
   padding: .5rem;
   border-radius: 10px;
-  background-color: var(--bg-blue-indigo);
+  background-color: var(--bg-white);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,7 +12,7 @@
 }
 
 .card__title {
-  color: var(--white);
+  color: var(--blue-bright);
   font-size: 1.5em;
 }
 
