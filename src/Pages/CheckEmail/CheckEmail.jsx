@@ -51,6 +51,7 @@ const CheckEmail = () => {
             placeholder="XXXX"
             onChange={(e) => setCode(e.target.value)}
            />
+           <button className="button button--card">Verificar</button>
         </form>
       </div>
     </section>
