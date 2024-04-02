@@ -6,6 +6,7 @@ import Axios from '../../utils/axios'
 const CheckEmail = () => {
   const [code, setCode] = useState(null)
   const [isVerify, setIsVerify] = useState(false)
+  const [error, setError] = useState(false)
 
   const { token } = useParams();
 
@@ -26,8 +27,10 @@ const CheckEmail = () => {
         code
       })
       setIsVerify(true)
+      setIsVerify(true)
     } catch (error) {
       setIsVerify(false)
+      setError(true)
       return error
     }
   }
@@ -51,7 +54,7 @@ const CheckEmail = () => {
             placeholder="XXXX"
             onChange={(e) => setCode(e.target.value)}
            />
-           <span className="card__error-text">Codigo incorrecto</span>
+           {error && <span className="card__error-text">Codigo incorrecto</span>}
            <button className="button button--card">Verificar</button>
         </form>
       </div>
