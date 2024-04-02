@@ -20,6 +20,10 @@
   color: var(--black);
 }
 
+.card__error-text {
+  color: red;
+}
+
 .card__form {
   display: flex;
   flex-direction: column;

@@ -51,6 +51,7 @@ const CheckEmail = () => {
             placeholder="XXXX"
             onChange={(e) => setCode(e.target.value)}
            />
+           <span className="card__error-text">Codigo incorrecto</span>
            <button className="button button--card">Verificar</button>
         </form>
       </div>
