@@ -19,6 +19,7 @@ import Chat from './Pages/Chat/Chat.jsx'
 import Menu from './layouts/Menu/Menu.layout.jsx'
 import ListChatLayout from './layouts/ListChat/ListChat.layout.jsx'
 import CheckEmail from './Pages/CheckEmail/CheckEmail.jsx'
+import NotFound from './Pages/NotFound/NotFound.jsx'
 
 
 
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
         element: <CheckEmail />
       }
     ]
+  },
+  {
+    path: '*',
+    element: <NotFound />
   }
 ])
 
