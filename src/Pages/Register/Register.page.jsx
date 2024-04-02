@@ -3,8 +3,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState } from "react"
 import { Link, Navigate } from "react-router-dom"
-import { useDispatch, useSelector } from 'react-redux'
-import { registerAsync } from "../../features/user/userSlice"
+import { useSelector } from 'react-redux'
 
 const datasFields = [
   {
@@ -128,13 +127,9 @@ const Register = () => {
   })
 
   const { isLogin } = useSelector(state => state.user)
-  const { user } = useSelector(state => state)
-
-  const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    dispatch(registerAsync(values))
     setValues({
       name: '',
       lastName: '',
@@ -150,12 +145,6 @@ const Register = () => {
     if (showPassword) setTypePassword('text')
     else setTypePassword('password')
   }, [showPassword])
-
-  useEffect(() => {
-    if (isLogin) {
-      localStorage.setItem("user", JSON.stringify(user))
-    }
-  }, [isLogin, user])
 
   if (isLogin) {
     return <Navigate to="/" />
