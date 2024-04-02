@@ -6,7 +6,7 @@ import Axios from '../../utils/axios'
 const CheckEmail = () => {
   const [code, setCode] = useState(null)
   const [isVerify, setIsVerify] = useState(false)
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(true)
 
   const { token } = useParams();
 
@@ -50,12 +50,14 @@ const CheckEmail = () => {
           Introduce el codigo que te enviamos al correo con el que te registrates
         </p>
         <form className="card__form" onSubmit={verifyEmail}>
-          <input className="input input--card" type="text"
-            placeholder="XXXX"
-            onChange={(e) => setCode(e.target.value)}
-           />
-           {error && <span className="card__error-text">Codigo incorrecto</span>}
-           <button className="button button--card">Verificar</button>
+          <div className='wrapped--flex-col'>
+            <input className="input input--card" type="text"
+              placeholder="XXXX"
+              onChange={(e) => setCode(e.target.value)}
+            />
+            {error && <span className="card__error-text">Codigo incorrecto</span>}
+          </div>
+          <button className="button button--card">Verificar</button>
         </form>
       </div>
     </section>

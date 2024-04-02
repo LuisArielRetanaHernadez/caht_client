@@ -48,6 +48,12 @@ ul, ol, li {
 
 /* .... wrapped ... */
 
+.wrapped--flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .wrapped {
   width: 100%;
   height: 100%;
