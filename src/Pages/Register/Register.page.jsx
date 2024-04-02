@@ -2,8 +2,9 @@
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState } from "react"
-import { Link, Navigate } from "react-router-dom"
+import { Link, Navigate, useNavigate } from "react-router-dom"
 import { useSelector } from 'react-redux'
+import { register } from "../../utils/Auth"
 
 const datasFields = [
   {
@@ -126,10 +127,20 @@ const Register = () => {
     passwordConfirm: '',
   })
 
+  const navigate = useNavigate()
+
   const { isLogin } = useSelector(state => state.user)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    const data = await register(values)
+    if (!data) {
+      return
+    }
+    if (data.status === 'success') {
+      navigate(`/email/verify/${data.data.token}`)
+    }
+    console.log(data)
     setValues({
       name: '',
       lastName: '',
