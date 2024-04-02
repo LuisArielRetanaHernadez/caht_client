@@ -22,7 +22,7 @@ const CheckEmail = () => {
 
   const verifyEmail = async () => {
     try {
-      await Axios.post(`/users/check/email/${token}`, {
+      await Axios.post(`/users/verify/email/${token}`, {
         code
       })
       setIsVerify(true)
