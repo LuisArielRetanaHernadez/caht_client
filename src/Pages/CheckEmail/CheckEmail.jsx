@@ -3,6 +3,7 @@ import './CheckEmail.css'
 import { Navigate, useParams } from 'react-router-dom'
 
 import Axios from '../../utils/axios'
+import { resendCodeEmail } from '../../utils/api/user';
 const CheckEmail = () => {
   const [code, setCode] = useState(null)
   const [isVerify, setIsVerify] = useState(false)
@@ -35,6 +36,10 @@ const CheckEmail = () => {
     }
   }
 
+  const resendCode = async () => {
+    await resendCodeEmail(token)
+  }
+
   useEffect(() => {
     if (isVerify) {
 
@@ -58,8 +63,10 @@ const CheckEmail = () => {
             {error && <span className="card__error-text">Codigo incorrecto</span>}
           </div>
           <div className='flex gap-10'>
-            <button className="button button--card">Reenviar Codigo</button>
-            <button className="button button--card">verificar</button>
+            <button className="button button--card"
+            onClick={resendCode}
+            >Reenviar Codigo</button>
+            <button type='submit' className="button button--card">verificar</button>
           </div>
         </form>
       </div>
