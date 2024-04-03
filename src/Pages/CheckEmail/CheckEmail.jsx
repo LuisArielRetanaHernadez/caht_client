@@ -57,7 +57,10 @@ const CheckEmail = () => {
             />
             {error && <span className="card__error-text">Codigo incorrecto</span>}
           </div>
-          <button className="button button--card">Verificar</button>
+          <div className='flex gap-10'>
+            <button className="button button--card">Reenviar Codigo</button>
+            <button className="button button--card">verificar</button>
+          </div>
         </form>
       </div>
     </section>
