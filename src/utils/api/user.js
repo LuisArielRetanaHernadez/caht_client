@@ -5,6 +5,6 @@ export const resendCodeEmail = async (token) => {
     const resendCode = await Axios.get(`/users/resend/code/email/${token}`)
     return resendCode.data
   } catch (error) {
-    throw new Error(error.message)
+    return error
   }
 }
