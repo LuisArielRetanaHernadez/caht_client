@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './CheckEmail.css'
 import { Navigate, useParams } from 'react-router-dom'
 
@@ -7,7 +7,9 @@ import { resendCodeEmail } from '../../utils/api/user';
 const CheckEmail = () => {
   const [code, setCode] = useState(null)
   const [isVerify, setIsVerify] = useState(false)
-  const [error, setError] = useState(true)
+  const [error, setError] = useState(false)
+
+  const btnResendCode = useRef(null)
 
   const { token } = useParams();
 
@@ -36,8 +38,24 @@ const CheckEmail = () => {
     }
   }
 
-  const resendCode = async () => {
-    await resendCodeEmail(token)
+  const resendCode = async (e) => {
+    e.preventDefault()
+    const newCode = await resendCodeEmail(token)
+    console.log(newCode)
+    if (btnResendCode.current) {
+      if  (newCode) {
+        // add class button-success
+        btnResendCode.current.classList.add('button--success')
+        setTimeout(() => {
+          btnResendCode.current.classList.remove('button--success')
+        }, 1500)
+      } else {
+        btnResendCode.current.classList.add('button--error')
+        setTimeout(() => {
+          btnResendCode.current.classList.remove('button--error')
+        }, 1500)
+      }
+    }
   }
 
   useEffect(() => {
@@ -54,7 +72,7 @@ const CheckEmail = () => {
         <p className="card__text">
           Introduce el codigo que te enviamos al correo con el que te registrates
         </p>
-        <form className="card__form" onSubmit={verifyEmail}>
+        <form className="card__form">
           <div className='wrapped--flex-col'>
             <input className="input input--card" type="text"
               placeholder="XXXX"
@@ -64,9 +82,10 @@ const CheckEmail = () => {
           </div>
           <div className='flex gap-10'>
             <button className="button button--card"
+            ref={btnResendCode}
             onClick={resendCode}
-            >Reenviar Codigo</button>
-            <button type='submit' className="button button--card">verificar</button>
+            ><span style={{position: 'relative'}}>Renviar Codigo</span></button>
+            <button onClick={verifyEmail} className="button button--card">verificar</button>
           </div>
         </form>
       </div>
