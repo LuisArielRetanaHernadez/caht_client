@@ -43,7 +43,7 @@ const CheckEmail = () => {
     const newCode = await resendCodeEmail(token)
     console.log(newCode)
     if (btnResendCode.current) {
-      if  (newCode) {
+      if  (newCode.response.status === 200) {
         // add class button-success
         btnResendCode.current.classList.add('button--success')
         setTimeout(() => {
