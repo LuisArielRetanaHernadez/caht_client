@@ -36,3 +36,46 @@
   color: var(--white);
   background-color: var(--bg-blue-bright);
 }
+
+.button--success, .button--error {
+  color: white;
+  position: relative;
+}
+
+.button--success::before, .button--error::before {
+  content: '';
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  position: absolute;
+  inset: 0;
+}
+
+.button--success::before {
+  background-color: green;
+  animation: button-success .5s forwards;
+}
+
+@keyframes button-success {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.button--error::before {
+  background-color: red;
+  animation: button-error .5s forwards;
+}
+
+@keyframes button-error {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
