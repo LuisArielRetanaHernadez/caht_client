@@ -1,7 +1,8 @@
+/* eslint-disable no-useless-escape */
 import axios from 'axios';	
 
 const urlsExcludeAuth = [
-  '/^\/email\/verify\/[^\/]+$/'
+  /^\/email\/verify\/[^\/]+\/?$/,
 ];
 
 const instance = axios.create({
@@ -25,12 +26,14 @@ instance.interceptors.response.use(
   res => res,
   error => {
     if (error.response.status === 401) {
-      const isMatch = urlsExcludeAuth.some(url => new RegExp(url).test(window.location.pathname))
+      const isMatch = urlsExcludeAuth.some(url => url.test(window.location.pathname))
       if (urlsExcludeAuth.includes(window.location.pathname) || isMatch) {
         return Promise.reject(error);
+      } else {
+        localStorage.removeItem('user');
+        window.location.href = '/login';
       }
-      localStorage.removeItem('user');
-      window.location.href = '/login';
+
     }
     return Promise.reject(error);
 
