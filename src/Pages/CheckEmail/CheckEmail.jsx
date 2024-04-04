@@ -74,7 +74,7 @@ const CheckEmail = () => {
         </p>
         <form className="card__form">
           <div className='wrapped--flex-col'>
-            <input className="input input--card" type="text"
+            <input className="input input--card text-center" type="text"
               placeholder="XXXX"
               onChange={(e) => setCode(e.target.value)}
             />
