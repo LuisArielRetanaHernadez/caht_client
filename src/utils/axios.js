@@ -1,5 +1,9 @@
 import axios from 'axios';	
 
+const urlsExcludeAuth = [
+  '/^\/email\/verify\/[^\/]+$/'
+];
+
 const instance = axios.create({
   baseURL: 'http://localhost:3000/api/v1',
   timeout: 1500,
@@ -21,6 +25,10 @@ instance.interceptors.response.use(
   res => res,
   error => {
     if (error.response.status === 401) {
+      const isMatch = urlsExcludeAuth.some(url => new RegExp(url).test(window.location.pathname))
+      if (urlsExcludeAuth.includes(window.location.pathname) || isMatch) {
+        return Promise.reject(error);
+      }
       localStorage.removeItem('user');
       window.location.href = '/login';
     }
