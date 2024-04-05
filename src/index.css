@@ -59,6 +59,12 @@ ul, ol, li {
   height: 100%;
 }
 
+.wrapped--flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .wrapped--menu {
   height: calc(100vh - 8vh);
 }
