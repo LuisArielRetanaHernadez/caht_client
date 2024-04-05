@@ -4,7 +4,7 @@ import cld from "../../utils/cloudinary/cloudinary"
 import { AdvancedImage, placeholder, responsive } from "@cloudinary/react"
 
 const UploadProfile = () => {
-  const [publicId, setPublicId] = useState('')
+  const [publicId, setPublicId] = useState('chat/photo_profile_default/epspfzghsr7md5dlci32')
 
   return (
     <section className="wrapped wrapped--menu-min-h wrapped--flex-center">
