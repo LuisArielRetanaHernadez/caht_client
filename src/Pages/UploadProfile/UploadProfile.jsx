@@ -17,9 +17,7 @@ const UploadProfile = () => {
             plugins={[responsive(), placeholder()]}
            />
         </div>
-        <form>
-          <CloudinaryWidget uwConfig={'dqmkovsdy'} setPublicId={setPublicId}/>
-        </form>
+          <CloudinaryWidget setPublicId={setPublicId}/>
       </div>
     </section>
   )
