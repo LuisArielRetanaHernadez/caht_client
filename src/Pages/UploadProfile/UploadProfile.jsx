@@ -12,7 +12,7 @@ const UploadProfile = () => {
         <h2>Upload Profile</h2>
         <div>
           <AdvancedImage
-            style={{ width: "100px", height: "100px", objectFit: "cover" }}
+            style={{ width: "200px", height: "200px", borderRadius: '50%', objectFit: "cover" }}
             cldImg={cld.image(publicId)}
             plugins={[responsive(), placeholder()]}
            />
