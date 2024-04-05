@@ -20,6 +20,7 @@ import Menu from './layouts/Menu/Menu.layout.jsx'
 import ListChatLayout from './layouts/ListChat/ListChat.layout.jsx'
 import CheckEmail from './Pages/CheckEmail/CheckEmail.jsx'
 import NotFound from './Pages/NotFound/NotFound.jsx'
+import UploadProfile from './Pages/UploadProfile/UploadProfile.jsx'
 
 
 
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: '/email/verify/:token',
         element: <CheckEmail />
+      },
+      {
+        path: '/profile/:id/upload/img',
+        element: <UploadProfile />
       }
     ]
   },
