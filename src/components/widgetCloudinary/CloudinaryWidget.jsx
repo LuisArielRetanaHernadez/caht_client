@@ -1,33 +1,41 @@
 /* eslint-disable react/prop-types */
-import { useRef } from "react"
+import { createContext, useRef } from "react"
 import { useEffect } from "react"
 import { useState } from "react"
 
-const CloudinaryWidget = ({ uwConfig, setPublicId }) => {
+const CloudinaryWidget = ({ setPublicId }) => {
   const [loaded, setLoaded] = useState(false)
 
+  const CloudinaryScriptContext = createContext()
+
   const widgetRef = useRef(null)
+  const cloudinaryRef = useRef(null)
 
   useEffect(() => {
-    if (loaded) return
-    const script = document.createElement("script")
-    script.src = "https://upload-widget.cloudinary.com/global/all.js"
-    script.async = true
-    script.onload = () => {
+    if (!loaded) {
+      
+      const script = document.createElement("script")
+      script.src = "https://upload-widget.cloudinary.com/global/all.js"
+      script.async = true
+      script.onload = () => {
+        setLoaded(true)
+      }
+      document.body.appendChild(script)
+    } else {
       setLoaded(true)
     }
-    document.body.appendChild(script)
     return () => {
       setLoaded(false)
-      document.body.removeChild(script)
     }
-  }, [loaded])
+  }, [])
 
   const initCloudinaryWidget = () => {
     if (!loaded) return
-    widgetRef.current = window.cloudinary.createUploadWidget({
-      cloudName: uwConfig,
-      uploadPreset: "preteminado",
+
+    cloudinaryRef.current = window.cloudinary;
+    widgetRef.current = cloudinaryRef.current.createUploadWidget({
+      cloudName: 'dqmkovsdy',
+      uploadPreset: "replicate",
     }, (error, result) => {
       if (!error && result && result.event === "success") {
         setPublicId(result.info.public_id)
@@ -42,9 +50,12 @@ const CloudinaryWidget = ({ uwConfig, setPublicId }) => {
 
 
   return (
-    <button className="button" onClick={initCloudinaryWidget}>
-      Subir
-    </button>
+    <CloudinaryScriptContext.Provider value={{loaded}}>
+      <button className="button" onClick={initCloudinaryWidget}>
+        Subir
+      </button>
+    </CloudinaryScriptContext.Provider>
+
   )
 }
 
