@@ -2,13 +2,25 @@ import CloudinaryWidget from "../../components/widgetCloudinary/CloudinaryWidget
 import { useState } from 'react'
 import cld from "../../utils/cloudinary/cloudinary"
 import { AdvancedImage, placeholder, responsive } from "@cloudinary/react"
+import { uploadImageProfile } from "../../utils/api/user"
+
+import { Navigate } from 'react-router-dom'
 
 const UploadProfile = () => {
   const [publicId, setPublicId] = useState('chat/photo_profile_default/epspfzghsr7md5dlci32')
   const [errorUpload, setErrorUpload] = useState(false)
-  const handleUpload = () => {
+
+  
+  const handleUpload = async () => {
     if (!publicId) return
-    const imgUpload = 'xxxxxxx'
+    const imgUpload = await uploadImageProfile(publicId)
+    if (imgUpload.status === 401) {
+      setErrorUpload(true)
+    }
+    if  (imgUpload.status === 200) {
+      setErrorUpload(false)
+      return <Navigate to="/" />
+    }
   }
 
   return (
