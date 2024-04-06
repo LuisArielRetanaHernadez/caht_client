@@ -1,27 +1,41 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import CloudinaryWidget from "../../components/widgetCloudinary/CloudinaryWidget"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import cld from "../../utils/cloudinary/cloudinary"
 import { AdvancedImage, placeholder, responsive } from "@cloudinary/react"
 import { uploadImageProfile } from "../../utils/api/user"
 
-import { Navigate } from 'react-router-dom'
+import { useNavigate  } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { setError } from "../../features/error/errorSlice"
 
 const UploadProfile = () => {
   const [publicId, setPublicId] = useState('chat/photo_profile_default/epspfzghsr7md5dlci32')
   const [errorUpload, setErrorUpload] = useState(false)
 
+  const dispatch = useDispatch()
+  const navigate = useNavigate();
+
   
   const handleUpload = async () => {
     if (!publicId) return
+
     const imgUpload = await uploadImageProfile(publicId)
-    if (imgUpload.status === 401) {
+    if (imgUpload.response.status === 401) {
       setErrorUpload(true)
+      dispatch(setError({message: 'error upload', statusCode: 401}))
     }
-    if  (imgUpload.status === 200) {
+
+    if  (imgUpload.response.status === 200) {
       setErrorUpload(false)
-      return <Navigate to="/" />
+      navigate('/')
     }
   }
+
+  useEffect(() => {
+    if (!publicId) return
+    handleUpload(publicId)
+  }, [publicId])
 
   return (
     <section className="wrapped wrapped--menu-min-h wrapped--flex-center">
