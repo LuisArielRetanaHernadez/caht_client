@@ -10,7 +10,7 @@ import "../../index.css"
 
 // router-dom-v6
 import { Link, redirect } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../features/user/userSlice";
 import manager from "../../utils/websocket";
 import Mobal from "../../components/Mobal/Mobal";
@@ -18,6 +18,8 @@ import Mobal from "../../components/Mobal/Mobal";
 const Menu = () => {
 
   const socket = manager.socket('/users')
+
+  const { isLogin } = useSelector(state => state.user)
 
   const dispatch = useDispatch()
 
@@ -37,23 +39,26 @@ const Menu = () => {
         </Link>
         <nav className="menu__navegation mr-5rem">
           <ul className="menu__list position-relative z-index-10">
-            <li className="menu__item menu__item--p-0 menu__list-sub--show position-relative">
-              <Link className="avatar">
-                <img 
-                className="avatar__img"
-                src="https://images.pexels.com/photos/15005609/pexels-photo-15005609/free-photo-of-puesta-de-sol-hombre-silueta-tarde.jpeg"
-                ></img>
-              </Link>
+          {
+            isLogin ? <li className="menu__item menu__item--p-0 menu__list-sub--show position-relative">
+                      <Link className="avatar">
+                        <img 
+                        className="avatar__img"
+                        src="https://images.pexels.com/photos/15005609/pexels-photo-15005609/free-photo-of-puesta-de-sol-hombre-silueta-tarde.jpeg"
+                        ></img>
+                      </Link>
 
-              <ul className="menu__list menu__list-sub">
-                <li 
-                onClick={logoutSeccion}
-                className="menu__item menu__item--bg-blue">
-                  <span>Logout</span>
-                </li>
-              </ul>
+                      <ul className="menu__list menu__list-sub">
+                        <li 
+                        onClick={logoutSeccion}
+                        className="menu__item menu__item--bg-blue">
+                          <span>Logout</span>
+                        </li>
+                      </ul>
 
-            </li>
+                    </li> : ''
+          }
+
 
           </ul>
         </nav>
