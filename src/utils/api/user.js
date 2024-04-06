@@ -20,7 +20,7 @@ export const uploadImageProfile = async (data) => {
 
 export const verifyUserByIdAndAuth = async (id) => {
   try {
-    const verifyUser = await Axios.get(`/users/verify/${id}`)
+    const verifyUser = await Axios.get(`/users/verify/user/${id}`)
     return verifyUser.data
   } catch (error) {
     return error
