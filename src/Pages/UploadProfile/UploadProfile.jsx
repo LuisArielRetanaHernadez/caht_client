@@ -3,19 +3,34 @@ import CloudinaryWidget from "../../components/widgetCloudinary/CloudinaryWidget
 import { useEffect, useState } from 'react'
 import cld from "../../utils/cloudinary/cloudinary"
 import { AdvancedImage, placeholder, responsive } from "@cloudinary/react"
-import { uploadImageProfile } from "../../utils/api/user"
+import { uploadImageProfile, verifyUserByIdAndAuth } from "../../utils/api/user"
 
 import { useNavigate  } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { setError } from "../../features/error/errorSlice"
 
+import { useParams } from "react-router-dom"
+
 const UploadProfile = () => {
   const [publicId, setPublicId] = useState('chat/photo_profile_default/epspfzghsr7md5dlci32')
   const [errorUpload, setErrorUpload] = useState(false)
 
+  const { id } = useParams()
+
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const verifyUser = async () => {
+      const user = await verifyUserByIdAndAuth(id)
+      
+      if (!user || user.response.status === 401) {
+        navigate('/login')
+      }
+    }
+  
+    verifyUser()
+  },[id])
   
   const handleUpload = async () => {
     if (!publicId) return
