@@ -3,6 +3,7 @@ import axios from 'axios';
 
 const urlsExcludeAuth = [
   /^\/email\/verify\/[^\/]+\/?$/,
+  /^\/profile\/[^\/]+\/upload\/img$/
 ];
 
 const instance = axios.create({
