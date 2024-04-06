@@ -29,6 +29,14 @@ const CloudinaryWidget = ({ setPublicId }) => {
     }
   }, [])
 
+  const options = {
+    showAdvancedOptions: true,
+    cropping: true,
+    multiple: false,
+    autoUpload: false,
+    sources: ['local', 'url', 'camera', 'image_search', 'facebook', 'dropbox', 'instagram', 'shutterstock', 'google_photos', 'google_drive', 'evernote', 'flickr', 'box'],
+  }
+
   const initCloudinaryWidget = () => {
     if (!loaded) return
 
@@ -36,6 +44,7 @@ const CloudinaryWidget = ({ setPublicId }) => {
     widgetRef.current = cloudinaryRef.current.createUploadWidget({
       cloudName: 'dqmkovsdy',
       uploadPreset: "replicate",
+      ...options,
     }, (error, result) => {
       if (!error && result && result.event === "success") {
         setPublicId(result.info.public_id)
