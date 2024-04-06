@@ -20,6 +20,7 @@ const UploadProfile = () => {
            />
         </div>
           <CloudinaryWidget setPublicId={setPublicId}/>
+          <button className="button">Save</button>
       </div>
     </section>
   )
