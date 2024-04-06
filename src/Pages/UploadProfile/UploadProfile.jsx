@@ -36,8 +36,11 @@ const UploadProfile = () => {
             plugins={[responsive(), placeholder()]}
            />
         </div>
+        <div className="flex gap-10">
           <CloudinaryWidget setPublicId={setPublicId}/>
           <button className="button" onClick={handleUpload}>Save</button>
+        </div>
+
       </div>
     </section>
   )
