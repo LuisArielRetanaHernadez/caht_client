@@ -5,6 +5,11 @@ import { AdvancedImage, placeholder, responsive } from "@cloudinary/react"
 
 const UploadProfile = () => {
   const [publicId, setPublicId] = useState('chat/photo_profile_default/epspfzghsr7md5dlci32')
+  const [errorUpload, setErrorUpload] = useState(false)
+  const handleUpload = () => {
+    if (!publicId) return
+    const imgUpload = 'xxxxxxx'
+  }
 
   return (
     <section className="wrapped wrapped--menu-min-h wrapped--flex-center">
@@ -20,7 +25,7 @@ const UploadProfile = () => {
            />
         </div>
           <CloudinaryWidget setPublicId={setPublicId}/>
-          <button className="button">Save</button>
+          <button className="button" onClick={handleUpload}>Save</button>
       </div>
     </section>
   )
