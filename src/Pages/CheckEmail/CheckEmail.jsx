@@ -3,7 +3,7 @@ import './CheckEmail.css'
 import { Navigate, useParams, useNavigate } from 'react-router-dom'
 
 import Axios from '../../utils/axios'
-import { resendCodeEmail } from '../../utils/api/user';
+import { resendCodeEmail, verifyTokenEmail } from '../../utils/api/user';
 const CheckEmail = () => {
   const [code, setCode] = useState(null)
   const [isVerify, setIsVerify] = useState(false)
@@ -18,7 +18,7 @@ const CheckEmail = () => {
   useEffect(() => {
     const verifyToken = async () => {
       try {
-        const response = await Axios.get(`/users/verify/email/token/${token}`)
+        const response = await verifyTokenEmail(token)
         if (response.response.status === 200) {
           const id = response.response.data._id
           navigate(`/profile/${id}/upload/img`)
@@ -33,9 +33,7 @@ const CheckEmail = () => {
 
   const verifyEmail = async () => {
     try {
-      await Axios.post(`/users/verify/email/${token}`, {
-        code
-      })
+      await verifyEmail()
       setIsVerify(true)
       setIsVerify(true)
     } catch (error) {
