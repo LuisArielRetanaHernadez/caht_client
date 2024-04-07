@@ -1,5 +1,16 @@
 import Axios from '../axios'
 
+export const verifyEmail = async (token, code) => {
+  try {
+    const verify = await Axios.post(`/users/verify/email/${token}`, {
+      code
+    })
+    return verify.response
+  } catch (error) {
+    return error
+  }
+}
+
 export const resendCodeEmail = async (token) => {
   try {
     const resendCode = await Axios.get(`/users/resend/code/email/${token}`)
