@@ -58,6 +58,11 @@ const userSlice = createSlice({
       state.token = ""
       state.user = {}
     },
+    setUser: (state, action) => {
+      state.isLogin = action.isLogin
+      state.token = action.token
+      state.user = action.user
+    },
     usersFind: (state, action) => {
       state.usersFind = action.payload
     }
