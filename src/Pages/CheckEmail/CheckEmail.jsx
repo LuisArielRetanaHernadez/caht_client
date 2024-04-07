@@ -35,7 +35,6 @@ const CheckEmail = () => {
     try {
       await verifyEmail()
       setIsVerify(true)
-      setIsVerify(true)
     } catch (error) {
       setIsVerify(false)
       setError(true)
