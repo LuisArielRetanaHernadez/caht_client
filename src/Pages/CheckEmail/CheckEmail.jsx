@@ -2,12 +2,16 @@ import { useEffect, useRef, useState } from 'react';
 import './CheckEmail.css'
 import { Navigate, useParams, useNavigate } from 'react-router-dom'
 
-import Axios from '../../utils/axios'
+import { useDispatch } from "react-redux"
+import { setUser } from "../../features/user/userSlice"
+
 import { resendCodeEmail, verifyTokenEmail } from '../../utils/api/user';
 const CheckEmail = () => {
   const [code, setCode] = useState(null)
   const [isVerify, setIsVerify] = useState(false)
   const [error, setError] = useState(false)
+
+  const dispatch = useDispatch()
 
   const btnResendCode = useRef(null)
 
@@ -20,7 +24,17 @@ const CheckEmail = () => {
       try {
         const response = await verifyTokenEmail(token)
         if (response.response.status === 200) {
-          const id = response.response.data._id
+
+          const id = response.response.data.user._id
+          const tokenSeccion = response.response.data.token
+          const user = response.response.data.user
+
+          dispatch(setUser({
+            isLogin: true,
+            token: tokenSeccion,
+            user
+          }))
+
           navigate(`/profile/${id}/upload/img`)
         }
       } catch (error) {
