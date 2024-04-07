@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './CheckEmail.css'
-import { Navigate, useParams } from 'react-router-dom'
+import { Navigate, useParams, useNavigate } from 'react-router-dom'
 
 import Axios from '../../utils/axios'
 import { resendCodeEmail } from '../../utils/api/user';
@@ -13,11 +13,14 @@ const CheckEmail = () => {
 
   const { token } = useParams();
 
+  const navigate = useNavigate()
+
   useEffect(() => {
     const verifyToken = async () => {
       try {
-        await Axios.post(`/users/verify/email/token/${token}`)
+        await Axios.get(`/users/verify/email/token/${token}`)
       } catch (error) {
+        navigate('*')
         return error
       }
     }
@@ -41,14 +44,14 @@ const CheckEmail = () => {
   const resendCode = async (e) => {
     e.preventDefault()
     const newCode = await resendCodeEmail(token)
-    console.log(newCode)
+
     if (btnResendCode.current) {
       if  (newCode.response.status === 200) {
-        // add class button-success
         btnResendCode.current.classList.add('button--success')
         setTimeout(() => {
           btnResendCode.current.classList.remove('button--success')
         }, 1500)
+        
       } else {
         btnResendCode.current.classList.add('button--error')
         setTimeout(() => {
