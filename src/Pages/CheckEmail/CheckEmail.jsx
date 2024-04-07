@@ -1,11 +1,19 @@
+// hooks react
 import { useEffect, useRef, useState } from 'react';
-import './CheckEmail.css'
+
+// router dom
 import { Navigate, useParams, useNavigate } from 'react-router-dom'
 
+// redux toolkit
 import { useDispatch } from "react-redux"
 import { setUser } from "../../features/user/userSlice"
 
+// api --> user
 import { resendCodeEmail, verifyTokenEmail } from '../../utils/api/user';
+
+// style CheckEmail
+import './CheckEmail.css'
+
 const CheckEmail = () => {
   const [code, setCode] = useState(null)
   const [isVerify, setIsVerify] = useState(false)
