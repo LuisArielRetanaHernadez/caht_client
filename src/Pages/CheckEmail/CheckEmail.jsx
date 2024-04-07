@@ -18,7 +18,11 @@ const CheckEmail = () => {
   useEffect(() => {
     const verifyToken = async () => {
       try {
-        await Axios.get(`/users/verify/email/token/${token}`)
+        const response = await Axios.get(`/users/verify/email/token/${token}`)
+        if (response.response.status === 200) {
+          const id = response.response.data._id
+          navigate(`/profile/${id}/upload/img`)
+        }
       } catch (error) {
         navigate('*')
         return error
@@ -51,7 +55,7 @@ const CheckEmail = () => {
         setTimeout(() => {
           btnResendCode.current.classList.remove('button--success')
         }, 1500)
-        
+
       } else {
         btnResendCode.current.classList.add('button--error')
         setTimeout(() => {
