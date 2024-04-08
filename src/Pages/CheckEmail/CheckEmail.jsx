@@ -2,14 +2,14 @@
 import { useEffect, useRef, useState } from 'react';
 
 // router dom
-import { Navigate, useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 // redux toolkit
 import { useDispatch } from "react-redux"
 import { setUser } from "../../features/user/userSlice"
 
 // api --> user
-import { resendCodeEmail, verifyTokenEmail } from '../../utils/api/user';
+import { resendCodeEmail, verifyEmail, verifyTokenEmail } from '../../utils/api/user';
 
 // style CheckEmail
 import './CheckEmail.css'
@@ -32,32 +32,32 @@ const CheckEmail = () => {
   useEffect(() => {
     const verifyToken = async () => {
       try {
-        const response = await verifyTokenEmail(token)
-        if (response.data.status === 200) {
-
-          const id = response.response.data.user._id
-          const tokenSeccion = response.response.data.token
-          const user = response.response.data.user
-
-          dispatch(setUser({
-            isLogin: true,
-            token: tokenSeccion,
-            user
-          }))
-
-          navigate(`/profile/${id}/upload/img`)
-        }
+        await verifyTokenEmail(token)
       } catch (error) {
-        // navigate('*')
+        navigate('*')
         return error
       }
     }
     verifyToken()
   },[token])
 
-  const verifyEmail = async () => {
+  const handleVerifyEmail = async () => {
     try {
-      await verifyEmail(token, code)
+      const response = await verifyEmail(token, code)
+
+      if (response.data.status === 200) {
+
+        const tokenSeccion = response.response.data.token
+        const user = response.response.data.user
+
+        dispatch(setUser({
+          isLogin: true,
+          token: tokenSeccion,
+          user
+        }))
+
+        navigate(`/profile/${id}/upload/img`)
+      }
       setIsVerify(true)
     } catch (error) {
       setIsVerify(false)
@@ -87,9 +87,9 @@ const CheckEmail = () => {
   }
 
   useEffect(() => {
+    
     if (isVerify) {
-
-      return <Navigate to={`/profile/${id}/upload/img`} />
+      navigate(`/profile/${id}/upload/img`)
     }
   },[isVerify])
 
@@ -100,7 +100,7 @@ const CheckEmail = () => {
         <p className="card__text">
           Introduce el codigo que te enviamos al correo con el que te registrates
         </p>
-        <form className="card__form">
+        <div className="card__form">
           <div className='wrapped--flex-col'>
             <input className="input input--card text-center" type="text"
               placeholder="XXXX"
@@ -113,9 +113,9 @@ const CheckEmail = () => {
             ref={btnResendCode}
             onClick={resendCode}
             ><span style={{position: 'relative'}}>Renviar Codigo</span></button>
-            <button onClick={verifyEmail} className="button button--card">verificar</button>
+            <button onClick={handleVerifyEmail} className="button button--card">verificar</button>
           </div>
-        </form>
+        </div>
       </div>
     </section>
   )
