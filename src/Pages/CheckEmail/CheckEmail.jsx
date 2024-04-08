@@ -89,7 +89,7 @@ const CheckEmail = () => {
   useEffect(() => {
     if (isVerify) {
 
-      return <Navigate to='/' />
+      return <Navigate to={`/profile/${id}/upload/img`} />
     }
   },[isVerify])
 
