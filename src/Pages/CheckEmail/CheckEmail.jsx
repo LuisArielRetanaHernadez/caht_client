@@ -31,7 +31,7 @@ const CheckEmail = () => {
     const verifyToken = async () => {
       try {
         const response = await verifyTokenEmail(token)
-        if (response.response.status === 200) {
+        if (response.data.status === 200) {
 
           const id = response.response.data.user._id
           const tokenSeccion = response.response.data.token
@@ -46,7 +46,7 @@ const CheckEmail = () => {
           navigate(`/profile/${id}/upload/img`)
         }
       } catch (error) {
-        navigate('*')
+        // navigate('*')
         return error
       }
     }
