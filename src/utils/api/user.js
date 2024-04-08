@@ -5,7 +5,7 @@ export const verifyEmail = async (token, code) => {
     const verify = await Axios.post(`/users/verify/email/${token}`, {
       code
     })
-    return verify.response
+    return verify.data
   } catch (error) {
     return error
   }
