@@ -23,7 +23,9 @@ const CheckEmail = () => {
 
   const btnResendCode = useRef(null)
 
-  const { token } = useParams();
+  const { id } = useParams()
+
+  const token = localStorage.getItem('token')
 
   const navigate = useNavigate()
 
