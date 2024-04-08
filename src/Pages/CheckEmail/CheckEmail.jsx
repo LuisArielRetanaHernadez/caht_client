@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom'
 
 // redux toolkit
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { setUser } from "../../features/user/userSlice"
 
 // api --> user
@@ -18,6 +18,8 @@ const CheckEmail = () => {
   const [code, setCode] = useState(null)
   const [isVerify, setIsVerify] = useState(false)
   const [error, setError] = useState(false)
+
+  const stateUser = useSelector(state => state.user)
 
   const dispatch = useDispatch()
 
@@ -45,10 +47,10 @@ const CheckEmail = () => {
     try {
       const response = await verifyEmail(token, code)
 
-      if (response.data.status === 200) {
+      if (response.status === 'success') {
 
-        const tokenSeccion = response.response.data.token
-        const user = response.response.data.user
+        const tokenSeccion = response.data.token
+        const user = response.data.user
 
         dispatch(setUser({
           isLogin: true,
@@ -56,7 +58,6 @@ const CheckEmail = () => {
           user
         }))
 
-        navigate(`/profile/${id}/upload/img`)
       }
       setIsVerify(true)
     } catch (error) {
@@ -71,7 +72,7 @@ const CheckEmail = () => {
     const newCode = await resendCodeEmail(token)
 
     if (btnResendCode.current) {
-      if  (newCode.response.status === 200) {
+      if  (newCode.response.status === 'success') {
         btnResendCode.current.classList.add('button--success')
         setTimeout(() => {
           btnResendCode.current.classList.remove('button--success')
@@ -88,10 +89,13 @@ const CheckEmail = () => {
 
   useEffect(() => {
     
-    if (isVerify) {
+    if (isVerify, stateUser.isLogin) {
+      localStorage.removeItem('token')
+      localStorage.setItem('user', JSON.stringify(stateUser))
+      
       navigate(`/profile/${id}/upload/img`)
     }
-  },[isVerify])
+  },[isVerify, stateUser])
 
   return (
     <section className='wrapped--menu container container--center'>
