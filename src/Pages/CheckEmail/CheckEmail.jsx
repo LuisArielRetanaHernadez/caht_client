@@ -57,7 +57,7 @@ const CheckEmail = () => {
 
   const verifyEmail = async () => {
     try {
-      await verifyEmail()
+      await verifyEmail(token, code)
       setIsVerify(true)
     } catch (error) {
       setIsVerify(false)
