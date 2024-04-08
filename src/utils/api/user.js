@@ -41,7 +41,7 @@ export const verifyUserByIdAndAuth = async (id) => {
 export const verifyTokenEmail = async (token) => {
   try {
     const verifyToken = await Axios.get(`/users/verify/email/token/${token}`)
-    return verifyToken.response
+    return verifyToken.data
   } catch (error) {
     return error
   }
