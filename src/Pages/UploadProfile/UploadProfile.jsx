@@ -23,8 +23,8 @@ const UploadProfile = () => {
   useEffect(() => {
     const verifyUser = async () => {
       const user = await verifyUserByIdAndAuth(id)
-      
-      if (!user || user.response.status === 401) {
+      console.log(user)
+      if (user.response.status === 401) {
         navigate('/login')
       }
     }
