@@ -138,9 +138,10 @@ const Register = () => {
       return
     }
     if (data.status === 'success') {
-      navigate(`/email/verify/${data.data.token}`)
+      navigate(`/email/verify/${data.data.id}`)
+      localStorage.setItem('token', data.data.token)
     }
-    console.log(data)
+
     setValues({
       name: '',
       lastName: '',
