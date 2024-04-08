@@ -49,7 +49,7 @@ const router = createBrowserRouter([
         element: <Register />
       },
       {
-        path: '/email/verify/:token',
+        path: '/email/verify/:id',
         element: <CheckEmail />
       },
       {
