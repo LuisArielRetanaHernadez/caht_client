@@ -137,15 +137,17 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const data = await register(values)
-    if (data.response.status === 400) {
+
+    if (data?.response?.status === 400) {
       dispatch(setError({
         statusCode: 'Error',
         message: 'Intenta de nuevo',
       }))
     }
-    if (data.status === 'success') {
-      navigate(`/email/verify/${data.data.id}`)
-      localStorage.setItem('token', data.data.token)
+    
+    if (data?.data.status === 'success') {
+      localStorage.setItem('token', data.data.data.token)
+      return navigate(`/email/verify/${data.data.data.id}`)
     }
 
     setValues({
