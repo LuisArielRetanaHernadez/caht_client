@@ -34,13 +34,14 @@ const UploadProfile = () => {
   const handleUpload = async () => {
     if (!publicId) return
 
-    const imgUpload = await uploadImageProfile(publicId)
-    if (imgUpload.response.status === 401) {
+    const imgUpload = await uploadImageProfile(id, publicId)
+
+    if (imgUpload.status === 401) {
       setErrorUpload(true)
       dispatch(setError({message: 'error upload', statusCode: 401}))
     }
 
-    if  (imgUpload.response.status === 200) {
+    if  (imgUpload.status === 200) {
       setErrorUpload(false)
       navigate('/')
     }
@@ -48,7 +49,7 @@ const UploadProfile = () => {
 
   useEffect(() => {
     if (!publicId) return
-    handleUpload(publicId)
+    handleUpload()
   }, [publicId])
 
   return (
