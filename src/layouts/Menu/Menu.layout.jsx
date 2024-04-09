@@ -19,7 +19,7 @@ const Menu = () => {
 
   const socket = manager.socket('/users')
 
-  const { isLogin } = useSelector(state => state.user)
+  const { isLogin, user } = useSelector(state => state.user)
 
   const dispatch = useDispatch()
 
@@ -44,7 +44,7 @@ const Menu = () => {
                       <Link className="avatar">
                         <img 
                         className="avatar__img"
-                        src="https://images.pexels.com/photos/15005609/pexels-photo-15005609/free-photo-of-puesta-de-sol-hombre-silueta-tarde.jpeg"
+                        src={user.photo}
                         ></img>
                       </Link>
 
