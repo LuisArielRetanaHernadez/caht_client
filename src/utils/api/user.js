@@ -20,10 +20,10 @@ export const resendCodeEmail = async (token) => {
   }
 }
 
-export const uploadImageProfile = async (data) => {
+export const uploadImageProfile = async (id, photo) => {
   try {
-    const uploadImage = await Axios.post('/users/upload/image/profile', data)
-    return uploadImage.data
+    const uploadImage = await Axios.post(`/users/upload/image/profile/${id}`, {photo})
+    return uploadImage
   } catch (error) {
     return error
   }
