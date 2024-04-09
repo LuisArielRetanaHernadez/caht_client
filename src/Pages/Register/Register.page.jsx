@@ -3,8 +3,9 @@ import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState } from "react"
 import { Link, Navigate, useNavigate } from "react-router-dom"
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { register } from "../../utils/Auth"
+import { setError } from "../../features/error/errorSlice"
 
 const datasFields = [
   {
@@ -131,11 +132,16 @@ const Register = () => {
 
   const { isLogin } = useSelector(state => state.user)
 
+  const dispatch = useDispatch()
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     const data = await register(values)
-    if (!data) {
-      return
+    if (data.response.status === 400) {
+      dispatch(setError({
+        statusCode: 'Error',
+        message: 'Intenta de nuevo',
+      }))
     }
     if (data.status === 'success') {
       navigate(`/email/verify/${data.data.id}`)
