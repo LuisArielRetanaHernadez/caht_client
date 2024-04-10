@@ -49,7 +49,7 @@ export const verifyTokenEmail = async (token) => {
 
 export const searchUsers = async (payload) => {
   try {
-    const response = await Axios.post(`/users/search`, payload)
+    const response = await Axios.get(`/users/search?user=${payload}`)
     return response.data
   } catch (error) {
     return error

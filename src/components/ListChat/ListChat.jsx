@@ -9,13 +9,13 @@ import './ListChat.css'
 import { useState } from 'react'
 
 // insta axios
-import axios from "../../utils/axios"
+import { searchUsers } from "../../utils/api/user"
 
 const ListChat = () => {
   const [users, setUsers] = useState([])
 
-  const searchUsers = async (value) => {
-    const usersFinds = await axios.get(`/users/search?user=${value}`, { value })
+  const searchUser = async (value) => {
+    const usersFinds =  await searchUsers(value)
     if (usersFinds) {
       setUsers(usersFinds.data.data.usersFind)
     }
@@ -36,7 +36,7 @@ const ListChat = () => {
   return (
     <>
       <div className="list-chat">
-        <Search onSubmit={searchUsers}/>
+        <Search onSubmit={searchUser}/>
         <ul className="list-chat__list grid">
           {items ?? <span className="legend">Start adding your contacts</span>}
         </ul>
