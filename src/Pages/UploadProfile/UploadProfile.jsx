@@ -12,7 +12,7 @@ import { setError } from "../../features/error/errorSlice"
 import { useParams } from "react-router-dom"
 
 const UploadProfile = () => {
-  const [publicId, setPublicId] = useState('chat/photo_profile_default/epspfzghsr7md5dlci32')
+  const [photo, setphoto] = useState('https://res.cloudinary.com/dqmkovsdy/image/upload/v1712350100/chat/photo_profile_default/epspfzghsr7md5dlci32.jpg')
   const [errorUpload, setErrorUpload] = useState(false)
 
   const { id } = useParams()
@@ -32,9 +32,9 @@ const UploadProfile = () => {
   },[id])
   
   const handleUpload = async () => {
-    if (!publicId) return
+    if (!photo) return
 
-    const imgUpload = await uploadImageProfile(id, publicId)
+    const imgUpload = await uploadImageProfile(id, photo)
 
     if (imgUpload.status === 401) {
       setErrorUpload(true)
@@ -48,9 +48,9 @@ const UploadProfile = () => {
   }
 
   useEffect(() => {
-    if (!publicId) return
+    if (!photo) return
     handleUpload()
-  }, [publicId])
+  }, [photo])
 
   return (
     <section className="wrapped wrapped--menu-min-h wrapped--flex-center">
@@ -61,12 +61,12 @@ const UploadProfile = () => {
             style={{ width: "200px", height: "200px", borderRadius: '50%', objectFit: "cover",
               border: "1px solid #ccc",
             }}
-            cldImg={cld.image(publicId)}
+            cldImg={cld.image(photo)}
             plugins={[responsive(), placeholder()]}
            />
         </div>
         <div className="flex gap-10">
-          <CloudinaryWidget setPublicId={setPublicId}/>
+          <CloudinaryWidget setPublicId={setphoto}/>
           <button className="button" onClick={handleUpload}>Save</button>
         </div>
 
