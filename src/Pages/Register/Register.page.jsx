@@ -2,9 +2,10 @@
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState } from "react"
-import { Link, Navigate } from "react-router-dom"
+import { Link, Navigate, useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
-import { registerAsync } from "../../features/user/userSlice"
+import { register } from "../../utils/Auth"
+import { setError } from "../../features/error/errorSlice"
 
 const datasFields = [
   {
@@ -127,14 +128,28 @@ const Register = () => {
     passwordConfirm: '',
   })
 
+  const navigate = useNavigate()
+
   const { isLogin } = useSelector(state => state.user)
-  const { user } = useSelector(state => state)
 
   const dispatch = useDispatch()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    dispatch(registerAsync(values))
+    const data = await register(values)
+
+    if (data?.response?.status === 400) {
+      dispatch(setError({
+        statusCode: 'Error',
+        message: 'Intenta de nuevo',
+      }))
+    }
+    
+    if (data?.data.status === 'success') {
+      localStorage.setItem('token', data.data.data.token)
+      return navigate(`/email/verify/${data.data.data.id}`)
+    }
+
     setValues({
       name: '',
       lastName: '',
@@ -150,12 +165,6 @@ const Register = () => {
     if (showPassword) setTypePassword('text')
     else setTypePassword('password')
   }, [showPassword])
-
-  useEffect(() => {
-    if (isLogin) {
-      localStorage.setItem("user", JSON.stringify(user))
-    }
-  }, [isLogin, user])
 
   if (isLogin) {
     return <Navigate to="/" />

@@ -12,7 +12,10 @@ import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 import './UserPreview.css'
 import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { getUserAsync } from '../../features/contact/contactSlice'
+import { getUserAsync, selectContact } from '../../features/contact/contactSlice'
+
+import Axios from '../../utils/axios';
+import { setError } from '../../features/error/errorSlice'
 
 const UserPreview = () => {
 
@@ -46,6 +49,15 @@ const UserPreview = () => {
     name
   } = useSelector(state => state.contact)
 
+  const addContacts = async () => {
+    try {
+      await Axios.put(`/contacts/add/${id}`)
+      dispatch(selectContact(name, true))
+    } catch (err) {
+      dispatch(setError(err.message, 'agregar contacto'))
+    }
+  }
+
 
   return (
     <div className="user-preview user-preview--center-content
@@ -74,7 +86,9 @@ const UserPreview = () => {
         ref={menuSub}
          className='list'>
           <li className='list__item pointer rounded-10'>Bloquear</li>
-          <li className='list__item pointer rounded-10'>Agregar</li>
+          <li className='list__item pointer rounded-10'
+          onClick={addContacts}
+          >Agregar</li>
           {
             isContact && <li className='list__item pointer rounded-10'>Editar</li>
           }

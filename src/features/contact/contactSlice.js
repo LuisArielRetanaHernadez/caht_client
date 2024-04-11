@@ -27,7 +27,7 @@ export const getContactAsync = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const response = await Axios.get(`/contact/${id}`)
-      return response.data
+      return response.data.data
     } catch (error) {
       return thunkAPI.rejectWithValue()
     }
@@ -39,7 +39,7 @@ export const getUserAsync = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const response = await getUser(id)
-      return response.data
+      return response.data.data
     } catch (error) {
       return thunkAPI.rejectWithValue()
     }
@@ -88,7 +88,7 @@ const contactSlice = createSlice({
     })
     .addCase(getUserAsync.fulfilled, (state, action) => {
       state.isContact = action.payload.isContact,
-      state.name = action.payload.name
+      state.name = action.payload.user.name
     })
     .addCase(getUserAsync.rejected, (state) => {
       state.isContact = false,

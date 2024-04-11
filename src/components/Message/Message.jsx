@@ -30,12 +30,12 @@ const Message = ({
     <>
     <article className={`message message--rounded-10px ${isAuthor ? 'message--float-right' : 'message--float-left'} `}>
       <header className="message__header">
-        <div className='avatar avatar--message avatar--message-left'>
+        <div className={`avatar avatar--message ${isAuthor ? 'avatar--message-left' : 'avatar--message-right'}`}>
           <img 
           src='https://images.pexels.com/photos/15005609/pexels-photo-15005609/free-photo-of-puesta-de-sol-hombre-silueta-tarde.jpeg' 
           className='avatar__img avatar__img--message' />
         </div>
-        <h4 className="message__name">{author.username}</h4>
+        <h4 className={`message__name ${isAuthor ? 'message__name--left' : ''}`}>{author.username}</h4>
         <ul className="message__options">
           <li className="message__option">
             <button className="" href="#">Edit</button>

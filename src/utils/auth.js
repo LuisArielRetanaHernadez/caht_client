@@ -7,7 +7,7 @@ const login = async (credentials) => {
 
 const register = async (...data) => {
   const user = await axios.post('/users/register', ...data)
-    .then(res => res.data)
+    .then(res => res)
     .catch(err => err)
   return user
 }

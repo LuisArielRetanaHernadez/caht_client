@@ -90,3 +90,9 @@
   color: var(--blue-bright);
   background-color: var(--bg-white);
 }
+
+@media screen and (max-width: 778px ){
+  .form {
+    width: 90%;
+  }
+}

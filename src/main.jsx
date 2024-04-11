@@ -16,8 +16,11 @@ import Register from './Pages/Register/Register.page.jsx'
 import Chat from './Pages/Chat/Chat.jsx'
 
 // layouts
-import Menu from './layouts/Mneu/Menu.layout.jsx'
+import Menu from './layouts/Menu/Menu.layout.jsx'
 import ListChatLayout from './layouts/ListChat/ListChat.layout.jsx'
+import CheckEmail from './Pages/CheckEmail/CheckEmail.jsx'
+import NotFound from './Pages/NotFound/NotFound.jsx'
+import UploadProfile from './Pages/UploadProfile/UploadProfile.jsx'
 
 
 
@@ -44,8 +47,20 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register />
+      },
+      {
+        path: '/email/verify/:id',
+        element: <CheckEmail />
+      },
+      {
+        path: '/profile/:id/upload/img',
+        element: <UploadProfile />
       }
     ]
+  },
+  {
+    path: '*',
+    element: <NotFound />
   }
 ])
 

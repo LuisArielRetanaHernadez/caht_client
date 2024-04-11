@@ -6,7 +6,9 @@
   justify-content: space-between;
   align-items: center;
 }
-
+.menu__logo {
+  color: var(--black);
+}
 .menu__navegation { 
   display: flex;
   align-items: center;
