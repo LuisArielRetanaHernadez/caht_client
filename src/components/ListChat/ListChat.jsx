@@ -16,8 +16,8 @@ const ListChat = () => {
 
   const searchUser = async (value) => {
     const usersFinds =  await searchUsers(value)
-    if (usersFinds) {
-      setUsers(usersFinds.data.data.usersFind)
+    if (usersFinds.message === 'search users') {
+      setUsers(usersFinds.data.usersFind)
     }
   }
 
