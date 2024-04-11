@@ -6,12 +6,16 @@ import Search from "../Search/Search"
 import './ListChat.css'
 
 // hooks react
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 // insta axios
 import { searchUsers } from "../../utils/api/user"
+import manager from "../../utils/websocket"
+
+const socket = manager.socket('/users')
 
 const ListChat = () => {
+
   const [users, setUsers] = useState([])
 
   const searchUser = async (value) => {
@@ -20,6 +24,25 @@ const ListChat = () => {
       setUsers(usersFinds.data.usersFind)
     }
   }
+  useEffect(() => {
+    socket.emit('list chat')
+
+    socket.on('list chat', (data) => {
+      const chatsFormated = data.map(chat => {
+        return {
+          _id: chat.users[0]._id,
+          name: chat.users[0].username,
+          message: chat.messages[0].content,
+          photo: chat.users[0].photo
+        }
+      })
+      setUsers(chatsFormated)
+    })
+  
+    return () => {
+      socket.off('list chat')
+    }
+  }, [])
 
   const items = users.map((contact, index) => (
     <ItemChat 
