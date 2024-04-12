@@ -61,6 +61,10 @@ const Chat = () => {
     }
 
     getMessages()
+
+    return () => {
+      setMessages([])
+    }
   }, [id])
 
   useEffect(() => {
