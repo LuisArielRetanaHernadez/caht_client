@@ -26,13 +26,12 @@ const ListChat = () => {
   }
   useEffect(() => {
     socket.emit('list chat')
-
     socket.on('list chat', (data) => {
       const chatsFormated = data.map(chat => {
         return {
           _id: chat.users[0]._id,
           name: chat.users[0].username,
-          message: chat.messages[0].content,
+          message: chat.messages[chat.messages.length - 1].content,
           photo: chat.users[0].photo
         }
       })
