@@ -1,20 +1,19 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import CloudinaryWidget from "../../components/widgetCloudinary/CloudinaryWidget"
 import { useEffect, useState } from 'react'
-import cld from "../../utils/cloudinary/cloudinary"
 import { AdvancedImage, placeholder, responsive } from "@cloudinary/react"
 import { uploadImageProfile, verifyUserByIdAndAuth } from "../../utils/api/user"
 
 import { useNavigate  } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { setError } from "../../features/error/errorSlice"
 
 import { useParams } from "react-router-dom"
+import { updatePhotoUser } from "../../features/user/userSlice"
 
 const UploadProfile = () => {
   const [photo, setphoto] = useState('https://res.cloudinary.com/dqmkovsdy/image/upload/v1712350100/chat/photo_profile_default/epspfzghsr7md5dlci32.jpg')
   const [photoCurrent, setPhotoCurrent] = useState(photo)
-  const [errorUpload, setErrorUpload] = useState(false)
 
   const { id } = useParams()
 
@@ -28,7 +27,6 @@ const UploadProfile = () => {
         navigate('/login')
       }
     }
-  
     verifyUser()
   },[id])
   
@@ -38,12 +36,11 @@ const UploadProfile = () => {
     const imgUpload = await uploadImageProfile(id, photo)
 
     if (imgUpload.status === 401) {
-      setErrorUpload(true)
       dispatch(setError({message: 'error upload', statusCode: 401}))
     }
 
-    if  (imgUpload.status === 200) {
-      setErrorUpload(false)
+    if  (imgUpload.status === 'success') {
+      dispatch(updatePhotoUser(photo))
       navigate('/')
     }
   }
