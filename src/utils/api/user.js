@@ -22,8 +22,9 @@ export const resendCodeEmail = async (token) => {
 
 export const uploadImageProfile = async (id, photo) => {
   try {
-    const uploadImage = await Axios.post(`/users/upload/image/profile/${id}`, {photo})
-    return uploadImage
+    const response = await Axios.post(`/users/upload/image/profile/${id}`, {photo})
+    console.log('subir nueva foto ', response.data)
+    return response.data
   } catch (error) {
     return error
   }
