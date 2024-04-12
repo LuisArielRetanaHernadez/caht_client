@@ -13,6 +13,7 @@ import { useParams } from "react-router-dom"
 
 const UploadProfile = () => {
   const [photo, setphoto] = useState('https://res.cloudinary.com/dqmkovsdy/image/upload/v1712350100/chat/photo_profile_default/epspfzghsr7md5dlci32.jpg')
+  const [photoCurrent, setPhotoCurrent] = useState(photo)
   const [errorUpload, setErrorUpload] = useState(false)
 
   const { id } = useParams()
@@ -48,8 +49,13 @@ const UploadProfile = () => {
   }
 
   useEffect(() => {
-    if (!photo) return
-    handleUpload()
+    setPhotoCurrent(prev => {
+      if (prev !== photo) {
+        handleUpload()
+        return photo
+      }
+      return prev
+    })
   }, [photo])
 
   return (
@@ -61,7 +67,7 @@ const UploadProfile = () => {
             style={{ width: "200px", height: "200px", borderRadius: '50%', objectFit: "cover",
               border: "1px solid #ccc",
             }}
-            cldImg={cld.image(photo)}
+            src={photo}
             plugins={[responsive(), placeholder()]}
            />
         </div>
