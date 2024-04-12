@@ -9,7 +9,7 @@ import "./Menu.layout.css"
 import "../../index.css"
 
 // router-dom-v6
-import { Link, redirect } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../features/user/userSlice";
 import manager from "../../utils/websocket";
@@ -19,15 +19,16 @@ const Menu = () => {
 
   const socket = manager.socket('/users')
 
+  const navigate = useNavigate()
+  
   const { isLogin, user } = useSelector(state => state.user)
-
   const dispatch = useDispatch()
 
   const logoutSeccion = () => {
     dispatch(logout())
     socket.disconnect()
     localStorage.removeItem('user')
-    return redirect('/login')
+    return navigate('/login')
   }
 
   return (
