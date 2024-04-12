@@ -47,7 +47,7 @@ const CloudinaryWidget = ({ setPublicId }) => {
       ...options,
     }, (error, result) => {
       if (!error && result && result.event === "success") {
-        setPublicId(result.info.public_id)
+        setPublicId(result.info.url)
       }
     })
 
