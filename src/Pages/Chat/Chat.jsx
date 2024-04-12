@@ -69,7 +69,6 @@ const Chat = () => {
 
   useEffect(() => {
     socket.on('message', (data) => {
-
       setMessages(prev => [...prev, { 
 
         content: data.message,
