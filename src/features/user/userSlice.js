@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 // utils
 import { login } from "../../utils/Auth";
 import { getContacts } from "../../utils/thunkUser";
-import { uploadImageProfile } from "../../utils/api/user";
 
 const initialState = {
   isLogin: false,
@@ -49,18 +48,6 @@ export const getContactsAsync = createAsyncThunk(
   }
 )
 
-export const uploadPhotoProfileAsync = createAsyncThunk(
-  "user/uploadPhotoProfile",
-  async (data, thunkAPI) => {
-    try {
-      const response = await uploadImageProfile()
-      return response
-    } catch (error) {
-      return thunkAPI.rejectWithValue()
-    }
-  }
-)
-
 const userSlice = createSlice({
   name: "user",
   initialState,
@@ -78,6 +65,9 @@ const userSlice = createSlice({
     },
     usersFind: (state, action) => {
       state.usersFind = action.payload
+    },
+    updatePhotoUser: (state, action) => {
+      state.user.photo = action.payload
     }
   },
 
@@ -117,19 +107,9 @@ const userSlice = createSlice({
     .addCase(getContactsAsync.fulfilled, (state, action) => {
       state.contacts = action.payload.data.contacts
     })
-
-    .addCase(uploadPhotoProfileAsync.pending, state => {
-      state.status = "loading"
-    })
-    .addCase(uploadPhotoProfileAsync.rejected, state => {
-      state.status = "rejected"
-    })
-    .addCase(uploadPhotoProfileAsync.fulfilled, (state, action) => {
-      state.user.photo = action.payload.data.photo
-    })
   }
 })
 
-export const { logout, setUser } = userSlice.actions
+export const { logout, setUser, updatePhotoUser } = userSlice.actions
 
 export default userSlice
