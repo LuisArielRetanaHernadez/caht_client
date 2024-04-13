@@ -48,6 +48,15 @@ export const verifyTokenEmail = async (token) => {
   }
 }
 
+export const getUsers = async (id) => {
+  try {
+    const response = await Axios.get(`/users/${id}`)
+    return response.data
+  } catch (error) {
+    return error
+  }
+}
+
 export const searchUsers = async (payload) => {
   try {
     const response = await Axios.get(`/users/search?user=${payload}`)
