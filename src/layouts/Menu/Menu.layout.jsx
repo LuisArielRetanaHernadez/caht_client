@@ -21,7 +21,7 @@ const Menu = () => {
 
   const navigate = useNavigate()
   
-  const { isLogin, user } = useSelector(state => state.user)
+  const { isLogin, photo } = useSelector(state => state.user)
   const dispatch = useDispatch()
 
   const logoutSeccion = () => {
@@ -45,7 +45,7 @@ const Menu = () => {
                       <Link className="avatar">
                         <img 
                         className="avatar__img"
-                        src={user.photo}
+                        src={photo}
                         ></img>
                       </Link>
 
