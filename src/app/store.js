@@ -18,8 +18,13 @@ const preloadedState = {
     user: { 
         isLogin: false,
         token: "",
-        user: {},
-        rol: "standar"
+        ID: "",
+        name: "",
+        username: "",
+        email: "",
+        photo: "",
+        rol: "standar",
+        status: 'fulfilled'
     }
 }
 
