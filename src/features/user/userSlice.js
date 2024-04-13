@@ -20,6 +20,7 @@ export const loginAsync = createAsyncThunk(
   async (data, thunkAPI) => {
     try {
       const response = await login(data)
+      console.log(response)
       return response
     } catch (error) {
       return thunkAPI.rejectWithValue()
@@ -102,7 +103,10 @@ const userSlice = createSlice({
     .addCase(logoutAsync.fulfilled, (state) => {
       state.isLogin = false
       state.token = ""
-      state.user = {}
+      state.name = ""
+      state.username = ""
+      state.email = ""
+      state.photo = ""
     })
 
     .addCase(getContactsAsync.pending, state => {
