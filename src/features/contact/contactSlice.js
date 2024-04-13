@@ -39,7 +39,7 @@ export const getUserAsync = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const response = await getUsers(id)
-      return response.data.data
+      return response.data
     } catch (error) {
       return thunkAPI.rejectWithValue()
     }
