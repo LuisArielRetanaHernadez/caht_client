@@ -103,6 +103,7 @@ const userSlice = createSlice({
     .addCase(logoutAsync.fulfilled, (state) => {
       state.isLogin = false
       state.token = ""
+      state.ID = ""
       state.name = ""
       state.username = ""
       state.email = ""
