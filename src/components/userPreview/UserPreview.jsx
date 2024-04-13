@@ -36,11 +36,8 @@ const UserPreview = () => {
   }, [showMenu])
 
   useEffect(() => {
-    const getUser = async () => {
-      dispatch(getUserAsync(id))
-    }
     if (id) {
-      getUser()
+      dispatch(getUserAsync(id))
     }
   }, [id])
 
