@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import Axios from "../../utils/axios"
-import { getUser } from "../../utils/thunkContact"
+import { getUsers } from "../../utils/api/user"
 
 const initialState = {
   id: null,
@@ -38,7 +38,7 @@ export const getUserAsync = createAsyncThunk(
   "contact/getUser",
   async (id, thunkAPI) => {
     try {
-      const response = await getUser(id)
+      const response = await getUsers(id)
       return response.data.data
     } catch (error) {
       return thunkAPI.rejectWithValue()
