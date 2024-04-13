@@ -6,8 +6,10 @@ import { getContacts } from "../../utils/thunkUser";
 const initialState = {
   isLogin: false,
   token: "",
-  user: {},
-  contacts: [],
+  name: "",
+  username: "",
+  email: "",
+  photo: "",
   rol: "standar",
   status: 'fulfilled'
 }
@@ -83,7 +85,10 @@ const userSlice = createSlice({
       state.status = "fulfilled"
       state.isLogin = true
       state.token = action.payload.data.token
-      state.user = action.payload.data.user
+      state.photo = action.payload.data.user.photo
+      state.username = action.payload.data.user.username
+      state.name = action.payload.data.user.name
+      state.email = action.payload.data.user.email
     })
 
     .addCase(logoutAsync.pending, state => {
