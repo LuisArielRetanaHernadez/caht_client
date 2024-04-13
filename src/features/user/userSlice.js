@@ -69,7 +69,7 @@ const userSlice = createSlice({
       state.usersFind = action.payload
     },
     updatePhotoUser: (state, action) => {
-      state.user.photo = action.payload
+      state.photo = action.payload
     }
   },
 
