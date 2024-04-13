@@ -6,6 +6,7 @@ import { getContacts } from "../../utils/thunkUser";
 const initialState = {
   isLogin: false,
   token: "",
+  ID: "",
   name: "",
   username: "",
   email: "",
@@ -85,6 +86,7 @@ const userSlice = createSlice({
       state.status = "fulfilled"
       state.isLogin = true
       state.token = action.payload.data.token
+      state.ID = action.payload.data.user._id
       state.photo = action.payload.data.user.photo
       state.username = action.payload.data.user.username
       state.name = action.payload.data.user.name
