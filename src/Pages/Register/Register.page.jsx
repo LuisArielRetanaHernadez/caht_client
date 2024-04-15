@@ -1,11 +1,24 @@
 /* eslint-disable react/jsx-no-duplicate-props */
+
+// hooks react
+import { useEffect, useState } from "react"
+
+// router dom
+import { Link, Navigate, useNavigate } from "react-router-dom"
+
+// react redux
+import { useDispatch, useSelector } from 'react-redux'
+
+// utils -> Auth
+import { register } from "../../utils/Auth"
+
+// features -> errorSlice
+import { setError } from "../../features/error/errorSlice"
+
+// fortawesome
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useEffect, useState } from "react"
-import { Link, Navigate, useNavigate } from "react-router-dom"
-import { useDispatch, useSelector } from 'react-redux'
-import { register } from "../../utils/Auth"
-import { setError } from "../../features/error/errorSlice"
+
 
 const datasFields = [
   {
