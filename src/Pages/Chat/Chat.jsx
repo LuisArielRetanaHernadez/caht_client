@@ -17,12 +17,9 @@ import manager from "../../utils/websocket"
 import Message from "../../components/Message/Message"
 import UserPreview from "../../components/userPreview/UserPreview"
 
-// axios instacia
-import Axios from "../../utils/axios"
-
 // style chat
 import "./Chat.style.css"
-import { getAllMessagesByChat } from "../../utils/api/message"
+import { getAllMessagesByChat, saveMessage } from "../../utils/api/message"
 
 const Chat = () => {
   const [messages, setMessages] = useState([])
@@ -94,27 +91,23 @@ const Chat = () => {
     if (!message) return
 
     const sendNewMessage = async () => {
-      
-      try {
+      const response = await saveMessage({message, id})
 
-        const newMessage = await Axios.post('/messages/save', {
-          message,
-          id
-        })
-        if (newMessage.status === 204) {
-          setMessages(prev => [...prev, { 
-            content: message,
-            author: { username: user.username } 
-          }])
-        }
-      } catch (error) {
-        
+      if (response.status === 'success') {
+        setMessages(prev => [...prev, {
+          content: message,
+          author: { username: user.username }
+        }])
+
+      } else {
         dispatch(setError({
-          message: error.data.message,
-          statusCode: error.status,
+          message: response.message,
+          statusCode: response.status,
           isError: true
         }))
+
       }
+
     }
 
     sendNewMessage()
