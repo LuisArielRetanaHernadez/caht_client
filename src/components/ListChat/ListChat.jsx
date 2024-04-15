@@ -25,12 +25,16 @@ const ListChat = () => {
 
   const searchUser = async (value) => {
     const usersFinds =  await searchUsers(value)
-    if (usersFinds.message === 'search users') {
+
+    if (usersFinds.status === 'success') {
       setUsers(usersFinds.data.usersFind)
     }
+
   }
+
   useEffect(() => {
     socket.emit('list chat')
+
     socket.on('list chat', (data) => {
       const chatsFormated = data.map(chat => {
         return {
@@ -40,7 +44,9 @@ const ListChat = () => {
           photo: chat.users[0].photo
         }
       })
+
       setUsers(chatsFormated)
+      
     })
   
     return () => {
