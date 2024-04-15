@@ -12,8 +12,12 @@ import { useParams } from "react-router-dom"
 import { updatePhotoUser } from "../../features/user/userSlice"
 
 const UploadProfile = () => {
-  const [photo, setphoto] = useState('https://res.cloudinary.com/dqmkovsdy/image/upload/v1712350100/chat/photo_profile_default/epspfzghsr7md5dlci32.jpg')
-  const [photoCurrent, setPhotoCurrent] = useState(photo)
+  const profile = useSelector(state => state.user.photo)
+
+  const [photo, setphoto] = useState(
+    profile ?? 'https://res.cloudinary.com/dqmkovsdy/image/upload/v1712350100/chat/photo_profile_default/epspfzghsr7md5dlci32.jpg'
+  )
+  // const [photoCurrent, setPhotoCurrent] = useState(photo)
 
   const { id } = useParams()
 
@@ -46,13 +50,12 @@ const UploadProfile = () => {
   }
 
   useEffect(() => {
-    setPhotoCurrent(prev => {
-      if (prev !== photo) {
-        handleUpload()
-        return photo
-      }
-      return prev
-    })
+    const currentPhoto = profile
+
+    if (currentPhoto !== photo) {
+      handleUpload()
+    }
+    
   }, [photo])
 
   return (
