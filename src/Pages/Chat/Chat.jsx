@@ -22,6 +22,7 @@ import Axios from "../../utils/axios"
 
 // style chat
 import "./Chat.style.css"
+import { getAllMessagesByChat } from "../../utils/api/message"
 
 const Chat = () => {
   const [messages, setMessages] = useState([])
@@ -47,21 +48,21 @@ const Chat = () => {
 
   useEffect(() => {
     const getMessages = async () => {
+      const response = await getAllMessagesByChat(id)
 
-      try {
+      if (response.status === 'success') {
 
-        const messagesDB = await Axios.get(`/messages/${id}`)
+        setMessages(response.data.messages)
+      } else {
 
-        if (messagesDB.status === 200) {
-          setMessages(messagesDB.data.data.messages)
-        }
-      } catch (error) {
         dispatch(setError({
-          message: error.data.message,
-          statusCode: error.response.status,
+          message: response.message,
+          statusCode: response.status,
           isError: true
         }))
+
       }
+      
     }
 
     getMessages()
