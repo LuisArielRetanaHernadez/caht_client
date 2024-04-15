@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
 
 // redux
 import { Provider } from 'react-redux'
-import { store } from './app/store.js'
 
+// redux -> store
+import { store } from './app/store.js'
 
 // router-dom
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
@@ -14,16 +14,16 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Login from './Pages/Login/Login.pages.jsx'
 import Register from './Pages/Register/Register.page.jsx'
 import Chat from './Pages/Chat/Chat.jsx'
-
-// layouts
-import Menu from './layouts/Menu/Menu.layout.jsx'
-import ListChatLayout from './layouts/ListChat/ListChat.layout.jsx'
 import CheckEmail from './Pages/CheckEmail/CheckEmail.jsx'
 import NotFound from './Pages/NotFound/NotFound.jsx'
 import UploadProfile from './Pages/UploadProfile/UploadProfile.jsx'
 
+// layouts
+import Menu from './layouts/Menu/Menu.layout.jsx'
+import ListChatLayout from './layouts/ListChat/ListChat.layout.jsx'
 
-
+// style
+import './index.css'
 
 const router = createBrowserRouter([
   {
