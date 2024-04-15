@@ -1,9 +1,14 @@
 /* eslint-disable react/prop-types */
 
-// styles
-import { useSelector } from 'react-redux';
-import './Message.css';
+// react hooks
 import { useEffect, useState } from 'react';
+
+// react redux
+import { useSelector } from 'react-redux';
+
+// styles
+import './Message.css';
+
 
 const Message = ({
   content,
