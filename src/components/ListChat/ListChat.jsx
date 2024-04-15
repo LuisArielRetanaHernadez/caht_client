@@ -1,16 +1,21 @@
-// components
+// hooks react
+import { useEffect, useState } from 'react'
+
+// components -> ItemChat
 import ItemChat from "../ItemChat/ItemChat"
+
+// components -> Search
 import Search from "../Search/Search"
+
+// insta axios
+import { searchUsers } from "../../utils/api/user"
+
+// manager socket
+import manager from "../../utils/websocket"
 
 // style ListChat
 import './ListChat.css'
 
-// hooks react
-import { useEffect, useState } from 'react'
-
-// insta axios
-import { searchUsers } from "../../utils/api/user"
-import manager from "../../utils/websocket"
 
 const socket = manager.socket('/users')
 
