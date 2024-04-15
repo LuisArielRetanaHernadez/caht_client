@@ -1,8 +1,13 @@
 /* eslint-disable react/prop-types */
-// stytle
-import './Search.css'
-import '../../index.css'
+
+// react hooks
 import { useState } from 'react'
+
+// stytle -> Search.css
+import './Search.css'
+
+// style -> index.css
+import '../../index.css'
 
 const Search = ({onSubmit}) => {
 
