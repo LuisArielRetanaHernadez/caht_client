@@ -7,6 +7,12 @@ import { Navigate, useParams } from "react-router-dom"
 // redux toolkit
 import { useDispatch, useSelector } from "react-redux"
 
+// reducer setError -> errorSlice
+import { setError } from "../../features/error/errorSlice"
+
+// manager socket
+import manager from "../../utils/websocket"
+
 // components
 import Message from "../../components/Message/Message"
 import UserPreview from "../../components/userPreview/UserPreview"
@@ -17,8 +23,6 @@ import Axios from "../../utils/axios"
 // style chat
 import "./Chat.style.css"
 
-import manager from "../../utils/websocket"
-import { setError } from "../../features/error/errorSlice"
 const Chat = () => {
   const socket = manager.socket('/users')
 
