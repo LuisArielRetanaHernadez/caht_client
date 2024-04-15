@@ -43,7 +43,8 @@ const UserPreview = () => {
 
   const {
     isContact,
-    name
+    name,
+    photo
   } = useSelector(state => state.contact)
 
   const addContacts = async () => {
@@ -63,7 +64,7 @@ const UserPreview = () => {
       <div className="avatar avatar--preview">
         <img
         className="avatar__img"
-         src="https://images.pexels.com/photos/15005609/pexels-photo-15005609/free-photo-of-puesta-de-sol-hombre-silueta-tarde.jpeg" alt="" />
+         src={photo} alt="" />
       </div>
 
       <div className="user-preview__information">
