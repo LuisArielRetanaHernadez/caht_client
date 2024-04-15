@@ -1,9 +1,14 @@
-import { useEffect, useRef, useState } from 'react'
-import './Mobal.css'
+// react hooks
+import { useEffect, useRef } from 'react'
 
 // redux
 import { useDispatch, useSelector } from 'react-redux'
+
+// clearError -> errorSlice
 import { clearError } from '../../features/error/errorSlice'
+
+// styles
+import './Mobal.css'
 
 const Mobal = () => {
   const mobal = useRef(null)
