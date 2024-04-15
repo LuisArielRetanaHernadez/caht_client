@@ -13,6 +13,10 @@
   color: #0B60B0;
 }
 
+.message__name--left {
+  text-align: end;
+}
+
 .message--float-right {
   float: right;
   clear: both;

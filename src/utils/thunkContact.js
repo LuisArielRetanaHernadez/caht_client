@@ -13,3 +13,4 @@ export const getContact = async (id) => {
   })
   return contacts
 }
+

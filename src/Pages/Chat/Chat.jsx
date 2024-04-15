@@ -7,27 +7,29 @@ import { Navigate, useParams } from "react-router-dom"
 // redux toolkit
 import { useDispatch, useSelector } from "react-redux"
 
+// reducer setError -> errorSlice
+import { setError } from "../../features/error/errorSlice"
+
+// manager socket
+import manager from "../../utils/websocket"
+
 // components
 import Message from "../../components/Message/Message"
 import UserPreview from "../../components/userPreview/UserPreview"
 
-// axios instacia
-import Axios from "../../utils/axios"
-
 // style chat
 import "./Chat.style.css"
+import { getAllMessagesByChat, saveMessage } from "../../utils/api/message"
 
-import manager from "../../utils/websocket"
-import { setError } from "../../features/error/errorSlice"
 const Chat = () => {
-  const socket = manager.socket('/users')
+  const [messages, setMessages] = useState([])
+  const [message, setMessage] = useState('')
 
+  const socket = manager.socket('/users')
+  
   const { id } = useParams()
 
   const { user } = useSelector((state) => state.user);
-
-  const [messages, setMessages] = useState([])
-  const [message, setMessage] = useState('')
 
   const boxMessages = useRef(null)
 
@@ -43,29 +45,32 @@ const Chat = () => {
 
   useEffect(() => {
     const getMessages = async () => {
+      const response = await getAllMessagesByChat(id)
 
-      try {
+      if (response.status === 'success') {
 
-        const messagesDB = await Axios.get(`/messages/${id}`)
+        setMessages(response.data.messages)
+      } else {
 
-        if (messagesDB.status === 200) {
-          setMessages(messagesDB.data.data.messages)
-        }
-      } catch (error) {
         dispatch(setError({
-          message: error.data.message,
-          statusCode: error.response.status,
+          message: response.message,
+          statusCode: response.status,
           isError: true
         }))
+
       }
+      
     }
 
     getMessages()
+
+    return () => {
+      setMessages([])
+    }
   }, [id])
 
   useEffect(() => {
     socket.on('message', (data) => {
-
       setMessages(prev => [...prev, { 
 
         content: data.message,
@@ -86,27 +91,23 @@ const Chat = () => {
     if (!message) return
 
     const sendNewMessage = async () => {
-      
-      try {
+      const response = await saveMessage({message, id})
 
-        const newMessage = await Axios.post('/messages/save', {
-          message,
-          id
-        })
-        if (newMessage.status === 204) {
-          setMessages(prev => [...prev, { 
-            content: message,
-            author: { username: user.username } 
-          }])
-        }
-      } catch (error) {
-        
+      if (response.status === 'success') {
+        setMessages(prev => [...prev, {
+          content: message,
+          author: { username: user.username }
+        }])
+
+      } else {
         dispatch(setError({
-          message: error.data.message,
-          statusCode: error.status,
+          message: response.message,
+          statusCode: response.status,
           isError: true
         }))
+
       }
+
     }
 
     sendNewMessage()

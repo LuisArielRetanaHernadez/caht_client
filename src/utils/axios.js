@@ -1,4 +1,10 @@
+/* eslint-disable no-useless-escape */
 import axios from 'axios';	
+
+const urlsExcludeAuth = [
+  /^\/email\/verify\/[^\/]+\/?$/,
+  /^\/profile\/[^\/]+\/upload\/img$/
+];
 
 const instance = axios.create({
   baseURL: 'http://localhost:3000/api/v1',
@@ -21,8 +27,14 @@ instance.interceptors.response.use(
   res => res,
   error => {
     if (error.response.status === 401) {
-      localStorage.removeItem('user');
-      window.location.href = '/login';
+      const isMatch = urlsExcludeAuth.some(url => url.test(window.location.pathname))
+      if (urlsExcludeAuth.includes(window.location.pathname) || isMatch) {
+        return Promise.reject(error);
+      } else {
+        localStorage.removeItem('user');
+        window.location.href = '/login';
+      }
+
     }
     return Promise.reject(error);
 

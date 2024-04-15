@@ -4,6 +4,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import userSlice from "../features/user/userSlice";
 import contactSlice from "../features/contact/contactSlice";
 import errorSlice from "../features/error/errorSlice";
+import listChatSlice from "../features/listChat/ListChatSlice";
 
 const leadUserState = () => {
     const serializedState = localStorage.getItem('user');
@@ -17,8 +18,13 @@ const preloadedState = {
     user: { 
         isLogin: false,
         token: "",
-        user: {},
-        rol: "standar"
+        ID: "",
+        name: "",
+        username: "",
+        email: "",
+        photo: "",
+        rol: "standar",
+        status: 'fulfilled'
     }
 }
 
@@ -28,7 +34,7 @@ export const store = configureStore({
     reducer: {
         user: userSlice.reducer,
         contact: contactSlice.reducer,
-        listChat: contactSlice.reducer,
+        listChat: listChatSlice.reducer,
         error: errorSlice
     },
     preloadedState: {

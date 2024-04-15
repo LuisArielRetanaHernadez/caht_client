@@ -10,10 +10,20 @@ import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 // style UserPreview
 import './UserPreview.css'
+import { useDispatch } from 'react-redux'
+import { useParams } from 'react-router-dom'
+import { getUserAsync, selectContact } from '../../features/contact/contactSlice'
+
+import Axios from '../../utils/axios';
+import { setError } from '../../features/error/errorSlice'
 
 const UserPreview = () => {
 
   const [showMenu, setShowMenu] = useState(false)
+
+  const { id } = useParams()
+
+  const dispatch = useDispatch()
 
   const menuSub = useRef(null)
 
@@ -25,10 +35,27 @@ const UserPreview = () => {
     }
   }, [showMenu])
 
+  useEffect(() => {
+    if (id) {
+      dispatch(getUserAsync(id))
+    }
+  }, [id])
+
   const {
-    contact,
-    name
+    isContact,
+    name,
+    photo
   } = useSelector(state => state.contact)
+
+  const addContacts = async () => {
+    try {
+      await Axios.put(`/contacts/add/${id}`)
+      dispatch(selectContact(name, true))
+    } catch (err) {
+      dispatch(setError(err.message, 'agregar contacto'))
+    }
+  }
+
 
   return (
     <div className="user-preview user-preview--center-content
@@ -37,12 +64,12 @@ const UserPreview = () => {
       <div className="avatar avatar--preview">
         <img
         className="avatar__img"
-         src="https://images.pexels.com/photos/15005609/pexels-photo-15005609/free-photo-of-puesta-de-sol-hombre-silueta-tarde.jpeg" alt="" />
+         src={photo} alt="" />
       </div>
 
       <div className="user-preview__information">
         <p className="user-preview__username">{name}</p>
-        <p className="user-preview__frende">{contact ? 'Contacto' : 'Agregar'}</p>
+        <p className="user-preview__frende">{isContact ? 'Contacto' : 'Agregar'}</p>
       </div>
 
       <div>
@@ -57,9 +84,11 @@ const UserPreview = () => {
         ref={menuSub}
          className='list'>
           <li className='list__item pointer rounded-10'>Bloquear</li>
-          <li className='list__item pointer rounded-10'>Agregar</li>
+          <li className='list__item pointer rounded-10'
+          onClick={addContacts}
+          >Agregar</li>
           {
-            contact && <li className='list__item pointer rounded-10'>Editar</li>
+            isContact && <li className='list__item pointer rounded-10'>Editar</li>
           }
         </ul>
 

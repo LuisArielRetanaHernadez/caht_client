@@ -1,10 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import Axios from "../../utils/axios"
+import { getUsers } from "../../utils/api/user"
 
 const initialState = {
   id: null,
   isContact: false,
   name: "",
+  photo: "",
 }
 
 
@@ -26,6 +28,18 @@ export const getContactAsync = createAsyncThunk(
   async (id, thunkAPI) => {
     try {
       const response = await Axios.get(`/contact/${id}`)
+      return response.data.data
+    } catch (error) {
+      return thunkAPI.rejectWithValue()
+    }
+  }
+)
+
+export const getUserAsync = createAsyncThunk(
+  "contact/getUser",
+  async (id, thunkAPI) => {
+    try {
+      const response = await getUsers(id)
       return response.data
     } catch (error) {
       return thunkAPI.rejectWithValue()
@@ -67,6 +81,20 @@ const contactSlice = createSlice({
     })
     .addCase(getContactAsync.rejected, (state) => {
       state.isContact = false
+    })
+
+    .addCase(getUserAsync.pending, (state) => {
+      state.isContact = false,
+      state.name = ""
+    })
+    .addCase(getUserAsync.fulfilled, (state, action) => {
+      state.isContact = action.payload.isContact,
+      state.name = action.payload.user.name
+      state.photo = action.payload.user.photo
+    })
+    .addCase(getUserAsync.rejected, (state) => {
+      state.isContact = false,
+      state.name = "" 
     })
   }
 })

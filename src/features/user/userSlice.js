@@ -1,13 +1,16 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 // utils
-import { login, register } from "../../utils/Auth";
+import { login } from "../../utils/Auth";
 import { getContacts } from "../../utils/thunkUser";
 
 const initialState = {
   isLogin: false,
   token: "",
-  user: {},
-  contacts: [],
+  ID: "",
+  name: "",
+  username: "",
+  email: "",
+  photo: "",
   rol: "standar",
   status: 'fulfilled'
 }
@@ -17,22 +20,11 @@ export const loginAsync = createAsyncThunk(
   async (data, thunkAPI) => {
     try {
       const response = await login(data)
+      console.log(response)
       return response
     } catch (error) {
       return thunkAPI.rejectWithValue()
     }
-  }
-)
-
-export const registerAsync = createAsyncThunk(
-  "user/register",
-  async (data, thunkAPI) => {
-    try {
-      const response = await register(data)
-      return response
-    } catch (error) {
-      return thunkAPI.rejectWithValue()
-    } 
   }
 )
 
@@ -70,8 +62,16 @@ const userSlice = createSlice({
       state.token = ""
       state.user = {}
     },
+    setUser: (state, action) => {
+      state.isLogin = action.payload.isLogin
+      state.token = action.payload.token
+      state.user = action.payload.user
+    },
     usersFind: (state, action) => {
       state.usersFind = action.payload
+    },
+    updatePhotoUser: (state, action) => {
+      state.photo = action.payload
     }
   },
 
@@ -87,20 +87,11 @@ const userSlice = createSlice({
       state.status = "fulfilled"
       state.isLogin = true
       state.token = action.payload.data.token
-      state.user = action.payload.data.user
-    })
-
-    .addCase(registerAsync.pending, state => {
-      state.status = "loading"
-    })
-    .addCase(registerAsync.rejected, state => {
-      state.status = "rejected"
-    })
-    .addCase(registerAsync.fulfilled, (state, action) => {
-      state.status = "fulfilled"
-      state.isLogin = true
-      state.token = action.payload.data.token
-      state.user = action.payload.data.user
+      state.ID = action.payload.data.user._id
+      state.photo = action.payload.data.user.photo
+      state.username = action.payload.data.user.username
+      state.name = action.payload.data.user.name
+      state.email = action.payload.data.user.email
     })
 
     .addCase(logoutAsync.pending, state => {
@@ -112,7 +103,11 @@ const userSlice = createSlice({
     .addCase(logoutAsync.fulfilled, (state) => {
       state.isLogin = false
       state.token = ""
-      state.user = {}
+      state.ID = ""
+      state.name = ""
+      state.username = ""
+      state.email = ""
+      state.photo = ""
     })
 
     .addCase(getContactsAsync.pending, state => {
@@ -127,6 +122,6 @@ const userSlice = createSlice({
   }
 })
 
-export const { logout } = userSlice.actions
+export const { logout, setUser, updatePhotoUser } = userSlice.actions
 
 export default userSlice
