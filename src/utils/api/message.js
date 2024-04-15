@@ -8,3 +8,12 @@ export const getAllMessagesByChat = (id) => {
     return error
   }
 }
+
+export const saveMessage = (data) => {
+  try {
+    const response = Axios.post('/messages/save', data)
+    return response.data
+  } catch (error) {
+    return error
+  }
+}
