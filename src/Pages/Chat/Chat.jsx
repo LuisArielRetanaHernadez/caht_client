@@ -24,14 +24,14 @@ import Axios from "../../utils/axios"
 import "./Chat.style.css"
 
 const Chat = () => {
-  const socket = manager.socket('/users')
+  const [messages, setMessages] = useState([])
+  const [message, setMessage] = useState('')
 
+  const socket = manager.socket('/users')
+  
   const { id } = useParams()
 
   const { user } = useSelector((state) => state.user);
-
-  const [messages, setMessages] = useState([])
-  const [message, setMessage] = useState('')
 
   const boxMessages = useRef(null)
 
