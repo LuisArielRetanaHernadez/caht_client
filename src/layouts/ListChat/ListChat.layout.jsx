@@ -1,10 +1,20 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { Navigate, Outlet, useLocation } from "react-router-dom";
-import ListChat from "../../components/ListChat/ListChat";
-import "./ListChat.style.css";
+
+// react hooks
+import { useState, useEffect } from 'react';
+
+// react redux
 import { useSelector } from 'react-redux';
-import { useEffect } from "react";
-import { useState } from 'react';
+
+// router dom
+import { Navigate, Outlet, useLocation } from "react-router-dom";
+
+// components -> ListChat
+import ListChat from "../../components/ListChat/ListChat";
+
+// styles -> ListChat
+import "./ListChat.style.css";
+
 
 const ListChatLayout = () => {
   const [showListChat, setShowListChat] = useState(true);
@@ -19,6 +29,7 @@ const ListChatLayout = () => {
 
   useEffect(() => {
     const widthViewport = window.innerWidth;
+    
     if (widthViewport < 768) {
       if (location.pathname !== "/") {
         setShowListChat(false);
