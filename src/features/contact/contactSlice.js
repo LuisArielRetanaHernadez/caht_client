@@ -6,6 +6,7 @@ const initialState = {
   id: null,
   isContact: false,
   name: "",
+  photo: "",
 }
 
 
@@ -89,6 +90,7 @@ const contactSlice = createSlice({
     .addCase(getUserAsync.fulfilled, (state, action) => {
       state.isContact = action.payload.isContact,
       state.name = action.payload.user.name
+      state.photo = action.payload.user.photo
     })
     .addCase(getUserAsync.rejected, (state) => {
       state.isContact = false,
