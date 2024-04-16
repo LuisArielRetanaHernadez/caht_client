@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { loginAsync } from "../../features/user/userSlice"
 
 // styles
-import "./Login.styles.css"
+import "./Login.css"
 
 // svg
 import closedEye from "../../assets/svg/closedEye.svg"
