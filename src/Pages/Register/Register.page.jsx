@@ -9,8 +9,8 @@ import { Link, Navigate, useNavigate } from "react-router-dom"
 // react redux
 import { useDispatch, useSelector } from 'react-redux'
 
-// utils -> Auth
-import { register } from "../../utils/Auth"
+// api -> user
+import { registerUser } from "../../utils/api/user"
 
 // features -> errorSlice
 import { setError } from "../../features/error/errorSlice"
@@ -149,7 +149,8 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const data = await register(values)
+
+    const data = await registerUser(values)
 
     if (data?.response?.status === 400) {
       dispatch(setError({
@@ -159,8 +160,8 @@ const Register = () => {
     }
     
     if (data?.data.status === 'success') {
-      localStorage.setItem('token', data.data.data.token)
-      return navigate(`/email/verify/${data.data.data.id}`)
+      localStorage.setItem('token', data.data.token)
+      return navigate(`/email/verify/${data.data.id}`)
     }
 
     setValues({

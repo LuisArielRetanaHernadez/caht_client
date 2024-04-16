@@ -1,5 +1,14 @@
 import Axios from '../axios'
 
+export const registerUser = async (payload) => {
+  try {
+    const response = await Axios.post('/users/register', payload)
+    return response.data
+  } catch (error) {
+    return error
+  }
+}
+
 export const verifyEmail = async (token, code) => {
   try {
     const verify = await Axios.post(`/users/verify/email/${token}`, {
