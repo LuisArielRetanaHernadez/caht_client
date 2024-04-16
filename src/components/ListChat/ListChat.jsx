@@ -14,7 +14,7 @@ import { searchUsers } from "../../utils/api/user"
 import manager from "../../utils/websocket"
 
 // style ListChat
-import './ListChat.css'
+import './LIstChat.css'
 
 
 const socket = manager.socket('/users')
