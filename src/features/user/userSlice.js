@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 // utils
-import { login } from "../../utils/Auth";
+import { login } from "../../utils/auth";
 import { getContacts } from "../../utils/thunkUser";
 
 const initialState = {
