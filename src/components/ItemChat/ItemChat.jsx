@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import manager from "../../utils/websocket";
 
 // style ListChat.css
-import '../ListChat/ListChat.css'
+import '../ListChat/LIstChat.css'
 
 const ItemChat = ({ id, name, messageLast, photo}) => {
   const [userOnline, setUserOnline] = useState(false)
