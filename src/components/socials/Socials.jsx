@@ -1,4 +1,6 @@
-import Google from "../../assets/svg/Google.svg"
+// fortawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGoogle } from "@fortawesome/free-brands-svg-icons"
 
 const Socials = () => {
 
@@ -6,7 +8,7 @@ const Socials = () => {
     <>
       <div>
         <ul>
-          <li><img src={Google}></img></li>
+          <li><FontAwesomeIcon icon={faGoogle} /></li>
         </ul>
       </div>
     </>
