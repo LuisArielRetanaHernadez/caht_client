@@ -1,5 +1,15 @@
 /* eslint-disable no-useless-escape */
-import axios from 'axios';	
+import axios from 'axios';
+
+let serverURL = ""
+
+if (import.meta.env.MODE_DEV === 'production') {
+  serverURL = import.meta.env.SERVER_URL_PRODUCTION
+}
+
+if (import.meta.env.MODE_DEV === 'development') {
+  serverURL = import.meta.env.SERVER_URL_DEVELOPMENT
+}
 
 const urlsExcludeAuth = [
   /^\/email\/verify\/[^\/]+\/?$/,
@@ -7,7 +17,7 @@ const urlsExcludeAuth = [
 ];
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3000/api/v1',
+  baseURL: serverURL,
   timeout: 1500,
 })
 
