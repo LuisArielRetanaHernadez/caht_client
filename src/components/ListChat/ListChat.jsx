@@ -21,13 +21,13 @@ const socket = manager.socket('/users')
 
 const ListChat = () => {
 
-  const [users, setUsers] = useState([])
+  const [listChat, setListChat] = useState([])
 
   const searchUser = async (value) => {
     const usersFinds =  await searchUsers(value)
 
     if (usersFinds.status === 'success') {
-      setUsers(usersFinds.data.usersFind)
+      setListChat(usersFinds.data.usersFind)
     }
 
   }
@@ -45,7 +45,7 @@ const ListChat = () => {
         }
       })
 
-      setUsers(chatsFormated)
+      setListChat(chatsFormated)
       
     })
   
@@ -54,7 +54,7 @@ const ListChat = () => {
     }
   }, [])
 
-  const items = users.map((contact, index) => (
+  const items = listChat.map((contact, index) => (
     <ItemChat 
       key={index}
       id={contact._id}
