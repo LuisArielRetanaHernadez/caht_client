@@ -1,8 +1,13 @@
 import axios from './axios';
 
 const login = async (credentials) => {
-  return axios.post('/users/login', credentials)
-  .then(res => res.data)
+  try {
+    const response = await axios.post('/users/login', credentials)
+    console.log(response)
+    return response.data
+  } catch (error) {
+    return error
+  }  
 }
 
 const register = async (...data) => {
