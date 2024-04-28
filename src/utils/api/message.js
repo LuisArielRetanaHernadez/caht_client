@@ -2,7 +2,7 @@ import Axios from '../../utils/axios'
 
 export const getAllMessagesByChat = async (id) => {
   try {
-    const response = Axios.get(`/messages/${id}`)
+    const response = await Axios.get(`/messages/${id}`)
     return response.data
   } catch (error) {
     return error
