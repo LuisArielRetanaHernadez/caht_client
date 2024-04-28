@@ -46,8 +46,8 @@ const Chat = () => {
   useEffect(() => {
     const getMessages = async () => {
       const response = await getAllMessagesByChat(id)
-
-      if (response.status === 'success') {
+      console.log(response);
+      if (response.status === 'succes') {
 
         setMessages(response.data.messages)
       } else {
@@ -87,7 +87,7 @@ const Chat = () => {
 
   const sendMessage = (e) => {
     e.preventDefault();
-
+    console.log(message);
     if (!message) return
 
     const sendNewMessage = async () => {
@@ -135,7 +135,7 @@ const Chat = () => {
       <UserPreview />
 
         {messages.map((m, i) => (    
-          <Message key={i} content={m.content} author={m.author} />
+          <Message key={i} id={m._id} content={m.content} author={m.author} />
         )) ?? "No hay mensajes"}
         
       </div>
