@@ -3,12 +3,12 @@ import axios from 'axios';
 
 let serverURL = ""
 
-if (import.meta.env.MODE_DEV === 'production') {
-  serverURL = import.meta.env.SERVER_URL_PRODUCTION
+if (import.meta.env.VITE_REACT_MODE_DEV === 'production') {
+  serverURL = import.meta.env.VITE_REACT_SERVER_URL_PRODUCTION
 }
 
-if (import.meta.env.MODE_DEV === 'development') {
-  serverURL = import.meta.env.SERVER_URL_DEVELOPMENT
+if (import.meta.env.VITE_REACT_MODE_DEV === 'development') {
+  serverURL = import.meta.env.VITE_REACT_SERVER_URL_DEVELOPMENT
 }
 
 const urlsExcludeAuth = [
