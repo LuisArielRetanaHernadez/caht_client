@@ -16,10 +16,10 @@ const Message = ({
 }) => {
   const [isAuthor, setIsAuthor] = useState(false);
 
-  const { user } = useSelector(state => state.user)
+  const { ID } = useSelector(state => state.user)
 
   useEffect(() => {
-    if (user.username === author.username) {
+    if (ID === author._id) {
       setIsAuthor(true)
     } else {
       setIsAuthor(false)
