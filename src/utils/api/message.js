@@ -11,8 +11,8 @@ export const getAllMessagesByChat = async (id) => {
 
 export const saveMessage = async (data) => {
   try {
-    const response = Axios.post('/messages/save', data)
-    return response.data
+    const response = await Axios.post('/messages/save', data)
+    return response
   } catch (error) {
     return error
   }
