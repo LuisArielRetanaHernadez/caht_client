@@ -29,7 +29,7 @@ const Chat = () => {
   
   const { id } = useParams()
 
-  const { user } = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
 
   const boxMessages = useRef(null)
 
@@ -46,7 +46,7 @@ const Chat = () => {
   useEffect(() => {
     const getMessages = async () => {
       const response = await getAllMessagesByChat(id)
-      console.log(response);
+
       if (response.status === 'succes') {
 
         setMessages(response.data.messages)
@@ -71,10 +71,12 @@ const Chat = () => {
 
   useEffect(() => {
     socket.on('message', (data) => {
+
       setMessages(prev => [...prev, { 
 
         content: data.message,
           author: {
+            _id: data.from,
             username: data.username,
           }
       }])
@@ -93,10 +95,13 @@ const Chat = () => {
     const sendNewMessage = async () => {
       const response = await saveMessage({message, id})
 
-      if (response.status === 'success') {
+      if (response.status === 204) {
         setMessages(prev => [...prev, {
           content: message,
-          author: { username: user.username }
+          author: { 
+            _id: user.ID,
+            username: user.username,
+          }
         }])
 
       } else {
