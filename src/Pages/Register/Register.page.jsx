@@ -159,7 +159,7 @@ const Register = () => {
       }))
     }
     
-    if (data?.data.status === 'success') {
+    if (data.status === 'success') {
       localStorage.setItem('token', data.data.token)
       return navigate(`/email/verify/${data.data.id}`)
     }
