@@ -82,6 +82,8 @@ const Chat = () => {
       }])
     })
 
+    socket.emit('list chat')
+
     return () => {
       socket.off('message')
     }
@@ -89,7 +91,6 @@ const Chat = () => {
 
   const sendMessage = (e) => {
     e.preventDefault();
-    console.log(message);
     if (!message) return
 
     const sendNewMessage = async () => {
@@ -119,6 +120,7 @@ const Chat = () => {
 
     setMessage('')
     socket.emit('send message', {message, to: id})
+    socket.emit('list chat')
   }
 
   useEffect(() => {
