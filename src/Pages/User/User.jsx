@@ -35,8 +35,8 @@ const User = (props) => {
     }
   }, [id])
 	return (
-		<div className="container">
-			<header className="header">
+		<div className="profile">
+			<header className="header profile__content">
         <div className="profile__image-header">
           <img></img>
         </div>
@@ -45,7 +45,7 @@ const User = (props) => {
         </div>
       </header>
 
-      <div className="profile_content">
+      <div className="profile__content">
         <form className="form">
           <div className="form__field">
             <label className="form__label">Username</label>
@@ -74,7 +74,7 @@ const User = (props) => {
         </form>
       </div>
 
-      <div className="profile_content">
+      <div className="profile__content">
         <h3 className="sub-title">Contacts</h3>
         <ul className="list">
           <li className="item">
