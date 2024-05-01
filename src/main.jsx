@@ -17,6 +17,7 @@ import Chat from './Pages/Chat/Chat.jsx'
 import CheckEmail from './Pages/CheckEmail/CheckEmail.jsx'
 import NotFound from './Pages/NotFound/NotFound.jsx'
 import UploadProfile from './Pages/UploadProfile/UploadProfile.jsx'
+import User from './Pages/User/User.jsx'
 
 // layouts
 import Menu from './layouts/Menu/Menu.layout.jsx'
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: '/email/verify/:id',
         element: <CheckEmail />
+      },
+      {
+        path: '/profile/:id',
+        element: <User />
       },
       {
         path: '/profile/:id/upload/img',
