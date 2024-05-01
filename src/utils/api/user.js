@@ -57,7 +57,7 @@ export const verifyTokenEmail = async (token) => {
   }
 }
 
-export const getUsers = async (id) => {
+export const getUser = async (id) => {
   try {
     const response = await Axios.get(`/users/${id}`)
     return response.data
