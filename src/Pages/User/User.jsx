@@ -50,9 +50,13 @@ const User = (props) => {
         <div className="profile__image-user">
           <img src="https://www.xtrafondos.com/wallpapers/fortnite-plague-3769.jpg"></img>
         </div>
+
+      </header>
+      
+      <div>
         <h2 className="title profile__name-user">Alison Mendez</h2>
         <p className="text profile__username">@alisonmendez</p>
-      </header>
+      </div>
 
       <div className="profile__content">
         <form className="form" onSubmit={handleSubmit}>
