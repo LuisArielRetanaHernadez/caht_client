@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { Link, useParams } from "react-router-dom"
-import { updateUser } from "../../utils/api/user"
+import { getUser, updateUser } from "../../utils/api/user"
 
 /* eslint-disable no-unused-vars */
 const User = (props) => {
@@ -21,7 +21,15 @@ const User = (props) => {
     const response = await updateUser(data)
   }
 
+  const getInformationUser = async () => {
+    const response = await getUser(id)
+    if  (response.status === 200) {
+      setDataUser(response.data)
+    }
+  }
+
   useEffect(() => {
+    getInformationUser()
     if (user.id === id) {
       setIsAuthor(true)
     }
