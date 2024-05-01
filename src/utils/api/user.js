@@ -66,9 +66,9 @@ export const getUsers = async (id) => {
   }
 }
 
-export const updateUser = async () => {
+export const updateUser = async (data) => {
   try {
-    const response = await Axios.put(`/users/`)
+    const response = await Axios.put(`/users/`, { data })
     return response.data
   } catch (error) {
     return error
