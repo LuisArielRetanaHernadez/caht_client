@@ -8,7 +8,6 @@ if (user) {
 }
 
 const manager = new Manager("ws://localhost:3000", {
-  reconnectionDelayMax: 10000,
   reconnection: true,
   autoConnect: true,
   auth: {
