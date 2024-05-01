@@ -4,6 +4,8 @@ import { useSelector } from "react-redux"
 import { Link, useParams } from "react-router-dom"
 import { getUser, updateUser } from "../../utils/api/user"
 
+import './user.style.css'
+
 /* eslint-disable no-unused-vars */
 const User = (props) => {
   const [isAuthor, setIsAuthor] = useState(false)
@@ -43,10 +45,10 @@ const User = (props) => {
 		<div className="profile">
 			<header className="header profile__content">
         <div className="profile__image-header">
-          <img></img>
+          <img src="https://www.xtrafondos.com/wallpapers/fortnite-capitulo-2-4215.jpg"></img>
         </div>
         <div className="profile__image-user">
-          <img></img>
+          <img src="https://www.xtrafondos.com/wallpapers/fortnite-plague-3769.jpg"></img>
         </div>
       </header>
 
