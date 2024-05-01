@@ -96,17 +96,27 @@ const User = (props) => {
 
       <div className="profile__content">
         <h3 className="sub-title">Contacts</h3>
-        <ul className="list">
-          <li className="item">
+        <ul className="list list--profile">
+          <li className="item rounded-10">
             <Link className="user-content">
-              <div className="user-content__box">
-                <div className="user-content__avatar">
-                  <img></img>
-                </div>
+              <div className="user-content__avatar">
+                <img src="https://www.xtrafondos.com/wallpapers/fortnite-plague-3769.jpg"></img>
               </div>
-              <div className="user-content__box">
-                <h3 className="text">Name</h3>
+              <div className="text-center flex direction-column items-center justify-center flex-1">
+                <h3 className="text">Mabi</h3>
               </div>
+            </Link>
+          </li>
+
+          <li className="item rounded-10">
+            <Link className="user-content">
+              <div className="user-content__avatar">
+                <img src="https://www.xtrafondos.com/wallpapers/fortnite-plague-3769.jpg"></img>
+              </div>
+              <div className="text-center flex direction-column items-center justify-center flex-1">
+                <h3 className="user-content__name">Mabi</h3>
+              </div>
+
             </Link>
           </li>
         </ul>
