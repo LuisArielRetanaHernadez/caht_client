@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 /* eslint-disable no-unused-vars */
 const User = (props) => {
+  const { id } = useParams()
 	return (
 		<div>
 			<header>
