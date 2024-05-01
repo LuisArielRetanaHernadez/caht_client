@@ -64,3 +64,10 @@
   font-size: 25px;
   text-align: center;
 }
+
+.profile__username {
+  margin: auto;
+  color: gray;
+  font-size: 20px;
+  text-align: center;
+}
