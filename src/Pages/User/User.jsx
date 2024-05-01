@@ -1,8 +1,19 @@
+import { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
 import { Link, useParams } from "react-router-dom"
 
 /* eslint-disable no-unused-vars */
 const User = (props) => {
+  const [isAuthor, setIsAuthor] = useState(false)
+  const user = useSelector(state => state.user)
+
   const { id } = useParams()
+
+  useEffect(() => {
+    if (user.id === id) {
+      setIsAuthor(true)
+    }
+  })
 	return (
 		<div>
 			<header>
@@ -17,15 +28,27 @@ const User = (props) => {
       <div>
         <div>
           <label>Username</label>
-          <input></input>
+          {
+            isAuthor ? 
+            <input></input> 
+            : <p></p>
+          }
         </div>
         <div>
           <label>Name</label>
-          <input></input>
+          {
+            isAuthor ?
+            <input></input> 
+            : <p></p>
+          }
         </div>
         <div>
           <label>Last Name</label>
-          <input></input>
+          {
+            isAuthor ? 
+            <input></input> 
+            : <p></p>
+          }
         </div>
       </div>
 
