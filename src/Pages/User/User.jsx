@@ -2,13 +2,24 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { Link, useParams } from "react-router-dom"
+import { updateUser } from "../../utils/api/user"
 
 /* eslint-disable no-unused-vars */
 const User = (props) => {
   const [isAuthor, setIsAuthor] = useState(false)
+  const [dataUser, setDataUser] = useState({
+    id: '',
+    username: '',
+    name: '',
+    lastName: ''
+  })
   const user = useSelector(state => state.user)
 
   const { id } = useParams()
+
+  const update = async (data) => {
+    const response = await updateUser(data)
+  }
 
   useEffect(() => {
     if (user.id === id) {
