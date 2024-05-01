@@ -60,34 +60,34 @@ const User = (props) => {
 
       <div className="profile__content">
         <form className="form profile__form" onSubmit={handleSubmit}>
-          <div className="form__field">
-            <label className="form__label">Username</label>
+          <div className="form__field form__field--profile">
+            <label className="form__label form__label--profile">Username</label>
             {
               isAuthor ? 
-              <input className="form__input" type="text" placeholder="Username" defaultValue={'Username'} /> 
+              <input className="form__input form__input--profile" type="text" placeholder="Username" defaultValue={'Username'} /> 
               : <p className="text">Username</p>
             }
           </div>
-          <div className="form__field">
-            <label className="form__label">Name</label>
+          <div className="form__field form__field--profile">
+            <label className="form__label--profile">Name</label>
             {
               isAuthor ?
-              <input className="form__input" type="text" placeholder="Name" defaultValue={'Name'} /> 
+              <input className="form__input form__input--profile" type="text" placeholder="Name" defaultValue={'Name'} /> 
               : <p className="text">Name</p>
             }
           </div>
-          <div className="form__field">
-            <label className="form__label">Last Name</label>
+          <div className="form__field form__field--profile">
+            <label className="form__label form__label--profile">Last Name</label>
             {
               isAuthor ? 
-              <input className="form__input" type="text" placeholder="Last Name" defaultValue={'Last Name'} /> 
+              <input className="form__input form__input--profile" type="text" placeholder="Last Name" defaultValue={'Last Name'} /> 
               : <p className="text">Last Name</p>
             }
           </div>
           {
             isAuthor &&
-            <div>
-              <button className="button profile__button">Save</button>
+            <div className="profile__content-button">
+              <button className="button button__profile">Save</button>
             </div>
           }
 
