@@ -51,6 +51,7 @@ const User = (props) => {
           <img src="https://www.xtrafondos.com/wallpapers/fortnite-plague-3769.jpg"></img>
         </div>
         <h2 className="title profile__name-user">Alison Mendez</h2>
+        <p className="text profile__username">@alisonmendez</p>
       </header>
 
       <div className="profile__content">
