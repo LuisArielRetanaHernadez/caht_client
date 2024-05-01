@@ -30,7 +30,7 @@ const User = (props) => {
 
   useEffect(() => {
     getInformationUser()
-    if (user.id === id) {
+    if (user.ID === id) {
       setIsAuthor(true)
     }
   }, [id])
@@ -58,7 +58,7 @@ const User = (props) => {
           <label>Name</label>
           {
             isAuthor ?
-            <input type="text" placeholder="Name" defaultValue={'Name'}/> 
+            <input type="text" placeholder="Name" defaultValue={'Name'} /> 
             : <p>Name</p>
           }
         </div>
