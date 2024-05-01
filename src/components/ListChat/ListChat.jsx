@@ -17,11 +17,24 @@ import manager from "../../utils/websocket"
 import './LIstChat.css'
 
 
-const socket = manager.socket('/users')
-
 const ListChat = () => {
-
   const [listChat, setListChat] = useState([])
+
+  const socket = manager.socket('/users')
+
+  useEffect(() => {
+    socket.emit('listchat')
+  }, [])
+
+  useEffect(() => {
+    socket.on('list chat', list => {
+      setListChat(list.chats)
+    })
+
+    return () => {
+      socket.off('listchat')
+    }
+  }, [])
 
   const searchUser = async (value) => {
     const usersFinds =  await searchUsers(value)
@@ -32,27 +45,6 @@ const ListChat = () => {
 
   }
 
-  useEffect(() => {
-    socket.emit('list chat')
-
-    socket.on('list chat', (data) => {
-      const chatsFormated = data.map(chat => {
-        return {
-          _id: chat.users[0]._id,
-          name: chat.users[0].username,
-          message: chat.messages[chat.messages.length - 1].content,
-          photo: chat.users[0].photo
-        }
-      })
-
-      setListChat(chatsFormated)
-      
-    })
-  
-    return () => {
-      socket.off('list chat')
-    }
-  }, [])
 
   const items = listChat.map((contact, index) => (
     <ItemChat 
