@@ -28,6 +28,11 @@ const User = (props) => {
     }
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    update(dataUser)
+  }
+
   useEffect(() => {
     getInformationUser()
     if (user.ID === id) {
@@ -46,7 +51,7 @@ const User = (props) => {
       </header>
 
       <div className="profile__content">
-        <form className="form">
+        <form className="form" onSubmit={handleSubmit}>
           <div className="form__field">
             <label className="form__label">Username</label>
             {
