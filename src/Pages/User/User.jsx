@@ -52,14 +52,14 @@ const User = (props) => {
         </div>
 
       </header>
-      
+
       <div>
         <h2 className="title profile__name-user">Alison Mendez</h2>
         <p className="text profile__username">@alisonmendez</p>
       </div>
 
       <div className="profile__content">
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="form profile__form" onSubmit={handleSubmit}>
           <div className="form__field">
             <label className="form__label">Username</label>
             {
@@ -84,6 +84,13 @@ const User = (props) => {
               : <p className="text">Last Name</p>
             }
           </div>
+          {
+            isAuthor &&
+            <div>
+              <button className="button profile__button">Save</button>
+            </div>
+          }
+
         </form>
       </div>
 
