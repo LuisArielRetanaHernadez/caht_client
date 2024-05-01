@@ -71,3 +71,8 @@
   font-size: 20px;
   text-align: center;
 }
+
+
+.profile__form {
+  margin: auto;
+}
