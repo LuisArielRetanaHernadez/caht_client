@@ -31,24 +31,24 @@ const User = (props) => {
           <label>Username</label>
           {
             isAuthor ? 
-            <input></input> 
-            : <p></p>
+            <input type="text" placeholder="Username" defaultValue={'Username'} /> 
+            : <p>Username</p>
           }
         </div>
         <div>
           <label>Name</label>
           {
             isAuthor ?
-            <input></input> 
-            : <p></p>
+            <input type="text" placeholder="Name" defaultValue={'Name'}/> 
+            : <p>Name</p>
           }
         </div>
         <div>
           <label>Last Name</label>
           {
             isAuthor ? 
-            <input></input> 
-            : <p></p>
+            <input type="text" placeholder="Last Name" defaultValue={'Last Name'} /> 
+            : <p>Last Name</p>
           }
         </div>
       </div>
