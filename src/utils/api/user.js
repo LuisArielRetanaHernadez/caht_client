@@ -66,6 +66,15 @@ export const getUsers = async (id) => {
   }
 }
 
+export const updateUser = async () => {
+  try {
+    const response = await Axios.put(`/users/`)
+    return response.data
+  } catch (error) {
+    return error
+  }
+}
+
 export const searchUsers = async (payload) => {
   try {
     const response = await Axios.get(`/users/search?user=${payload}`)
