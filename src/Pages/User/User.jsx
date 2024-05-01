@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { Link, useParams } from "react-router-dom"
@@ -13,7 +14,7 @@ const User = (props) => {
     if (user.id === id) {
       setIsAuthor(true)
     }
-  })
+  }, [id])
 	return (
 		<div>
 			<header>
