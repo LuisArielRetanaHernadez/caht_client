@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { createContext, useRef } from "react"
 import { useEffect } from "react"
 import { useState } from "react"
@@ -60,9 +62,7 @@ const CloudinaryWidget = ({ setPublicId }) => {
 
   return (
     <CloudinaryScriptContext.Provider value={{loaded}}>
-      <button className="button" onClick={initCloudinaryWidget}>
-        Subir
-      </button>
+      <FontAwesomeIcon icon={faArrowUpFromBracket} onClick={initCloudinaryWidget}/>
     </CloudinaryScriptContext.Provider>
 
   )
