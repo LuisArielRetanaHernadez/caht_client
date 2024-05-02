@@ -63,7 +63,11 @@ const User = (props) => {
         <div className="profile__image-user">
           <div className="widget__image-content">
             <img src={imageAvatar}></img>
-            <CloudinaryWidget />
+            {
+              isAuthor &&
+              <CloudinaryWidget />
+            }
+            
           </div>
         </div>
 
