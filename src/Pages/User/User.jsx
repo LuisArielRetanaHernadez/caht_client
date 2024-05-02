@@ -64,6 +64,12 @@ const User = (props) => {
     }
     getAllContacts(id)
   }, [id])
+
+  useEffect(() => {
+    if (dataUser) {
+      setIsUpdate(false)
+    }
+  }, [dataUser])
 	return (
 		<div className="profile">
 			<header className="header profile__content">
@@ -115,7 +121,7 @@ const User = (props) => {
             }
           </div>
           {
-            isAuthor &&
+            isAuthor && isUpdate &&
             <div className="profile__content-button">
               <button className="button button__profile">Save</button>
             </div>
