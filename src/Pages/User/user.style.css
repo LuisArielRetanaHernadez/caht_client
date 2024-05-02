@@ -26,6 +26,10 @@
   object-position: center;
 }
 
+.profile__image-header .widget__button-upload {
+  left: 0;
+}
+
 .profile__image-user {
   width: 100px;
   height: 100px;
