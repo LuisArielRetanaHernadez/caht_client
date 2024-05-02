@@ -109,3 +109,46 @@
 .button__profile {
   margin: auto;
 }
+
+
+
+.sub-title {
+  font-size: 25px;
+}
+
+
+.list--profile {
+  width: 250px;
+  padding: 2px;
+  background-color: transparent;
+}
+.item {
+  width: 100%;
+  background-color: white;
+  box-shadow: 5px 5px 5px gray;
+}
+
+.user-content {
+  width: 100%;
+  padding: 5px;
+  display: flex;
+}
+
+.user-content__name {
+  text-align: center;
+}
+
+.user-content__avatar {
+  width: 20%;
+  height: 50px;
+  border-radius: 50%;
+  background-color: chartreuse;
+}
+
+.user-content__avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: center;
+}
