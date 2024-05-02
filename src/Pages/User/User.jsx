@@ -15,6 +15,10 @@ const User = (props) => {
     name: '',
     lastName: ''
   })
+  const [isUpdate, setIsUpdate] = useState(false)
+  const [imageAvatar, setImageAvatar] = useState("")
+  const [imageHeader, setImageHeader] = useState("")
+
   const user = useSelector(state => state.user)
 
   const { id } = useParams()
@@ -25,8 +29,16 @@ const User = (props) => {
 
   const getInformationUser = async () => {
     const response = await getUser(id)
-    if  (response.status === 200) {
-      setDataUser(response.data)
+    if  (response.status === 'success') {
+      console.log(response.data.user)
+      setDataUser({
+        id,
+        username: response.data.user.username,
+        name: response.data.user.name,
+        lastName: response.data.user.lastName
+      })
+      setImageAvatar(response.data.user.photo)
+      setImageHeader(response.data.user.photo)
     }
   }
 
@@ -45,17 +57,17 @@ const User = (props) => {
 		<div className="profile">
 			<header className="header profile__content">
         <div className="profile__image-header">
-          <img src="https://www.xtrafondos.com/wallpapers/fortnite-capitulo-2-4215.jpg"></img>
+          <img src={imageHeader}></img>
         </div>
         <div className="profile__image-user">
-          <img src="https://www.xtrafondos.com/wallpapers/fortnite-plague-3769.jpg"></img>
+          <img src={imageAvatar}></img>
         </div>
 
       </header>
 
       <div>
-        <h2 className="title profile__name-user">Alison Mendez</h2>
-        <p className="text profile__username">@alisonmendez</p>
+        <h2 className="title profile__name-user">{dataUser.name} {dataUser.lastName}</h2>
+        <p className="text profile__username">@{dataUser.username}</p>
       </div>
 
       <div className="profile__content">
@@ -64,24 +76,24 @@ const User = (props) => {
             <label className="form__label form__label--profile">Username</label>
             {
               isAuthor ? 
-              <input className="form__input form__input--profile" type="text" placeholder="Username" defaultValue={'Username'} /> 
-              : <p className="text">Username</p>
+              <input className="form__input form__input--profile" type="text" placeholder="Username" defaultValue={dataUser.username} /> 
+              : <p className="text">{dataUser.username}</p>
             }
           </div>
           <div className="form__field form__field--profile">
             <label className="form__label--profile">Name</label>
             {
               isAuthor ?
-              <input className="form__input form__input--profile" type="text" placeholder="Name" defaultValue={'Name'} /> 
-              : <p className="text">Name</p>
+              <input className="form__input form__input--profile" type="text" placeholder="Name" defaultValue={dataUser.name} /> 
+              : <p className="text">{dataUser.name}</p>
             }
           </div>
           <div className="form__field form__field--profile">
             <label className="form__label form__label--profile">Last Name</label>
             {
               isAuthor ? 
-              <input className="form__input form__input--profile" type="text" placeholder="Last Name" defaultValue={'Last Name'} /> 
-              : <p className="text">Last Name</p>
+              <input className="form__input form__input--profile" type="text" placeholder="Last Name" defaultValue={dataUser.lastName} /> 
+              : <p className="text">{dataUser.lastName}</p>
             }
           </div>
           {
