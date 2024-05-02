@@ -96,7 +96,7 @@ const User = (props) => {
 
       <div className="profile__content">
         <h3 className="sub-title">Contacts</h3>
-        <ul className="list list--profile">
+        <ul className="list list--profile m-auto">
           <li className="item rounded-10">
             <Link className="user-content">
               <div className="user-content__avatar">
