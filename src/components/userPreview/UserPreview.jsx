@@ -11,7 +11,7 @@ import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
 // style UserPreview
 import './UserPreview.css'
 import { useDispatch } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { getUserAsync, selectContact } from '../../features/contact/contactSlice'
 
 import Axios from '../../utils/axios';
@@ -68,7 +68,7 @@ const UserPreview = () => {
       </div>
 
       <div className="user-preview__information">
-        <p className="user-preview__username">{name}</p>
+        <Link to={`/profile/${id}`} className="user-preview__username">{name}</Link>
         <p className="user-preview__frende">{isContact ? 'Contacto' : 'Agregar'}</p>
       </div>
 
