@@ -3,9 +3,10 @@ import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { Link, useParams } from "react-router-dom"
 import { getUser, updateUser } from "../../utils/api/user"
-
+import { getContacts } from "../../utils/api/contact"
 import './user.style.css'
 import CloudinaryWidget from "../../components/widgetCloudinary/CloudinaryWidget"
+
 
 /* eslint-disable no-unused-vars */
 const User = (props) => {
@@ -16,6 +17,7 @@ const User = (props) => {
     name: '',
     lastName: ''
   })
+  const [contacts, setContacts] = useState([])
   const [isUpdate, setIsUpdate] = useState(false)
   const [imageAvatar, setImageAvatar] = useState("https://www.xtrafondos.com/wallpapers/naruto-uzumaki-mano-elevada-baryon-mode-8737.jpg")
   const [imageHeader, setImageHeader] = useState("https://www.xtrafondos.com/wallpapers/fortnite-x-todos-los-trajes-de-battle-pass-skins-season-10-3751.jpg")
@@ -48,11 +50,19 @@ const User = (props) => {
     update(dataUser)
   }
 
+  const getAllContacts = async () => {
+    const response = await getContacts(id)
+    if (response.status === 'success') {
+      setContacts(response.data.contacts)
+    }
+  }
+
   useEffect(() => {
     getInformationUser()
     if (user.ID === id) {
       setIsAuthor(true)
     }
+    getAllContacts(id)
   }, [id])
 	return (
 		<div className="profile">
