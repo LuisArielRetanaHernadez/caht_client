@@ -62,7 +62,7 @@ const CloudinaryWidget = ({ setPublicId }) => {
 
   return (
     <CloudinaryScriptContext.Provider value={{loaded}}>
-      <FontAwesomeIcon icon={faArrowUpFromBracket} onClick={initCloudinaryWidget}/>
+      <FontAwesomeIcon className="widget__button-upload" icon={faArrowUpFromBracket} onClick={initCloudinaryWidget}/>
     </CloudinaryScriptContext.Provider>
 
   )

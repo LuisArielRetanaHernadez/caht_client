@@ -1,0 +1,40 @@
+.widget__image-content {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: red;
+  position: relative;
+  transition: all .5s;
+}
+
+.widget__image-content:hover::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-color: rgba(0, 0, 0, 0.295);
+  position: absolute;
+  transition: all .5s;
+}
+
+.widget__image {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: center;
+}
+
+.widget__button-upload {
+  color: var(--blue-bright);
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  right: 90px;
+}
+
+.widget__image-content:hover  .widget__button-upload{
+  display: inline-block;
+}
