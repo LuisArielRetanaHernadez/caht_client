@@ -64,16 +64,17 @@ const UploadProfile = () => {
     <section className="wrapped wrapped--menu-min-h wrapped--flex-center">
       <div className="card">
         <h2 className="card__title">Upload Profile</h2>
-        <div className="widget__image-content">
-          <AdvancedImage
-            style={{ width: "200px", height: "200px", borderRadius: '50%', objectFit: "cover",
-              border: "1px solid #ccc",
-            }}
-            src={photo}
-            plugins={[responsive(), placeholder()]}
-           />
-          <CloudinaryWidget className="widget__button-upload" setPublicId={setphoto}/>
+        <div className="image__box">
+          <div className="widget__image-content">
+            <AdvancedImage
+              className="widget__image"
+              src={photo}
+              plugins={[responsive(), placeholder()]}
+            />
+            <CloudinaryWidget className="widget__button-upload" setPublicId={setphoto}/>
+          </div>
         </div>
+
 
         <div className="flex gap-10">
           <button className="button" onClick={handleUpload}>Save</button>
