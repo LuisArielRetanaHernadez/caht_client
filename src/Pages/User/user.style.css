@@ -137,6 +137,7 @@
 }
 
 .user-content__name {
+  color: var(--blue-bright);
   text-align: center;
 }
 

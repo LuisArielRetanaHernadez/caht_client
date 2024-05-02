@@ -119,7 +119,7 @@ const User = (props) => {
                 <img src="https://www.xtrafondos.com/wallpapers/fortnite-plague-3769.jpg"></img>
               </div>
               <div className="text-center flex direction-column items-center justify-center flex-1">
-                <h3 className="text">Mabi</h3>
+                <h3 className="user-content__name">Mabi</h3>
               </div>
             </Link>
           </li>
