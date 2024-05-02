@@ -127,28 +127,20 @@ const User = (props) => {
       <div className="profile__content">
         <h3 className="sub-title">Contacts</h3>
         <ul className="list list--profile m-auto">
-          <li className="item rounded-10">
-            <Link className="user-content">
-              <div className="user-content__avatar">
-                <img src="https://www.xtrafondos.com/wallpapers/fortnite-plague-3769.jpg"></img>
-              </div>
-              <div className="text-center flex direction-column items-center justify-center flex-1">
-                <h3 className="user-content__name">Mabi</h3>
-              </div>
-            </Link>
-          </li>
 
-          <li className="item rounded-10">
-            <Link className="user-content">
-              <div className="user-content__avatar">
-                <img src="https://www.xtrafondos.com/wallpapers/fortnite-plague-3769.jpg"></img>
-              </div>
-              <div className="text-center flex direction-column items-center justify-center flex-1">
-                <h3 className="user-content__name">Mabi</h3>
-              </div>
-
-            </Link>
-          </li>
+          {contacts.length ? contacts.map((contact, index) => (
+            <li className="item rounded-10" key={index}>
+              <Link className="user-content">
+                <div className="user-content__avatar">
+                  <img src={contact.photo}></img>
+                </div>
+                <div className="text-center flex direction-column items-center justify-center flex-1">
+                  <h3 className="user-content__name">{contact.name}</h3>
+                </div>
+              </Link>
+            </li>
+          ))
+          : (<h2>Sin Contacts</h2>)}
         </ul>
       </div>
 		</div>
