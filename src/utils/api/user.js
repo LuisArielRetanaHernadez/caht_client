@@ -86,7 +86,7 @@ export const searchUsers = async (payload) => {
 
 export const getListChat = async () => {
   try {
-    const response = await Axios.get('/users/list-chat/')
+    const response = await Axios.get('/users/chats/all')
     return response.data
   } catch (error) {
     return error
