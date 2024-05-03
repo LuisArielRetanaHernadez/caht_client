@@ -5,6 +5,7 @@ import userSlice from "../features/user/userSlice";
 import contactSlice from "../features/contact/contactSlice";
 import errorSlice from "../features/error/errorSlice";
 import listChatSlice from "../features/listChat/ListChatSlice";
+import themeSlice from "../features/theme/themeSlice";
 
 const leadUserState = () => {
     const serializedState = localStorage.getItem('user');
@@ -35,6 +36,7 @@ export const store = configureStore({
         user: userSlice.reducer,
         contact: contactSlice.reducer,
         listChat: listChatSlice.reducer,
+        theme: themeSlice.reducer,
         error: errorSlice
     },
     preloadedState: {
