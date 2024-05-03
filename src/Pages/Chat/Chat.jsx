@@ -24,12 +24,21 @@ import { getAllMessagesByChat, saveMessage } from "../../utils/api/message"
 const Chat = () => {
   const [messages, setMessages] = useState([])
   const [message, setMessage] = useState('')
+  
+  const refBackground = useRef(null)
 
   const socket = manager.socket('/users')
   
   const { id } = useParams()
 
   const user = useSelector((state) => state.user);
+  const { backroundImage } = useSelector((state) => state.theme);
+
+  useEffect(() => {
+    if (backroundImage) {
+      refBackground.current.style.backgroundImage = `url(${backroundImage})`
+    }
+  }, [backroundImage])
 
   const boxMessages = useRef(null)
 
@@ -136,7 +145,7 @@ const Chat = () => {
   }
 
   return (
-    <div className="chat">
+    <div className="chat" ref={refBackground}>
       <div ref={boxMessages} className="chat__messages position-relative">
 
       <UserPreview />
