@@ -108,7 +108,7 @@ const User = (props) => {
             {
               isAuthor ? 
               <input className="form__input form__input--profile" type="text" placeholder="Username" defaultValue={dataUser.username} /> 
-              : <p className="text">{dataUser.username}</p>
+              : <p className="profile__text">{dataUser.username}</p>
             }
           </div>
           <div className="form__field form__field--profile">
@@ -116,7 +116,7 @@ const User = (props) => {
             {
               isAuthor ?
               <input className="form__input form__input--profile" type="text" placeholder="Name" defaultValue={dataUser.name} /> 
-              : <p className="text">{dataUser.name}</p>
+              : <p className="profile__text">{dataUser.name}</p>
             }
           </div>
           <div className="form__field form__field--profile">
@@ -124,7 +124,7 @@ const User = (props) => {
             {
               isAuthor ? 
               <input className="form__input form__input--profile" type="text" placeholder="Last Name" defaultValue={dataUser.lastName} /> 
-              : <p className="text">{dataUser.lastName}</p>
+              : <p className="profile__text">{dataUser.lastName}</p>
             }
           </div>
           {

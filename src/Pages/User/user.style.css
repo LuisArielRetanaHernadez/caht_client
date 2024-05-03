@@ -96,11 +96,14 @@
   margin-bottom: 5px;
 }
 
-.form__input--profile {
-  border: 0px;
+.profile__text, .form__input--profile {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
+}
+
+.form__input--profile {
+  border: 0px;
 }
 
 .profile__content-button {
