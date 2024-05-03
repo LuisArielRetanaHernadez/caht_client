@@ -8,7 +8,7 @@ import ItemChat from "../ItemChat/ItemChat"
 import Search from "../Search/Search"
 
 // insta axios
-import { searchUsers } from "../../utils/api/user"
+import { getListChat, searchUsers } from "../../utils/api/user"
 
 // manager socket
 import manager from "../../utils/websocket"
@@ -36,6 +36,15 @@ const ListChat = () => {
     }
   }, [])
 
+  useEffect(() => {
+    const getChats = async () => {
+      const response = await getListChat()
+      setListChat(response.data.listChat.chats)
+      console.log('chasss -> ', response.data.listChat.chats)
+    }
+    getChats()
+  }, []) 
+
   const searchUser = async (value) => {
     const usersFinds =  await searchUsers(value)
 
@@ -49,10 +58,10 @@ const ListChat = () => {
   const items = listChat.map((contact, index) => (
     <ItemChat 
       key={index}
-      id={contact._id}
-      name={contact.name}
-      messageLast={contact.message}
-      photo={contact.photo}
+      id={contact.users[0]._id}
+      name={contact.users[0].name}
+      messageLast={contact.messages[0].content}
+      photo={contact.users[0].photo}
     />
   ))
 
