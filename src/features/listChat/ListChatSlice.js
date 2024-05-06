@@ -12,7 +12,10 @@ const listChatSlice = createSlice({
   reducers: {
     toggleVisibility(state) {
       state.isShow = !state.isShow
-    }
+    },
+    addChat(state, action) {
+      state.chats.push(action.payload)
+    },
   }
 })
 
