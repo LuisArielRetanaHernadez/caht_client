@@ -79,7 +79,7 @@ const Chat = () => {
   }, [id])
 
   useEffect(() => {
-    socket.on('message', (data) => {
+    socket.on('message', async (data) => {
 
       setMessages(prev => [...prev, { 
 
