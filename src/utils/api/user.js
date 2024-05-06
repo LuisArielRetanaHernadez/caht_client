@@ -92,3 +92,12 @@ export const getListChat = async () => {
     return error
   }
 }
+
+export const addChatToListChat = async () => {
+  try {
+    const response = await Axios.get('/users/chats/add')
+    return response.data
+  } catch (error) {
+    return error
+  }
+}
