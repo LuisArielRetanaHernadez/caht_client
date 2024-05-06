@@ -39,15 +39,19 @@ const ListChat = () => {
   useEffect(() => {
     const getChats = async () => {
       const response = await getListChat()
-      setListChat(response.data.listChat.chats)
-      console.log('chasss -> ', response.data.listChat.chats)
+      console.log('chasss -> ', response.data.listChat)
+      if (response.status === 'success' && response.data.listChat.length > 0) {
+
+        setListChat(response.data.listChat)
+      }
+
     }
     getChats()
   }, []) 
 
   const searchUser = async (value) => {
     const usersFinds =  await searchUsers(value)
-
+    console.log('usersFinds -> ', usersFinds)
     if (usersFinds.status === 'success') {
       setListChat(usersFinds.data.usersFind)
     }
@@ -58,10 +62,10 @@ const ListChat = () => {
   const items = listChat.map((contact, index) => (
     <ItemChat 
       key={index}
-      id={contact.users[0]._id}
-      name={contact.users[0].name}
-      messageLast={contact.messages[0].content}
-      photo={contact.users[0].photo}
+      id={contact.user._id}
+      name={contact.user.name}
+      messageLast={contact?.messages?.content}
+      photo={contact.user.photo}
     />
   ))
 
